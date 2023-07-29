@@ -174,18 +174,21 @@ namespace Trial_projects
         //            //Console.WriteLine("delta wychodzi z rownania {1} ^ 2 - 4 * {0} * {2}", a, b, c);
         //            //Console.ReadKey();
         //        //}
-        //        static void Main (string[] args)
-        //        {
-        //                //            /* oblicz wskaznik BMI = masa/wzrost kg/m */
+
+        /* oblicz wskaznik BMI = masa/wzrost kg/m */
+        //        static void Main(string[] args)
+        //        {     
         //            double masa, wzrost, wynik;
         //            Console.WriteLine("Podaj wzrost (m): ");
-        //            masa = double.Parse(Console.ReadLine());
-        //            Console.WriteLine("Podaj wage (kg): ");
         //            wzrost = double.Parse(Console.ReadLine());
-        //            wynik = masa / wzrost;
+        //            Console.WriteLine("Podaj wage (kg): ");
+        //            masa = (double)decimal.Parse(Console.ReadLine());
+        //            wynik = masa / Math.Pow(wzrost, 2);
         //            Console.WriteLine(wynik);
         //            Console.ReadKey();
         //        }
+        //    }
+        //}
         //        //static void gGestosc(string[] args)
         //        //{
         //        ////Po wykonaniu przedstawionego niżej kodu programu zmienna gestoscZaludnienia
@@ -845,29 +848,33 @@ namespace Trial_projects
          18,5–24,99 – wartość prawidłowa,
          ≥ 25,0 – nadwaga.
         i*/
+
         static void Main(string[] args)
         {
             double masa, wzrost, wynik;
+            int p = 2;
             Console.WriteLine("Podaj wzrost (m): ");
-            masa = double.Parse(Console.ReadLine());
-            Console.WriteLine("Podaj wage (kg): ");
             wzrost = double.Parse(Console.ReadLine());
-            int pow = 2;
-             wynik =  masa /( Math.Pow(wzrost, pow));
-            if ( 0 < wynik && wynik <= 18.5)
+            Console.WriteLine("Podaj wage (kg): ");
+            masa = (double)decimal.Parse(Console.ReadLine());
+            wynik = masa / Math.Pow(wzrost, 2);        
+            if ((0 < wynik) && (wynik <= 18.5))
             {
                 Console.WriteLine(wynik);
-                Console.WriteLine( "niedowaga");
+                Console.WriteLine("niedowaga");
             }
-            if (18.5 > wynik && wynik <= 24.99)
+            if ((18.5 < wynik) && (wynik <= 24.99))
             {
                 Console.WriteLine(wynik);
                 Console.WriteLine("prawidlowa");
             }
             else
             {
-                Console.WriteLine(wynik);
-                Console.WriteLine("nadwaga");
+                if (wynik >= 25)
+                {
+                    Console.WriteLine(wynik);
+                    Console.WriteLine("nadwaga");
+                }
             }
 
             Console.ReadKey();

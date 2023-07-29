@@ -1,11 +1,13 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Schema;
 /*
- * wykaz wybranych modyfikatorów typów dla literałów:
+* wykaz wybranych modyfikatorów typów dla literałów:
 f F  x = 34.5f float
 d D 3d = 3.0 double
 m M 3m decimal
@@ -554,71 +556,377 @@ namespace Trial_projects
         //{
         //    Console.WriteLine("Podaj dodatni wykładnik");
         //    int wykladnik = Convert.ToInt16(Console.ReadLine());
-            //petla FOR
+        //petla FOR
 
-            //if (wykladnik > 0)
-            //{
-            //    int potega = 1;
-            //    for (int i = 1; i <= wykladnik; i++)
-            //    {
-            //        potega = potega * 2;
-            //        Console.WriteLine("2 do {0,2} = {1,2}", i, potega);
-            //    }
-            //}
+        //if (wykladnik > 0)
+        //{
+        //    int potega = 1;
+        //    for (int i = 1; i <= wykladnik; i++)
+        //    {
+        //        potega = potega * 2;
+        //        Console.WriteLine("2 do {0,2} = {1,2}", i, potega);
+        //    }
+        //}
 
-            //petla WHILE
-            //if (wykladnik > 0)
-            //{
-            //    int potega = 1;
-            //    int i = 1;
-            //    while (i <= wykladnik)
-            //    {
-            //        potega = potega * 2;
-            //        Console.WriteLine("2 do {0,2} = {1,2}", i, potega);
-            //        i++;
-            //    }
+        //petla WHILE
+        //if (wykladnik > 0)
+        //{
+        //    int potega = 1;
+        //    int i = 1;
+        //    while (i <= wykladnik)
+        //    {
+        //        potega = potega * 2;
+        //        Console.WriteLine("2 do {0,2} = {1,2}", i, potega);
+        //        i++;
+        //    }
 
-            //petla DO WHILE
+        //petla DO WHILE
 
-            //int i = 1;
-            //do
-            //{
-            //    potega = potega * 2;
-            //    Console.WriteLine("2 do {0,2} = {1,2}", i, potega);
-            //    i++;
-            //} while (i <= wykladnik);
-            //Console.ReadKey();
-            //}
+        //int i = 1;
+        //do
+        //{
+        //    potega = potega * 2;
+        //    Console.WriteLine("2 do {0,2} = {1,2}", i, potega);
+        //    i++;
+        //} while (i <= wykladnik);
+        //Console.ReadKey();
+        //}
 
-            //Polecenia break i continue
+        //Polecenia break i continue
 
+        //static void Main(string[] args)
+        //{
+        //    int a = 0;
+        //    do
+        //    {
+        //        a++;
+        //        if (a == 5)
+        //            break; // przerwij pętle
+        //        Console.WriteLine(a);
+        //    } while (true);
+
+
+        //    for (int i = 1; i <= 3; i++)
+        //    {
+        //        Console.WriteLine("Liczby w {0} wierszu:", i);
+        //        for (int j = 1; j <= 5; j++)
+        //        {
+        //            if (j == 3) break;
+        //            Console.Write(j + ",");
+        //        }
+        //        Console.WriteLine();
+        //    }
+        //    Console.ReadKey();
+        //}
+
+        //to co wyżej ale zamiast break jest contine
+        //static void Main(string[] args)
+        //{
+        //    for (int i = 1; i <= 3; i++)
+        //    {
+        //        Console.WriteLine("Liczby w {0} wierszu:", i);
+        //        for (int j = 1; j <= 5; j++)
+        //        {
+        //            if (j == 3) break;
+        //            Console.Write(j + ",");
+        //        }
+        //        Console.WriteLine();
+        //    }
+        //    Console.ReadKey();
+        //}
+        //static void Main(string[] args)
+        //{
+        //    for (int i = 1; i <= 6; i++)
+        //    {
+        //        if (i == 4)
+        //            continue; // pomin dalsze instrukcje (nie drukuje 4) i wznow petle
+        //        Console.WriteLine(i);
+        //    }
+        //    Console.ReadKey();
+        //}
+        //PETLA FOR EACH -> w rozdziale 4. dotyczy bowiem tablic
+
+        //ZADANIA
+        //3.a program do sprawdzania czy liczba jest parzysta czy ujemna
+
+        //static void Main (string[] args)
+        //{
+        //    Console.WriteLine("podaj liczbe calkowita\n");
+        //    int liczba = int.Parse(Console.ReadLine());
+        //    if (liczba % 2 == 0) //sprawdza czy jest parzysta
+        //    {
+        //        Console.WriteLine("{0} jest liczba parzysta", liczba);
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine("{0} jest nieparzysta", liczba);
+        //    }
+        //    if (liczba < 0)
+        //    {
+        //        Console.WriteLine("{0} jest uqjemna", liczba);
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine("{0} nie jest liczba ujemna", liczba);
+        //    }
+        //    Console.ReadKey();
+        //}
+
+
+        //3.b pobierz 2 liczby calkowite. znajdz i podaj parzyste liczby pomiedzy nimi
+        //static void Main(string[] args)
+        //{
+        //    Console.WriteLine("podaj 1 liczbą calkowita\n");
+        //    int x = int.Parse(Console.ReadLine());
+        //    Console.WriteLine("podaj 2 liczbą calkowita\n");
+        //    int y = int.Parse(Console.ReadLine());
+        //    Console.WriteLine("liczby parzyste");
+        //    if (x <= y)
+        //    {
+        //        for ( int i = x; i <= y; i++)
+        //        {
+        //            if (i % 2 == 0)
+        //            {
+        //                Console.WriteLine(i + ",");
+        //            }
+        //        }
+        //    }
+        //    Console.ReadKey();
+        //}
+
+        //3.b inne podejscie
+        //static void Main(string[] args)
+        //{
+        //Console.WriteLine("podaj 1 liczbą calkowita\n");
+        //int x = int.Parse(Console.ReadLine());
+        //Console.WriteLine("podaj 2 liczbą calkowita\n");
+        //int y = int.Parse(Console.ReadLine());
+        //x = (x % 2 == 0) ? x : x + 1;
+        //y = (y % 2 == 0) ? y : y - 1;
+        //for (int i = x; i <= y; i += 2)
+        //{
+        //    Console.Write(i + ",");
+        //}
+
+        // 3c.
+        // /* Dwaj koledzy Janek i Karol zadłużyli się na 80 zł. Umówili się między sobą, że każdy z
+        // nich codziennie będzie odkładał na spłatę zadłużenia 20 % swojego dziennego zarobku, Jane
+        // zarabia dziennie 50 zł, a Karol 40 zł.Napisz program, który przy pomocy pętli do .while
+        // sprawdzi po ilu dniach obaj koledzy uzbierają kwotę potrzebną do spłaty swojego długu oraz wypisze
+        // wartość uzbieranej kwoty w każdym dniu*/
+
+        //static void Main(string[] args)
+        //{
+        //    int i = 1;
+        //    double dlug = 80, zarobekJanka = 50, zarobekKarola = 40;
+        //    double splata = 0;
+        //    do
+        //    {
+        //        splata += 0.2 * zarobekJanka + 0.2 * zarobekKarola;
+        //        Console.WriteLine("Dzień = {0} Spłata = {1}", i++, splata);
+        //    } while (dlug > splata);
+        //    Console.ReadKey();
+
+
+        //3.4 Napisz program, który wyświetla na ekranie konsoli „kwadrat” zbudowany ze znaku „*”. Liczbę wierszy(a tym samym kolumn) ma podać użytkownik.
+        //static void Main(string[] args)
+        //{ 
+        //    Console.WriteLine("podaj liczbę wierszy");
+        //    int i = int.Parse(Console.ReadLine());
+        //    for (int n = 1; n<= i; n++)
+        //    {
+        //        for (int j = 1; j <= i; j++)
+        //        {  
+        //            Console.Write("*"); // wConsole.Write ! !
+        //        }
+        //        Console.WriteLine();
+        //    }
+        //    Console.ReadKey();  
+
+        // 3.1. czy rok byl przestepny
+        //static void Main(string[] args)
+        //{
+        //    Console.WriteLine("podaj rok do sprawdzenia ");
+        //    int rok = int.Parse(Console.ReadLine());
+        //    if (rok % 4 == 0 || rok % 400 == 0)
+        //    {
+        //        Console.WriteLine("{0} jest przestepnym rokiem", rok);
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine("{0} NIE jest przestepnym rokiem", rok);
+        //    }
+        //        Console.ReadKey();
+        //}
+
+        // 3.2 2 liczby sprawdz czy druga jest dzielnikiem pierwszej
+        //static void Main(string[] args)
+        //{
+        //    Console.WriteLine("podaj liczbe  do sprawdzenia ");
+        //    int l1 = int.Parse(Console.ReadLine());
+        //    Console.WriteLine("podaj dzielnik do sprawdzenia ");
+        //    int l2 = int.Parse(Console.ReadLine());
+        //    if (l1 % l2 == 0)
+
+        //    {
+        //        Console.WriteLine("{1} jest dzielnikiem {0}", l1, l2);
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine("{1} NIE jest dzielnikiem {0}", l1, l2);
+        //    }
+        //    Console.ReadKey();
+        //}
+
+        //3/3 podaj 3 liczby i wyswietl najwieksza
+        //static void Main(string[] args)
+        //{
+        //    Console.WriteLine("podaj liczbe  do sprawdzenia ");
+        //    int l1 = int.Parse(Console.ReadLine());
+        //    Console.WriteLine("podaj liczbe do sprawdzenia ");
+        //    int l2 = int.Parse(Console.ReadLine());
+        //    Console.WriteLine("podaj liczbe do sprawdzenia ");
+        //    int l3 = int.Parse(Console.ReadLine());
+
+        //    if (l1 > l2 && l2 > l3)
+
+        //    {
+        //        Console.WriteLine(" {0} najwieksza", l1);
+        //    }
+        //    if (l2 > l1 && l2 > l3)
+        //    {
+        //        Console.WriteLine("{1} najwieksza", l2);
+        //    }
+        //    if (l3 > l1 && l3 >l2)
+        //    {
+        //        Console.WriteLine("{2}", l3);
+        //    }
+        //    if (l1 == l2  && l1 == l3)
+        //    {
+        //        Console.WriteLine("rowne");
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine(" blad");
+        //    }
+        //    Console.ReadKey();
+        //}
+
+        // 3.4
+        //static void Main(string[] args)
+        //{
+
+        //    Console.WriteLine("liczba");
+        //    double a = double.Parse(Console.ReadLine());
+        //    Console.WriteLine("liczba");
+        //    double b = double.Parse(Console.ReadLine());
+        //    Console.WriteLine("dzialanie");
+        //    string dzialanie = Console.ReadLine();
+
+        //    if (dzialanie == "*")
+        //    {
+        //        double wynik = a * b;
+        //        Console.WriteLine("{0}{2}(1} = {3}", a, b, dzialanie, wynik);
+        //    }
+        //    if (dzialanie == "+")
+        //    {
+        //        double wynik = a + b;
+        //        Console.WriteLine("{0}{2}(1} = {3}", a, b, dzialanie, wynik);
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine("blad");
+        //    }
+        //    Console.ReadKey();
+        //}
+
+        /*3.6 BMI Z zadania 2.3 a potem komunikaty
+         *  < 18,5 – niedowaga,
+         18,5–24,99 – wartość prawidłowa,
+         ≥ 25,0 – nadwaga.
+        i*/
         static void Main(string[] args)
         {
-            int a = 0;
-            do
+            double masa, wzrost, wynik;
+            Console.WriteLine("Podaj wzrost (m): ");
+            masa = double.Parse(Console.ReadLine());
+            Console.WriteLine("Podaj wage (kg): ");
+            wzrost = double.Parse(Console.ReadLine());
+            int pow = 2;
+             wynik =  masa /( Math.Pow(wzrost, pow));
+            if ( 0 < wynik && wynik <= 18.5)
             {
-                a++;
-                if (a == 5)
-                    break; // przerwij pętle
-                Console.WriteLine(a);
-            } while (true);
-
-
-            for (int i = 1; i <= 3; i++)
-            {
-                Console.WriteLine("Liczby w {0} wierszu:", i);
-                for (int j = 1; j <= 5; j++)
-                {
-                    if (j == 3) break;
-                    Console.Write(j + ",");
-                }
-                Console.WriteLine();
+                Console.WriteLine(wynik);
+                Console.WriteLine( "niedowaga");
             }
+            if (18.5 > wynik && wynik <= 24.99)
+            {
+                Console.WriteLine(wynik);
+                Console.WriteLine("prawidlowa");
+            }
+            else
+            {
+                Console.WriteLine(wynik);
+                Console.WriteLine("nadwaga");
+            }
+
             Console.ReadKey();
         }
-        //przyklad 3.26 str. 84 
-
-        }
     }
+}
+
+
+
+//3.7 zamien program z uzuciem  switch..case (zamiast if..else).
+
+//        static void Main(string[] args)
+//        {
+//            Console.WriteLine("Wpisz nr dnia tygodnia");
+//            int numer = int.Parse(Console.ReadLine());
+//            switch (numer)
+//            {
+//                case 1:
+//                    Console.WriteLine("Poniedziałek");
+//                    break;
+//                case 2:
+//                    Console.WriteLine("Wtorek");
+//                    break;
+//                case 3:
+//                    Console.WriteLine("Środa");
+//                    break;
+//                case 4:
+//                    Console.WriteLine("Czwartek");
+//                    break;
+//                case 5:
+//                    Console.WriteLine("Piątek");
+//                    break;
+//                case 6:
+//                    Console.WriteLine("Sobota");
+//                    break;
+//                case 7:
+//                    Console.WriteLine("Niedziela");
+//                    break;
+//                default:
+//                    Console.WriteLine("Nie ma takiego dnia tygodnia");
+//                    break;
+//            }
+//            Console.ReadKey();
+//        }
+//    }
+//}
+
+
+
+/* 3.8 Pobierz od użytkownika wartość średniej ocen. Program ma wyświetlać informacje o
+wysokości przysługującego stypendium zgodnie z poniższą tabelą:
+Średnia ocen Kwota stypendium
+Od Do
+2,00 3,99 0,00 zł
+4,00 4,79 350,00 zł
+4,80 5,00 550,00 zł
+
+        // str 89 zadania 3.9 - 3.15
+        //rozdzial 4 od strony 91*/
+
 
 

@@ -177,12 +177,12 @@ namespace Trial_projects
 
         /* oblicz wskaznik BMI = masa/wzrost kg/m */
         //        static void Main(string[] args)
-        //        {     
+        //        {
         //            double masa, wzrost, wynik;
         //            Console.WriteLine("Podaj wzrost (m): ");
         //            wzrost = double.Parse(Console.ReadLine());
         //            Console.WriteLine("Podaj wage (kg): ");
-        //            masa = (double)decimal.Parse(Console.ReadLine());
+        //            decimal masa  = decimal.Parse(Console.ReadLine());
         //            wynik = masa / Math.Pow(wzrost, 2);
         //            Console.WriteLine(wynik);
         //            Console.ReadKey();
@@ -847,90 +847,114 @@ namespace Trial_projects
          *  < 18,5 – niedowaga,
          18,5–24,99 – wartość prawidłowa,
          ≥ 25,0 – nadwaga.
-        i*/
+        //i*/
 
+        //static void Main(string[] args)
+        //        {
+        //            double masa, wzrost, wynik;
+        //            int p = 2;
+        //            Console.WriteLine("Podaj wzrost (m): ");
+        //            wzrost = double.Parse(Console.ReadLine());
+        //            Console.WriteLine("Podaj wage (kg): ");
+        //            masa = (double)decimal.Parse(Console.ReadLine());
+        //            wynik = masa / Math.Pow(wzrost, 2);        
+        //            if ((0 < wynik) && (wynik <= 18.5))
+        //            {
+        //                Console.WriteLine(wynik);
+        //                Console.WriteLine("niedowaga");
+        //            }
+        //            if ((18.5 < wynik) && (wynik <= 24.99))
+        //            {
+        //                Console.WriteLine(wynik);
+        //                Console.WriteLine("prawidlowa");
+        //            }
+        //            else
+        //            {
+        //                if (wynik >= 25)
+        //                {
+        //                    Console.WriteLine(wynik);
+        //                    Console.WriteLine("nadwaga");
+        //                }
+        //            }
+
+        //            Console.ReadKey();
+        //        }
+        //    }
+        //}
+
+
+
+        //3.7 zamien program z uzuciem  switch..case (zamiast if..else).
+
+        //        static void Main(string[] args)
+        //        {
+        //            Console.WriteLine("Wpisz nr dnia tygodnia");
+        //            int numer = int.Parse(Console.ReadLine());
+        //            switch (numer)
+        //            {
+        //                case 1:
+        //                    Console.WriteLine("Poniedziałek");
+        //                    break;
+        //                case 2:
+        //                    Console.WriteLine("Wtorek");
+        //                    break;
+        //                case 3:
+        //                    Console.WriteLine("Środa");
+        //                    break;
+        //                case 4:
+        //                    Console.WriteLine("Czwartek");
+        //                    break;
+        //                case 5:
+        //                    Console.WriteLine("Piątek");
+        //                    break;
+        //                case 6:
+        //                    Console.WriteLine("Sobota");
+        //                    break;
+        //                case 7:
+        //                    Console.WriteLine("Niedziela");
+        //                    break;
+        //                default:
+        //                    Console.WriteLine("Nie ma takiego dnia tygodnia");
+        //                    break;
+        //            }
+        //            Console.ReadKey();
+        //        }
+        //    }
+        //}
+
+
+
+        /* 3.8 Pobierz od użytkownika wartość średniej ocen. Program ma wyświetlać informacje o
+        wysokości przysługującego stypendium zgodnie z poniższą tabelą:
+        Średnia ocen Kwota stypendium
+        Od Do
+        2,00 3,99 0,00 zł
+        4,00 4,79 350,00 zł
+        4,80 5,00 550,00 zł*/
         static void Main(string[] args)
         {
-            double masa, wzrost, wynik;
-            int p = 2;
-            Console.WriteLine("Podaj wzrost (m): ");
-            wzrost = double.Parse(Console.ReadLine());
-            Console.WriteLine("Podaj wage (kg): ");
-            masa = (double)decimal.Parse(Console.ReadLine());
-            wynik = masa / Math.Pow(wzrost, 2);        
-            if ((0 < wynik) && (wynik <= 18.5))
-            {
-                Console.WriteLine(wynik);
-                Console.WriteLine("niedowaga");
-            }
-            if ((18.5 < wynik) && (wynik <= 24.99))
-            {
-                Console.WriteLine(wynik);
-                Console.WriteLine("prawidlowa");
-            }
-            else
-            {
-                if (wynik >= 25)
-                {
-                    Console.WriteLine(wynik);
-                    Console.WriteLine("nadwaga");
-                }
-            }
+            double srednia, stypenndium;
+            Console.WriteLine("podaj sreednia ocen\n");
+            srednia = decimal.Parse(Console.ReadLine());
 
+            if ((2 <= srednia) && (srednia <= 3.99))
+            {
+                double stypendium = 0.0D;
+            }
+            if ((4 <= srednia) && (srednia <= 4, 79))
+            {
+                double stypendium = 350.0D;
+            }
+            if ((4.8 <= srednia) && (srednia <= 5, 0))
+            {
+                double stypendium = 550.0D;
+            }
+            Console.WriteLine(stypenndium);
             Console.ReadKey();
         }
+
     }
 }
-
-
-
-//3.7 zamien program z uzuciem  switch..case (zamiast if..else).
-
-//        static void Main(string[] args)
-//        {
-//            Console.WriteLine("Wpisz nr dnia tygodnia");
-//            int numer = int.Parse(Console.ReadLine());
-//            switch (numer)
-//            {
-//                case 1:
-//                    Console.WriteLine("Poniedziałek");
-//                    break;
-//                case 2:
-//                    Console.WriteLine("Wtorek");
-//                    break;
-//                case 3:
-//                    Console.WriteLine("Środa");
-//                    break;
-//                case 4:
-//                    Console.WriteLine("Czwartek");
-//                    break;
-//                case 5:
-//                    Console.WriteLine("Piątek");
-//                    break;
-//                case 6:
-//                    Console.WriteLine("Sobota");
-//                    break;
-//                case 7:
-//                    Console.WriteLine("Niedziela");
-//                    break;
-//                default:
-//                    Console.WriteLine("Nie ma takiego dnia tygodnia");
-//                    break;
-//            }
-//            Console.ReadKey();
-//        }
-//    }
-//}
-
-
-
-/* 3.8 Pobierz od użytkownika wartość średniej ocen. Program ma wyświetlać informacje o
-wysokości przysługującego stypendium zgodnie z poniższą tabelą:
-Średnia ocen Kwota stypendium
-Od Do
-2,00 3,99 0,00 zł
-4,00 4,79 350,00 zł
-4,80 5,00 550,00 zł
 
         // str 89 zadania 3.9 - 3.15
         //rozdzial 4 od strony 91*/

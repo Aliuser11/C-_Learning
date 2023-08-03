@@ -7,7 +7,6 @@
 //using System.Threading.Tasks;
 //using System.Xml.Schema;
 
-///* wykaz wybranych modyfikatorów typów dla literałów:
 //f F  x = 34.5f float
 //d D 3d = 3.0 double
 //m M 3m decimal
@@ -69,7 +68,6 @@
 //ot = ++t * 2; // t = 1
 //o = t++ * 2;
 //// ++ zwieksza o 1| -- zmniejsza
-///*jeśli operator jest przed
 //zmienną, to zmienna ta będzie zwiększona (lub zmniejszona) przed jej użyciem w wyrażeniu.
 //Jeśli zaś operator jest po zmiennej, to zmienna ta będzie zwiększona (lub zmniejszona) po jej
 //odczytaniu w wyrażeniu.*/
@@ -136,10 +134,8 @@
 //Console.WriteLine("9. A ta liczba będzie w klamrach {{{0}}}", yyy); // potrójna klamra
 //Console.ReadKey();
 
-////zadania do samodzielnego rozwiązania 2.7
-///* program przeliczający temperaturę w stopniach Celsjusza na temperaturę w  stopniach Fahrenheita. 
+////zadania
 //Program ma prosić użytkownika o podanie temperatury w stopniach Celsjusza. Wzór: F = 32 + (9/5)*C*/
-
 //Console.WriteLine("Podaj temperatrure w C: ");
 //C = double.Parse(Console.ReadLine()); //metody double.Parse(), która zamieni typ string na typ double
 //F = 32 + (9.0 / 5.0) * C;
@@ -165,7 +161,6 @@
 //Console.ReadKey();
 
 
-///* oblicz wskaznik BMI = masa/wzrost kg/m */
 //decimal masa, wzrost;
 //Console.WriteLine("Podaj wzrost (m): ");
 //wzrost = decimal.Parse(Console.ReadLine());
@@ -176,7 +171,6 @@
 //Console.ReadKey();
 
 
-///*Po wykonaniu przedstawionego niżej kodu programu zmienna gestoscZaludnienia
 //przyjmie wartość 0.Odpowiedz dlaczego i zmień program(w linii, gdzie jest obliczana
 //zmienna gestoscZaludnienia) tak, aby wartość tej zmiennej wynosiła 0,1(czyli 10 / 100)*/
 //double osoby;
@@ -607,9 +601,7 @@
 
 //// PETLA FOR EACH->w rozdziale 4.dotyczy bowiem tablic
 
-///*ZADANIA*/
 ////3.a program do sprawdzania czy liczba jest parzysta czy ujemna
-
 //Console.WriteLine("podaj liczbe calkowita\n");
 //liczba = int.Parse(Console.ReadLine());
 //if (liczba % 2 == 0) //sprawdza czy jest parzysta
@@ -632,7 +624,6 @@
 
 
 ////3.b pobierz 2 liczby calkowite. znajdz i podaj parzyste liczby pomiedzy nimi
-
 //Console.WriteLine("podaj 1 liczbą calkowita\n");
 //x = int.Parse(Console.ReadLine());
 //Console.WriteLine("podaj 2 liczbą calkowita\n");
@@ -651,7 +642,6 @@
 //Console.ReadKey();
 
 ////3.b inne podejscie
-
 //Console.WriteLine("podaj 1 liczbą calkowita\n");
 //x = int.Parse(Console.ReadLine());
 //Console.WriteLine("podaj 2 liczbą calkowita\n");
@@ -666,7 +656,6 @@
 
 
 //// 3c.
-///* Dwaj koledzy Janek i Karol zadłużyli się na 80 zł. Umówili się między sobą, że każdy z
 //nich codziennie będzie odkładał na spłatę zadłużenia 20 % swojego dziennego zarobku, Jane
 //zarabia dziennie 50 zł, a Karol 40 zł.Napisz program, który przy pomocy pętli do .while
 //sprawdzi po ilu dniach obaj koledzy uzbierają kwotę potrzebną do spłaty swojego długu oraz wypisze
@@ -788,8 +777,8 @@
 //Console.ReadKey();
 
 
-///*3.6 BMI Z zadania 2.3 a potem komunikaty
-//*  < 18,5 – niedowaga,
+//* BMI
+// < 18,5 – niedowaga,
 // 18,5–24,99 – wartość prawidłowa,
 // ≥ 25,0 – nadwaga*/
 
@@ -846,7 +835,6 @@
 //}
 //Console.ReadKey();
 
-///* 3.8 Pobierz od użytkownika wartość średniej ocen. Program ma wyświetlać informacje o wysokości przysługującego stypendium zgodnie z poniższą tabelą: Średnia ocen Kwota stypendium
 //2,00 3,99 0,00 zł
 //4,00 4,79 350,00 zł
 //4,80 5,00 550,00 zł*/
@@ -879,18 +867,42 @@
 //Console.ReadKey();
 
 //3.10 Napisz program obliczający n! (n silnia), gdzie n jest podane przez użytkownika.
-Console.WriteLine("podaj  liczbe");
-int liczba = int.Parse(Console.ReadLine());
-int s = 1;
-for (int i = 1;  i <= liczba; i++)
+///* wykaz wybranych modyfikatorów typów dla literałów:
+///*jeśli operator jest przed
+///* program przeliczający temperaturę w stopniach Celsjusza na temperaturę w  stopniach Fahrenheita. 
+///* oblicz wskaznik BMI = masa/wzrost kg/m */
+///*Po wykonaniu przedstawionego niżej kodu programu zmienna gestoscZaludnienia
+///*ZADANIA*/
+///* Dwaj koledzy Janek i Karol zadłużyli się na 80 zł. Umówili się między sobą, że każdy z
+///*3.6 BMI Z zadania 2.3 a potem komunikaty
+///* 3.8 Pobierz od użytkownika wartość średniej ocen. Program ma wyświetlać informacje o wysokości przysługującego stypendium zgodnie z poniższą tabelą: Średnia ocen Kwota stypendium
+//Console.WriteLine("podaj  liczbe");
+//int liczba = int.Parse(Console.ReadLine());
+//int s = 1;
+//for (int i = 1;  i <= liczba; i++)
+//{
+//    s *= i;
+//}
+//Console.WriteLine(s);
+//Console.ReadKey();
+
+//3.11Napisz program obliczający ile kolejnych liczb całkowitych (rozpoczynając od wartości 1) należy dodać do siebie, aby suma przekroczyła wartość x.
+int sum = 0;
+int licz = 1;
+int ind = 0;
+Console.WriteLine("podaj wartosc sumy\n");
+int x =(int)double.Parse(Console.ReadLine());
+while (sum <= x)
 {
-    s *= i;
+    sum = sum + licz;
+    licz++;
+    ind += 1;
 }
-Console.WriteLine(s);
+Console.WriteLine(sum);
+Console.WriteLine(ind);
 Console.ReadKey();
 
-//// /*str 90 zadania 3.10 - 3.15
-////rozdzial 4 od strony 91*/
+//rozdzial 4 od strony 91*/
 
 
 

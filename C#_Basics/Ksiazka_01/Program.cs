@@ -879,10 +879,10 @@
 //Console.ReadKey();
 
 //3.10 Napisz program obliczający n! (n silnia), gdzie n jest podane przez użytkownika.
-Console.WriteLine("podaj  n");
-int i = int.Parse(Console.ReadLine());
-int s = 1
-for (i >=2; i <= n+1)
+Console.WriteLine("podaj  liczbe");
+int liczba = int.Parse(Console.ReadLine());
+int s = 1;
+for (int i = 1;  i <= liczba; i++)
 {
     s *= i;
 }

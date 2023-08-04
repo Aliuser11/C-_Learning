@@ -887,23 +887,464 @@
 //Console.ReadKey();
 
 //3.11Napisz program obliczający ile kolejnych liczb całkowitych (rozpoczynając od wartości 1) należy dodać do siebie, aby suma przekroczyła wartość x.
-int sum = 0;
-int licz = 1;
-int ind = 0;
-Console.WriteLine("podaj wartosc sumy\n");
-int x =(int)double.Parse(Console.ReadLine());
-while (sum <= x)
-{
-    sum = sum + licz;
-    licz++;
-    ind += 1;
-}
-Console.WriteLine(sum);
-Console.WriteLine(ind);
-Console.ReadKey();
+//int sum = 0;
+//int licz = 1;
+//int ind = 0;
+//Console.WriteLine("podaj wartosc sumy\n");
+//int x =(int)double.Parse(Console.ReadLine());
+//while (sum <= x)
+//{
+//    sum = sum + licz;
+//    licz++;
+//    ind += 1;
+//}
+//Console.WriteLine(sum);
+//Console.WriteLine(ind);
+//Console.ReadKey();
 
-//rozdzial 4 od strony 91*/
+// 4.1 tablice
+//int uczestnik1 = 19;
+//int uczestnik2 = 34;
+//int uczestnik3 = 23;
+//int uczestnik4 = 54;
+//int uczestnik5 = 31;
+//double srednia = (uczestnik1 + uczestnik2 + uczestnik3 +
+//uczestnik4 + uczestnik5) / 5.0;
+//Console.WriteLine(srednia);
+//Console.ReadKey();
 
 
+//int[] uczestnicy = new int[] { 19, 34, 23, 54, 31 };
+//albo int[] uczestnicy = {19, 34, 23, 54, 31 };
+//for (int i = 0; i < 5; i++)
+//{
+//    Console.WriteLine(uczestnicy[i]);
+//}
+//Console.ReadKey();
 
+//ALBO
+//int ii = 0;
+//do
+//{
+//    Console.WriteLine(uczestnicy[ii]);
+//    ii++;
+//} while (ii < 5);
+//Console.ReadKey();
+
+
+//int[] tablica = new int[3];
+//tablica[0] = 19;
+//tablica[1] = 34;
+//tablica[2] = 23;
+
+//albo int[] tablica = {19, 34, 23};
+//for (int i = 0; i < uczestnicy.Length; i++)
+//{
+//    Console.WriteLine(uczestnicy[i]);
+//}
+//Console.ReadKey();
+
+
+//Console.WriteLine("Ile chcesz wpisać imion?");
+//int rozmiar = Convert.ToInt32(Console.ReadLine());
+//string[] imiona = new string[rozmiar];
+//for (int i = 0; i < imiona.Length; i++)
+//{
+//    Console.WriteLine("Podaj {0} imię", i + 1);
+//    imiona[i] = Console.ReadLine();
+//}
+//for (int i = 0; i < imiona.Length; i++)
+//{
+//    Console.Write(imiona[i] + ", ");
+//}
+//Console.ReadKey();
+
+//prezentowanie ywników od tyłu | od konca
+//int[] uczestnicy = { 19, 34, 23, 54, 31 };
+//for (int i = uczestnicy.Length - 1; i >= 0; i--)
+//    Console.WriteLine(uczestnicy[i]);
+//Console.ReadKey();
+
+//int[] uczestnicy = { 19, 34, 23, 54, 31 };
+//for (int i = 1; i <= uczestnicy.Length; i++)
+//    Console.WriteLine(uczestnicy[i - 1]);
+//Console.ReadKey();
+
+/*przypisanie elementom jednej tablicy elementów tablicy drugiej, lecz w kolejności odwrotnej.*/
+//int[] uczestnicy = new int[] { 19, 34, 23, 54, 31 };
+//int[] odwrotnie = new int[uczestnicy.Length];
+//// Wpisywanie elementów do tablicy odwrotnie
+//for (int i = uczestnicy.Length - 1; i >= 0; i--)
+//    odwrotnie[uczestnicy.Length - i - 1] = uczestnicy[i];
+//// Wyświetlenie elementów tablicy odwrotnie
+//for (int i = 0; i < odwrotnie.Length; i++)
+//    Console.WriteLine(odwrotnie[i]);
+//Console.ReadKey();
+
+// PETLA foreach
+/*Pętla foreach umożliwia jedynie odczyt kolejno wszystkich elementów tablicy.*/
+//int[] uczestnicy = { 19, 34, 23, 54, 31 };
+//foreach (int x in uczestnicy)
+//{
+//    Console.WriteLine(x);
+//}
+//Console.ReadKey();
+
+//obliczanie sredniej przy użyciu tablicy.
+//int[] uczestnicy = { 19, 34, 23, 54, 31 };
+//int suma = 0;
+//double srednia;
+//Console.Write("Wiek uczestników: ");
+//for (int i = 0; i < uczestnicy.Length; i++)
+//{
+//    Console.Write("{0}, ", uczestnicy[i]);
+//    suma += uczestnicy[i];
+//}
+//srednia = (double)suma / uczestnicy.Length;
+//Console.WriteLine();
+//Console.WriteLine("Średnia: {0}", srednia);
+//Console.ReadKey();
+
+// znajdz max lkiczbe w tablicy
+//int[] uczestnicy = { 19, 34, 23, 54, 31 };
+//int max = uczestnicy[0]; 
+//for (int i = 1; i < uczestnicy.Length; i++)
+//{
+//    if (uczestnicy[i] > max)
+//    {
+//        max = uczestnicy[i];
+//    }
+//}
+//Console.WriteLine("Najstarszy uczestnik ma {0} lat(a)", max);
+//Console.ReadKey();
+
+//Tablice dwuwymiarowe = prostokątne = regularne
+//int[,] tablica2d = new int[3, 5];
+//int[, ,] tablica3d = new int[2, 2, 2];
+
+//int[,] tablica2d = { { 1, 2 }, { 3, 4 }, { 5, 6 }, { 7, 8 } }; // 4,2  4weirsze i 2 kolumny
+//Console.WriteLine(tablica2d[2, 0]); //5
+//Console.WriteLine(tablica2d[2, 1]);//6
+//Console.WriteLine(tablica2d[1, 1]);//4
+//Console.WriteLine(" ");
+//foreach (int x in tablica2d)
+//{
+//    Console.WriteLine(x);
+//}
+//Console.WriteLine(" ");
+
+//for (int a = 0; a < 4; a++)
+//{
+//    for (int b = 0; b < 2; b++)
+//    {
+//        Console.Write("{0,3}", tablica2d[a, b]);
+//    }
+//    Console.WriteLine();
+//}
+//Console.WriteLine("Rozmiar: " + tablica2d.Length);
+//Console.WriteLine(" ");
+
+////GetLength(). Metoda ta zwraca liczbę elementów w danym wymiarze.
+//for (int a = 0; a < tablica2d.GetLength(0); a++) // piwerwszy wiersz
+//{
+//    for (int b = 0; b < tablica2d.GetLength(1); b++) // druga kolumna
+//    {
+//        Console.Write("{0,3}", tablica2d[a, b]);
+//    }
+//}
+//Console.WriteLine();
+//Console.ReadKey();
+
+/*tablice postrzępione -> tablicą, której elementy są tablicami (czyli jest „tablicą tablic”)
+ * W tablicy postrzępionej liczba elementów w poszczególnych wierszach może byc rozna*/
+
+// 3 sposoby:
+//int[][] tab = new int[][]
+//{
+//new int[2],
+//new int[4],
+//new int[3]
+//};
+
+//int[][] tab = new int[3][];
+//tab[0] = new int[2];
+//tab[1] = new int[4];
+//tab[2] = new int[3];
+
+
+//int[][] tab =
+//{
+//new int[] {1,2},
+//new int[] {3,4,5,6},
+//new int[] {7,8,9}
+//};
+//Console.WriteLine(tab[0][0]); // wypisze 1
+//Console.WriteLine(tab[1][2]); // wypisze 5
+//Console.WriteLine(tab[2][2]); // wypisze 9
+//Console.Write(" \n");
+//Console.WriteLine(tab[0].Length); // wypisze 2
+//Console.WriteLine(tab[1].Length); // wypisze 4
+//Console.WriteLine(tab[2].Length); // wypisze 3
+//Console.ReadKey();
+//Console.Write(" \n");
+//// dodaanie kolejnego poziomu zagnieżdżenia tablicy.
+//int[][][] tabs =
+//{
+//new int[][]
+//{
+//new int[] {1,2},
+//new int[] {3,4,5}
+//}
+//};
+//Console.Write(tabs[0][1][2]); // wypisze 5 Dostęp do poszczególnych elementów takiej tablicy jak powyższym przykładzie wymaga wskazania trzech indeksów
+//Console.ReadKey();
+//Console.Write(" \n");
+
+//int[][,] taby =
+//{
+//new int[,] { {1,2}, {3,4} },
+//new int[,] { {5,6,7}, {8,9,10} }
+//};
+///*Wyświetlenie wartości elementu tej tablicy wymaga odwołania się w indeksie
+//pierwszym do tablicy jednowymiarowej, a w indeksie drugim do tablicy dwuwymiarowej*/
+
+//Console.WriteLine(taby[1][0, 2]); // wypisze 7 | drugi rzad index 2 czyli 3 pozycja
+//Console.Write(" \n");
+//Console.ReadKey();
+
+/*Wyświetlanie zawartości całej tablicy postrzępionej umożliwia pętla foreach*/
+//int[][] tabi =
+//{
+//new int[] {1,2},
+//new int[] {3,4,5,6},
+//new int[] {7,8,9}
+//};
+//foreach (int[] podtablica in tabi)
+//{
+//    foreach (int x in podtablica)
+//    {
+//        Console.Write("{0,2}", x);
+//    }
+//    Console.WriteLine();
+//}
+//Console.WriteLine();
+//Console.ReadKey();
+
+/*wyświetlenie elementów tablicy postrzępionej odbywa się przy pomocy pętli for oraz właściwości Length*/
+//string[][] zespoly = {
+//new string[] { "Adam", "Karol" },
+//new string[] { "Ola", "Ela", "Jan" } };
+//for (int i = 0; i < zespoly.Length; i++)
+//{
+//    for (int j = 0; j < zespoly[i].Length; j++)
+//    {
+//        Console.Write("{0,-10}", zespoly[i][j]);
+//    }
+//    Console.WriteLine();
+//}
+//Console.ReadKey();
+//Console.WriteLine();
+
+//metody klasy Array
+
+/*copy*/
+//int[] a = { 11, 22, 33, 44, 55, 66, 77, 88, 99 };
+//int[] b = new int[10];
+//Array.Copy(a, 2, b, 3, 5); // kopiowanie z a od indexu 2, do tablicy b, do indexu 5 z tablicy a | skomplikowane :)
+//foreach (int x in b)
+//{
+//    Console.Write("{0}, ", x);
+//}
+//Console.ReadKey();
+//Console.WriteLine("");
+
+///*Reverse(): zamiast odwrocenia z uzycie petli for*/
+//int[] tab = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+//Array.Reverse(tab);
+//foreach (int x in tab)
+//    Console.Write("{0,2}", x);
+//Console.ReadKey();
+//Console.WriteLine("nastepnie: sortowanie tablicy");
+
+///*Sort()*/
+//int[] taby = { 4, 2, 6, 23, 1, 3, 7, 0 };
+//Array.Sort(taby); // sortowanie tablicy
+//for (int i = 0; i < taby.Length; i++)
+//    Console.WriteLine(taby[i]);
+//Console.ReadKey();
+
+///*IndexOf(), która zwraca indeks pierwszego wystąpienia szukanego elementu
+// LastIndexOf(), zrwaca ostatnie wystapienie */
+////  elementy tablicy  0      1      2        3       4
+//string[] imiona = { "Ala", "Ola", "Ela", "Tola", "Ela" };
+//Console.WriteLine(Array.IndexOf(imiona, "Ela")); // wypisze 2
+//Console.WriteLine(Array.IndexOf(imiona, "Iza")); // wypisze -1
+//Console.ReadKey();
+//Console.WriteLine();
+///*właściwość Rank, która zwraca liczbę wymiarów danej tablicy*/
+
+//////Operacje na tekstach
+//string tekst = "Ala ma kota";
+//Console.WriteLine(tekst[0]); // od 0: to bedzie  ‘A’
+//Console.WriteLine(tekst[4]); //  ‘m’
+//Console.WriteLine(tekst[7]); //  ‘k’
+
+//Console.WriteLine("");
+//Console.ReadKey();
+////tekst po jednym znaku w każdej linii:
+//foreach (char litera in tekst)
+//{
+//    Console.WriteLine(litera);
+//}
+//Console.WriteLine("od tylu");
+//// od tylu
+//for (int i = tekst.Length - 1; i >= 0; i--)
+//{
+//    Console.Write(tekst[i]);
+//}
+//Console.WriteLine();
+//////policzenie, ile razy w danym tekście występuje konkretna litera (lub inny znak).
+//int liczbaZnakow = 0;
+//foreach (char litera in tekst)
+//    if (litera == 'a') liczbaZnakow++;
+
+//Console.WriteLine("Litera a wystąpiła {0} razy", liczbaZnakow);
+//Console.ReadKey();
+//Console.WriteLine();
+//////Substring() pobieranie fragmentu tekstu
+//string fragment;
+//fragment = tekst.Substring(4, 6);
+//Console.WriteLine(fragment); // wypisze "ma kot"
+//Console.ReadKey();
+
+/*Compare().Pozwala ona na porównanie dwóch tekstów*/
+//int wynik;
+//string tekst1 = "Kowalski";
+//string tekst2 = "Nowak";
+//wynik = String.Compare(tekst1, tekst2); // wypisze -1 bo zero to ok tekst ten sam
+//Console.WriteLine(wynik);
+//Console.ReadKey();
+//Console.WriteLine();
+
+///*Concat(): laczy ciagi znakow*/
+//string tekstSklejony;
+//string tekst10 = "Ala ma kota";
+//string tekst20 = " i psa";
+//tekstSklejony = string.Concat(tekst10, tekst20);
+//Console.WriteLine(tekstSklejony);
+//Console.ReadKey();
+
+///*IndexOf(). by spr czy fragment znajduje sie w innym teksci, zwroci zero gdy jest OK */
+//string tekst = "być albo nie być";
+//Console.WriteLine(tekst.IndexOf("być")); // wypisze 0
+
+//////wszystkie wystąpienia szukanego fragmentu
+//Console.WriteLine();
+//int pozycja, start = 0;
+//Console.WriteLine("0123456789012345"); // pomocniczo, aby numerować znaki
+//Console.WriteLine(tekst);
+//Console.WriteLine("szukany tekst \"być\" jest na pozycjach:");
+
+//while ((pozycja = tekst.IndexOf("być", start)) >= 0)
+//{
+//    Console.Write("{0}, ", pozycja);
+//    start = pozycja + 3; // dalsze szukanie 3 znaki dalej (bo "być" ma 3 znaki)
+//}
+//Console.ReadKey();
+
+//////Insert() wstawia tekst do łancucha zankow
+//string t = "Ala ma kota";
+//string nowyTekst;
+//nowyTekst = t.Insert(7, "kanarka i ");
+//Console.WriteLine("  laczenie ");
+//Console.WriteLine(nowyTekst);
+//Console.ReadKey();
+
+/*inne metody klasy String:
+takich jak: Remove(), ToLower(), ToUpper(), Trim(), Join()*/
+
+////4.3 Zadania do samodzielnego rozwiązania od 121strony
+
+/*Zadanie 4.1.
+Napisz program, który pozwoli zapełnić n–elementową tablicę jednowymiarową liczb
+całkowitych wartościami podanymi przez użytkownika. Na początku działania programu
+użytkownik podaje liczbę elementów tablicy, a następnie poszczególne wartości jej
+elementów. Po wypełnieniu całej tablicy program powinien wypisać je w oknie konsoli*/
+Console.WriteLine();
+
+/*Zadanie 4.2.
+Napisz program kopiujący z danej tablicy liczb całkowitych tab1 do nowej tablicy tab2
+wyłącznie wartości dodatnie. Obie tablice mają być jednowymiarowe o rozmiarze równym 10
+(czyli 10-elemetowe). Elementy pierwszej tablicy (tab1) należy wpisać w trakcie deklaracji
+tej tablicy*/
+
+/*Zadanie 4.3.
+Napisz program wyświetlający informacje o wypełnionej przez użytkownika tablicy nelementowej:
+ wartość i numer pozycji największego elementu,
+ wartość i numer pozycji najmniejszego elementu,
+ średnia wartości wszystkich elementów tablicy,
+ liczba dodatnich elementów tablicy*/
+
+
+/*Zadanie 4.4.
+Napisz program, który podaje, ile jest liczb pierwszych w tablicy 100 elementowej typu
+int. Tablicę należy wypełnić losowymi wartościami. Wskazówka: Poniższy fragment
+programu pokazuje działanie klasy Random (która zawiera generator liczb pseudolosowych) –
+w pętli zostanie wyświetlonych 100 liczb wybranych losowo z zakresu 1 – 999 (o zakresie
+decydują argumenty podane w wywołaniu metody Next()43).
+Random rand = new Random();
+for (int i = 0; i < 100; i++)
+Console.Write("{0,8}", rand.Next(1, 1000))*/
+
+
+/*Zadanie 4.5.
+Dana jest n-elementowa tablica liczb całkowitych tab1. Napisz program kopiujący
+wartości elementów tablicy tab1 do tablicy tab2 (o tym samym rozmiarze) z przesunięciem o
+jedną pozycje. To znaczy, że element w tablicy źródłowej o indeksie 0 powinien znaleźć się w
+tablicy docelowej pod indeksem 1, element o indeksie 1 ma być w tablicy docelowej pod
+indeksem 2 itd. Element ostatni tablicy źródłowej ma być elementem o indeksie 0 w tablicy
+docelowej*/
+
+/*Zadanie 4.6.
+Napisz program, który deklaruje i inicjalizuje dwuwymiarową tablicę liczb
+rzeczywistych o rozmiarze 5 x 5. Program ma wyświetlić elementy tablicy (wiersz po
+wierszu), a następnie wyświetlić sumę elementów znajdujących się na głównej przekątnej
+tablicy (główna przekątna – od elementu o indeksach 0,0 do elementu o indeksach n,n)*/
+
+/*Zadanie 4.8.
+Uzupełnij poniższy kod programu o wszystkie dni tygodnia i przy użyciu pętli wyświetl
+zawartość tablicy: w każdym wierszu dany dzień tygodnia w trzech językach (polskim,
+angielskim, niemieckim).
+string[,] dniTygodnia;
+dniTygodnia = new string[2, 3]; // pamiętaj o zmianie rozmiaru tablicy
+dniTygodnia[0, 0] = "poniedzialek";
+dniTygodnia[1, 0] = "wtorek";
+dniTygodnia[0, 1] = "monday";
+dniTygodnia[1, 1] = "tuesday";
+dniTygodnia[0, 2] = "montag";
+dniTygodnia[1, 2] = "dienstag"*/
+
+/*Zadanie 4.9.
+Napisz program obliczający liczbę wyrazów w łańcuchu znaków wprowadzonym przez
+użytkownika. Należy przyjąć, że wyrazy to ciągi znaków rozdzielone spacją*/
+
+/*Zadanie 4.10.
+Napisać program, który pobierze datę w formacie DD-MM-RRRR, z której pobierze
+miesiąc i wyświetli jego nazwę słownie*/
+
+
+/*Zadanie 4.11.
+Napisz program analizujący częstość występowania poszczególnych znaków w
+łańcuchu znaków wprowadzonym przez użytkownika. Np. dla wprowadzonego tekstu
+„abrakadabra” program powinien wyświetlić informacje: a – 5, b – 2, r – 2, k – 1, d – 1.*/
+
+/*Zadanie 4.13.
+Napisz program, który przeanalizuje dany łańcuch pod kątem wielokrotnego
+występowania słów w tekście. Przykładowo dla zmiennej łańcuchowej o zawartości: „Kiedy
+idzie się po miód z balonikiem, to trzeba się starać, żeby pszczoły nie wiedziały, po co się
+idzie – odpowiedział Puchatek” – program powinien wypisać raport o słowach powielonych
+w tym tekście: idzie – 2 razy, po – 2 razy, się – 3 razy.*/
+
+
+/*5 Metody str 125*/
 

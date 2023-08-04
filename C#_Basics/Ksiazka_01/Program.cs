@@ -1270,13 +1270,55 @@ Napisz program, który pozwoli zapełnić n–elementową tablicę jednowymiarow
 całkowitych wartościami podanymi przez użytkownika. Na początku działania programu
 użytkownik podaje liczbę elementów tablicy, a następnie poszczególne wartości jej
 elementów. Po wypełnieniu całej tablicy program powinien wypisać je w oknie konsoli*/
-Console.WriteLine();
+
+//Console.WriteLine("Podaj liczbe elementow w tablicy");
+//int rozmiar = Convert.ToInt32(Console.ReadLine());
+//int[] tablica = new int[rozmiar];   
+//for (int x = 0; x < tablica.Length; x++)
+//{
+//    Console.WriteLine("Podaj {0} liczbe", x + 1);
+//    tablica[x] = int.Parse(Console.ReadLine());
+//}
+//for (int x = 0; x < tablica.Length; x++)
+//{
+//    Console.Write(tablica[x] + ", ");
+//}
+//Console.ReadKey();
+
 
 /*Zadanie 4.2.
 Napisz program kopiujący z danej tablicy liczb całkowitych tab1 do nowej tablicy tab2
 wyłącznie wartości dodatnie. Obie tablice mają być jednowymiarowe o rozmiarze równym 10
 (czyli 10-elemetowe). Elementy pierwszej tablicy (tab1) należy wpisać w trakcie deklaracji
 tej tablicy*/
+int[] tab1 = { -10, 9, -2, 4, -5, 6, -9, -7, 10, 11 };
+int[] tab2 = new int[tab1.Length];
+for (int x = 1; x <= tab1.Length; x++)
+{
+    if (tab1[x] > 0)
+    {
+        for (int y = 0; y <= tab2.Length; y++)
+        {
+            tab2[y] = tab1[x];
+        }
+    }
+        for (int y = 0; y <= tab2.Length; y++)
+        {
+            Console.WriteLine(tab2[y] + ", ");
+        }
+}
+Console.ReadKey();
+
+//int[] uczestnicy = new int[] { 19, 34, 23, 54, 31 };
+//int[] odwrotnie = new int[uczestnicy.Length];
+//// Wpisywanie elementów do tablicy odwrotnie
+//for (int i = uczestnicy.Length - 1; i >= 0; i--)
+//    odwrotnie[uczestnicy.Length - i - 1] = uczestnicy[i];
+//// Wyświetlenie elementów tablicy odwrotnie
+//for (int i = 0; i < odwrotnie.Length; i++)
+//    Console.WriteLine(odwrotnie[i]);
+//Console.ReadKey();
+
 
 /*Zadanie 4.3.
 Napisz program wyświetlający informacje o wypełnionej przez użytkownika tablicy nelementowej:

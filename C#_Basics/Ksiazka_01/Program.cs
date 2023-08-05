@@ -959,7 +959,7 @@
 //}
 //Console.ReadKey();
 
-//prezentowanie ywników od tyłu | od konca
+//prezentowanie wyników od tyłu | od konca
 //int[] uczestnicy = { 19, 34, 23, 54, 31 };
 //for (int i = uczestnicy.Length - 1; i >= 0; i--)
 //    Console.WriteLine(uczestnicy[i]);
@@ -1316,85 +1316,8 @@ Napisz program wyświetlający informacje o wypełnionej przez użytkownika tabl
  wartość i numer pozycji najmniejszego elementu,
  średnia wartości wszystkich elementów tablicy,
  liczba dodatnich elementów tablicy*/
-int[,] tablica2d = { { 1, -2 }, { 3, -4 }, { 5, 8 }, { -7, 6 } };
-Console.WriteLine("wyswietlenie tablicy");
-for (int a = 0; a < 4; a++)
-{
-    for (int b = 0; b < 2; b++)
-    {
-        Console.Write("{0,3}", tablica2d[a, b]);
-    }
-    Console.WriteLine();
-}
-Console.WriteLine("sprawdzenie liczby dodatnich elementów tablicy");
-int count = 0;
-for (int a = 0; a < 4; a++)
-{
-    for (int b = 0; b < 2; b++)
-    {
-        if (tablica2d[a, b] > 0)
-        {
-            count += 1;
-        }
-    }
-}
-Console.WriteLine(" dodatnich elementów jest {0}", count);
-Console.WriteLine();
-Console.WriteLine("średnia wartości w tablicy 2d ");
-int suma = 0;
-double srednia;
-for (int a = 0; a < 4; a++)
-{
-    for (int b = 0; b < 2; b++)
-    {
-        Console.Write("{0}, ", tablica2d[a, b]);
-        suma += tablica2d[a, b];
-    }
-}
-srednia = (double)suma / tablica2d.Length;
-Console.WriteLine();
-Console.WriteLine(" Średnia: {0}", srednia);
-Console.WriteLine();
-Console.WriteLine("wartość i numer pozycji największego elementu w tablicy 2d ");
-int max = 0;
-for (int a = 0; a < 4; a++)
-{
-    for (int b = 0; b < 2; b++)
-    {
-
-        if (tablica2d[a, b] > max)
-        {
-            max = tablica2d[a, b];
-        }
-    }
-}
-Console.WriteLine(" max element w tablicy {0}", max);
-Console.WriteLine("{0,3}", {tablica2d[2, 1]);
-Console.WriteLine();
-
-
-Console.WriteLine("wartość i numer pozycji najmniejszego elementu w tablicy 2d ");
-int min = 0;
-for (int a = 0; a < 4; a++)
-{
-    for (int b = 0; b < 2; b++)
-    {
-
-        if (tablica2d[a, b] < min)
-        {
-            min = tablica2d[a, b];
-        }
-    }
-}
-Console.WriteLine(" min element w tablicy {0}", min);
-
-
-//foreach (int x in tablica2d)
-//{
-//    Console.WriteLine(x);
-//}
-//Console.WriteLine(" ");
-
+//int[,] tablica2d = { { 1, -2 }, { 3, -4 }, { 5, 8 }, { -7, 6 } };
+//Console.WriteLine("wyswietlenie tablicy");
 //for (int a = 0; a < 4; a++)
 //{
 //    for (int b = 0; b < 2; b++)
@@ -1403,21 +1326,71 @@ Console.WriteLine(" min element w tablicy {0}", min);
 //    }
 //    Console.WriteLine();
 //}
-//Console.WriteLine("Rozmiar: " + tablica2d.Length);
-//Console.WriteLine(" ");
-
-////GetLength(). Metoda ta zwraca liczbę elementów w danym wymiarze.
-//for (int a = 0; a < tablica2d.GetLength(0); a++) // piwerwszy wiersz
+//Console.WriteLine("sprawdzenie liczby dodatnich elementów tablicy");
+//int count = 0;
+//for (int a = 0; a < 4; a++)
 //{
-//    for (int b = 0; b < tablica2d.GetLength(1); b++) // druga kolumna
+//    for (int b = 0; b < 2; b++)
 //    {
-//        Console.Write("{0,3}", tablica2d[a, b]);
+//        if (tablica2d[a, b] > 0)
+//        {
+//            count += 1;
+//        }
 //    }
 //}
+//Console.WriteLine(" dodatnich elementów jest {0}", count);
 //Console.WriteLine();
-Console.ReadKey();
+//Console.WriteLine("średnia wartości w tablicy 2d ");
+//int suma = 0;
+//double srednia;
+//for (int a = 0; a < 4; a++)
+//{
+//    for (int b = 0; b < 2; b++)
+//    {
+//        Console.Write("{0}, ", tablica2d[a, b]);
+//        suma += tablica2d[a, b];
+//    }
+//}
+//srednia = (double)suma / tablica2d.Length;
+//Console.WriteLine();
+//Console.WriteLine(" Średnia: {0}", srednia);
+//Console.WriteLine();
+//Console.WriteLine("wartość i numer pozycji największego elementu w tablicy 2d ");
+//int max = 0;
+//for (int a = 0; a < 4; a++)
+//{
+//    for (int b = 0; b < 2; b++)
+//    {
+
+//        if (tablica2d[a, b] > max)
+//        {
+//            max = tablica2d[a, b];
+//        }
+//    }
+//}
+//Console.WriteLine(" max element w tablicy {0}", max);
+//Console.WriteLine("{0,3}", tablica2d[2, 1]);
+//Console.WriteLine();
 
 
+//Console.WriteLine("wartość i numer pozycji najmniejszego elementu w tablicy 2d ");
+//int min = 0;
+//for (int a = 0; a < 4; a++)
+//{
+//    for (int b = 0; b < 2; b++)
+//    {
+
+//        if (tablica2d[a, b] < min)
+//        {
+//            min = tablica2d[a, b];
+//        }
+//    }
+//}
+//Console.WriteLine(" min element w tablicy {0}", min);
+////Console.WriteLine("{}", tablica2d[1][3, 0]);
+//Console.ReadKey();
+
+//Console.WriteLine();
 /*Zadanie 4.4.
 Napisz program, który podaje, ile jest liczb pierwszych w tablicy 100 elementowej typu
 int. Tablicę należy wypełnić losowymi wartościami. Wskazówka: Poniższy fragment
@@ -1429,13 +1402,61 @@ for (int i = 0; i < 100; i++)
 Console.Write("{0,8}", rand.Next(1, 1000))*/
 
 
-/*Zadanie 4.5.
+//int[] elementy = new int[100];
+//Random rand = new Random();
+//int ind = 0;
+//for (int i = 0; i < 100; i++)
+//{
+//    elementy[i] = rand.Next(1, 100);
+//    Console.Write(elementy[i] + ", ");
+//    if (elementy[i] == 0 || elementy[i] == 1)
+//    {
+//        Console.WriteLine(elementy[i] + " is not prime number");
+//    }
+//    else
+//    {
+//        for (int a = 2; a <= elementy[i] / 2; a++)
+//        {
+//            if (elementy[i] % a == 0)
+//            {
+//                Console.WriteLine(elementy[i] + " is not prime number");
+
+//            }
+//        }
+//        ind += 1;
+//        Console.WriteLine(elementy[i] + " is a prime number");
+
+//    }
+//}
+//Console.WriteLine("{0}", elementy.Length);
+//Console.WriteLine("liczb pierwszych jest : {0}", ind);
+//Console.ReadKey();
+
+
+/*Zadanie 4.5. UDAŁO SIĘ
 Dana jest n-elementowa tablica liczb całkowitych tab1. Napisz program kopiujący
 wartości elementów tablicy tab1 do tablicy tab2 (o tym samym rozmiarze) z przesunięciem o
 jedną pozycje. To znaczy, że element w tablicy źródłowej o indeksie 0 powinien znaleźć się w
 tablicy docelowej pod indeksem 1, element o indeksie 1 ma być w tablicy docelowej pod
 indeksem 2 itd. Element ostatni tablicy źródłowej ma być elementem o indeksie 0 w tablicy
 docelowej*/
+int[] tab1 = {-10, 9, -2, 4, -5, 6, -9, -7, 10, 11 };
+int[] tabela2 = new int[tab1.Length];
+Array.Copy(tab1, 9, tabela2, 0, 1);
+Array.Copy(tab1, 0, tabela2, 1, 9);
+foreach (int x in tabela2)
+{
+    Console.Write("{0}, ", x);
+}
+Console.ReadKey();
+Console.WriteLine("");
+
+//for (int i = 0; i < tab1.Length; i++)
+//{
+//    tabela2[i] = tab1[i+1];
+//}
+
+
 
 /*Zadanie 4.6.
 Napisz program, który deklaruje i inicjalizuje dwuwymiarową tablicę liczb

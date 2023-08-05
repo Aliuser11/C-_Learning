@@ -1286,46 +1286,136 @@ elementów. Po wypełnieniu całej tablicy program powinien wypisać je w oknie 
 //Console.ReadKey();
 
 
-/*Zadanie 4.2.
+/*Zadanie 4.2. NIE WYSZŁO
 Napisz program kopiujący z danej tablicy liczb całkowitych tab1 do nowej tablicy tab2
 wyłącznie wartości dodatnie. Obie tablice mają być jednowymiarowe o rozmiarze równym 10
 (czyli 10-elemetowe). Elementy pierwszej tablicy (tab1) należy wpisać w trakcie deklaracji
 tej tablicy*/
-int[] tab1 = { -10, 9, -2, 4, -5, 6, -9, -7, 10, 11 };
-int[] tab2 = new int[tab1.Length];
-for (int x = 1; x <= tab1.Length; x++)
-{
-    if (tab1[x] > 0)
-    {
-        for (int y = 0; y <= tab2.Length; y++)
-        {
-            tab2[y] = tab1[x];
-        }
-    }
-        for (int y = 0; y <= tab2.Length; y++)
-        {
-            Console.WriteLine(tab2[y] + ", ");
-        }
-}
-Console.ReadKey();
-
-//int[] uczestnicy = new int[] { 19, 34, 23, 54, 31 };
-//int[] odwrotnie = new int[uczestnicy.Length];
-//// Wpisywanie elementów do tablicy odwrotnie
-//for (int i = uczestnicy.Length - 1; i >= 0; i--)
-//    odwrotnie[uczestnicy.Length - i - 1] = uczestnicy[i];
-//// Wyświetlenie elementów tablicy odwrotnie
-//for (int i = 0; i < odwrotnie.Length; i++)
-//    Console.WriteLine(odwrotnie[i]);
+//int[] tab1 = { -10, 9, -2, 4, -5, 6, -9, -7, 10, 11 };
+//int[] tab2 = new int[tab1.Length];
+//for (int x = 1; x <= tab1.Length; x++)
+//{
+//    if (tab1[x] > 0)
+//    {
+//        for (int y = 0; y <= tab2.Length; y++)
+//        {
+//            tab2[y] = tab1[x];
+//        }
+//    }
+//        for (int y = 0; y <= tab2.Length; y++)
+//        {
+//            Console.WriteLine(tab2[y] + ", ");
+//        }
+//}
 //Console.ReadKey();
 
-
 /*Zadanie 4.3.
-Napisz program wyświetlający informacje o wypełnionej przez użytkownika tablicy nelementowej:
+Napisz program wyświetlający informacje o wypełnionej przez użytkownika tablicy n-elementowej: NIE UMIEM WYPISAC POZYCJI DLA MAX I MIN WARTOSCI W TABELI
+
  wartość i numer pozycji największego elementu,
  wartość i numer pozycji najmniejszego elementu,
  średnia wartości wszystkich elementów tablicy,
  liczba dodatnich elementów tablicy*/
+int[,] tablica2d = { { 1, -2 }, { 3, -4 }, { 5, 8 }, { -7, 6 } };
+Console.WriteLine("wyswietlenie tablicy");
+for (int a = 0; a < 4; a++)
+{
+    for (int b = 0; b < 2; b++)
+    {
+        Console.Write("{0,3}", tablica2d[a, b]);
+    }
+    Console.WriteLine();
+}
+Console.WriteLine("sprawdzenie liczby dodatnich elementów tablicy");
+int count = 0;
+for (int a = 0; a < 4; a++)
+{
+    for (int b = 0; b < 2; b++)
+    {
+        if (tablica2d[a, b] > 0)
+        {
+            count += 1;
+        }
+    }
+}
+Console.WriteLine(" dodatnich elementów jest {0}", count);
+Console.WriteLine();
+Console.WriteLine("średnia wartości w tablicy 2d ");
+int suma = 0;
+double srednia;
+for (int a = 0; a < 4; a++)
+{
+    for (int b = 0; b < 2; b++)
+    {
+        Console.Write("{0}, ", tablica2d[a, b]);
+        suma += tablica2d[a, b];
+    }
+}
+srednia = (double)suma / tablica2d.Length;
+Console.WriteLine();
+Console.WriteLine(" Średnia: {0}", srednia);
+Console.WriteLine();
+Console.WriteLine("wartość i numer pozycji największego elementu w tablicy 2d ");
+int max = 0;
+for (int a = 0; a < 4; a++)
+{
+    for (int b = 0; b < 2; b++)
+    {
+
+        if (tablica2d[a, b] > max)
+        {
+            max = tablica2d[a, b];
+        }
+    }
+}
+Console.WriteLine(" max element w tablicy {0}", max);
+Console.WriteLine("{0,3}", {tablica2d[2, 1]);
+Console.WriteLine();
+
+
+Console.WriteLine("wartość i numer pozycji najmniejszego elementu w tablicy 2d ");
+int min = 0;
+for (int a = 0; a < 4; a++)
+{
+    for (int b = 0; b < 2; b++)
+    {
+
+        if (tablica2d[a, b] < min)
+        {
+            min = tablica2d[a, b];
+        }
+    }
+}
+Console.WriteLine(" min element w tablicy {0}", min);
+
+
+//foreach (int x in tablica2d)
+//{
+//    Console.WriteLine(x);
+//}
+//Console.WriteLine(" ");
+
+//for (int a = 0; a < 4; a++)
+//{
+//    for (int b = 0; b < 2; b++)
+//    {
+//        Console.Write("{0,3}", tablica2d[a, b]);
+//    }
+//    Console.WriteLine();
+//}
+//Console.WriteLine("Rozmiar: " + tablica2d.Length);
+//Console.WriteLine(" ");
+
+////GetLength(). Metoda ta zwraca liczbę elementów w danym wymiarze.
+//for (int a = 0; a < tablica2d.GetLength(0); a++) // piwerwszy wiersz
+//{
+//    for (int b = 0; b < tablica2d.GetLength(1); b++) // druga kolumna
+//    {
+//        Console.Write("{0,3}", tablica2d[a, b]);
+//    }
+//}
+//Console.WriteLine();
+Console.ReadKey();
 
 
 /*Zadanie 4.4.

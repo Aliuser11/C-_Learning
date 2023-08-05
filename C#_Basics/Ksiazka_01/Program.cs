@@ -1472,16 +1472,6 @@ for (int a = 0; a < 5; a++)
 }
 Console.WriteLine(" suma po przekatnej to: {0}", suma);
 
-//for (int a = 0; a < 4; a++)
-//{
-//    for (int b = 0; b < 2; b++)
-//    {
-//        Console.Write("{0}, ", tablica2d[a, b]);
-//        suma += tablica2d[a, b];
-//    }
-////}
-
-
 /*Zadanie 4.8.
 Uzupełnij poniższy kod programu o wszystkie dni tygodnia i przy użyciu pętli wyświetl
 zawartość tablicy: w każdym wierszu dany dzień tygodnia w trzech językach (polskim,
@@ -1494,6 +1484,27 @@ dniTygodnia[0, 1] = "monday";
 dniTygodnia[1, 1] = "tuesday";
 dniTygodnia[0, 2] = "montag";
 dniTygodnia[1, 2] = "dienstag"*/
+
+string[,] dniTygodnia;
+dniTygodnia = new string[3, 3]; // pamiętaj o zmianie rozmiaru tablicy
+dniTygodnia[0, 0] = "poniedzialek";
+dniTygodnia[1, 0] = "wtorek";
+dniTygodnia[0, 1] = "monday";
+dniTygodnia[1, 1] = "tuesday";
+dniTygodnia[0, 2] = "montag";
+dniTygodnia[1, 2] = "dienstag";
+dniTygodnia[2, 0] = "środa";
+dniTygodnia[2, 1] = "Wednesday";
+dniTygodnia[2, 2] = "Mittwoch";
+for (int a = 0; a < 3; a++)
+{
+    for (int b = 0; b < 3; b++)
+    {
+        Console.Write("{0,2}, ", dniTygodnia[a, b]);
+    }
+    Console.WriteLine();
+}
+
 
 /*Zadanie 4.9.
 Napisz program obliczający liczbę wyrazów w łańcuchu znaków wprowadzonym przez

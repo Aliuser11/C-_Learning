@@ -1022,25 +1022,25 @@
 //int[,] tablica2d = new int[3, 5];
 //int[, ,] tablica3d = new int[2, 2, 2];
 
-//int[,] tablica2d = { { 1, 2 }, { 3, 4 }, { 5, 6 }, { 7, 8 } }; // 4,2  4weirsze i 2 kolumny
-//Console.WriteLine(tablica2d[2, 0]); //5
-//Console.WriteLine(tablica2d[2, 1]);//6
-//Console.WriteLine(tablica2d[1, 1]);//4
-//Console.WriteLine(" ");
-//foreach (int x in tablica2d)
-//{
-//    Console.WriteLine(x);
-//}
-//Console.WriteLine(" ");
+int[,] tablica2d = { { 1, 2 }, { 3, 4 }, { 5, 6 }, { 7, 8 } }; // 4,2  4weirsze i 2 kolumny
+Console.WriteLine(tablica2d[2, 0]); //5
+Console.WriteLine(tablica2d[2, 1]);//6
+Console.WriteLine(tablica2d[1, 1]);//4
+Console.WriteLine(" ");
+foreach (int x in tablica2d)
+{
+Console.WriteLine(x);
+}
+Console.WriteLine(" ");
 
-//for (int a = 0; a < 4; a++)
-//{
-//    for (int b = 0; b < 2; b++)
-//    {
-//        Console.Write("{0,3}", tablica2d[a, b]);
-//    }
-//    Console.WriteLine();
-//}
+for (int a = 0; a < 4; a++)
+{
+    for (int b = 0; b < 2; b++)
+    {
+        Console.Write("{0,3}", tablica2d[a, b]);
+    }
+    Console.WriteLine();
+}
 //Console.WriteLine("Rozmiar: " + tablica2d.Length);
 //Console.WriteLine(" ");
 
@@ -1432,7 +1432,6 @@ Console.Write("{0,8}", rand.Next(1, 1000))*/
 //Console.WriteLine("liczb pierwszych jest : {0}", ind);
 //Console.ReadKey();
 
-
 /*Zadanie 4.5. UDAŁO SIĘ
 Dana jest n-elementowa tablica liczb całkowitych tab1. Napisz program kopiujący
 wartości elementów tablicy tab1 do tablicy tab2 (o tym samym rozmiarze) z przesunięciem o
@@ -1445,25 +1444,43 @@ int[] tabela2 = new int[tab1.Length];
 Array.Copy(tab1, 9, tabela2, 0, 1);
 Array.Copy(tab1, 0, tabela2, 1, 9);
 foreach (int x in tabela2)
-
 {
     Console.Write("{0}, ", x);
 }
 Console.ReadKey();
 Console.WriteLine("");
 
-//for (int i = 0; i < tab1.Length; i++)
-//{
-//    tabela2[i] = tab1[i+1];
-//}
-
-
-
 /*Zadanie 4.6.
 Napisz program, który deklaruje i inicjalizuje dwuwymiarową tablicę liczb
 rzeczywistych o rozmiarze 5 x 5. Program ma wyświetlić elementy tablicy (wiersz po
 wierszu), a następnie wyświetlić sumę elementów znajdujących się na głównej przekątnej
 tablicy (główna przekątna – od elementu o indeksach 0,0 do elementu o indeksach n,n)*/
+int[,] rzeczywiste = { { 1, 2, 3, 4, 5 }, { 3, 4, 5, 6, 9 }, { 1, 2, 3, 4, 5 }, { 5, 6, 9, 9, 1 }, { 7, 8, 6, 8, 7 } };
+Console.WriteLine("5x5 ");
+int suma = 0;
+for (int a = 0; a < 5; a++)
+{
+    for (int b = 0; b < 5; b++)
+    {
+        Console.Write("{0,4}", rzeczywiste[a, b]);
+        if (a == b)
+        {
+            suma += rzeczywiste[a, b];
+        }
+    }
+    Console.WriteLine();
+}
+Console.WriteLine(" suma po przekatnej to: {0}", suma);
+
+//for (int a = 0; a < 4; a++)
+//{
+//    for (int b = 0; b < 2; b++)
+//    {
+//        Console.Write("{0}, ", tablica2d[a, b]);
+//        suma += tablica2d[a, b];
+//    }
+////}
+
 
 /*Zadanie 4.8.
 Uzupełnij poniższy kod programu o wszystkie dni tygodnia i przy użyciu pętli wyświetl

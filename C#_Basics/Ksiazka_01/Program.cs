@@ -1445,6 +1445,7 @@ int[] tabela2 = new int[tab1.Length];
 Array.Copy(tab1, 9, tabela2, 0, 1);
 Array.Copy(tab1, 0, tabela2, 1, 9);
 foreach (int x in tabela2)
+
 {
     Console.Write("{0}, ", x);
 }

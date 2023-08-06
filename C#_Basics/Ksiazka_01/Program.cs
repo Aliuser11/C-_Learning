@@ -1022,6 +1022,17 @@
 //int[,] tablica2d = new int[3, 5];
 //int[, ,] tablica3d = new int[2, 2, 2];
 
+using System.Security.Cryptography.X509Certificates;
+using static System.Net.Mime.MediaTypeNames;
+///* wykaz wybranych modyfikatorów typów dla literałów:
+///*jeśli operator jest przed
+///* program przeliczający temperaturę w stopniach Celsjusza na temperaturę w  stopniach Fahrenheita. 
+///* oblicz wskaznik BMI = masa/wzrost kg/m */
+///*Po wykonaniu przedstawionego niżej kodu programu zmienna gestoscZaludnienia
+///*ZADANIA*/
+///* Dwaj koledzy Janek i Karol zadłużyli się na 80 zł. Umówili się między sobą, że każdy z
+///*3.6 BMI Z zadania 2.3 a potem komunikaty
+///* 3.8 Pobierz od użytkownika wartość średniej ocen. Program ma wyświetlać informacje o wysokości przysługującego stypendium zgodnie z poniższą tabelą: Średnia ocen Kwota stypendium
 int[,] tablica2d = { { 1, 2 }, { 3, 4 }, { 5, 6 }, { 7, 8 } }; // 4,2  4weirsze i 2 kolumny
 Console.WriteLine(tablica2d[2, 0]); //5
 Console.WriteLine(tablica2d[2, 1]);//6
@@ -1211,6 +1222,7 @@ for (int a = 0; a < 4; a++)
 //Console.WriteLine("Litera a wystąpiła {0} razy", liczbaZnakow);
 //Console.ReadKey();
 //Console.WriteLine();
+
 //////Substring() pobieranie fragmentu tekstu
 //string fragment;
 //fragment = tekst.Substring(4, 6);
@@ -1234,7 +1246,7 @@ for (int a = 0; a < 4; a++)
 //Console.WriteLine(tekstSklejony);
 //Console.ReadKey();
 
-///*IndexOf(). by spr czy fragment znajduje sie w innym teksci, zwroci zero gdy jest OK */
+///*IndexOf(). by spr czy fragment znajduje sie w innym tekscie, zwroci zero gdy jest OK */
 //string tekst = "być albo nie być";
 //Console.WriteLine(tekst.IndexOf("być")); // wypisze 0
 
@@ -1262,6 +1274,7 @@ for (int a = 0; a < 4; a++)
 
 /*inne metody klasy String:
 takich jak: Remove(), ToLower(), ToUpper(), Trim(), Join()*/
+
 
 ////4.3 Zadania do samodzielnego rozwiązania od 121strony
 
@@ -1505,20 +1518,47 @@ for (int a = 0; a < 3; a++)
     Console.WriteLine();
 }
 
-
+Console.WriteLine("operacje na tekstach \n");
 /*Zadanie 4.9.
 Napisz program obliczający liczbę wyrazów w łańcuchu znaków wprowadzonym przez
 użytkownika. Należy przyjąć, że wyrazy to ciągi znaków rozdzielone spacją*/
 
+//Console.WriteLine("Podaj wyrażenie: ");
+//string wyrazenie =  Console.ReadLine();
+//int zlicz = 1;
+//foreach (char slowo in wyrazenie)
+//    if (slowo == ' ') 
+//    {
+//        zlicz++;
+//    }
+//Console.WriteLine("{0} slow w wyrazeniu: {1}", zlicz, wyrazenie);
+//Console.ReadKey();
+
 /*Zadanie 4.10.
 Napisać program, który pobierze datę w formacie DD-MM-RRRR, z której pobierze
 miesiąc i wyświetli jego nazwę słownie*/
+Console.WriteLine(DateTime.Now.ToString("MM/dd/yyyy"));
+Console.WriteLine(DateTime.Now.ToString("MMMM"));
 
-
-/*Zadanie 4.11.
+/*Zadanie 4.11. Na razie tylko dla jednej litery
 Napisz program analizujący częstość występowania poszczególnych znaków w
 łańcuchu znaków wprowadzonym przez użytkownika. Np. dla wprowadzonego tekstu
 „abrakadabra” program powinien wyświetlić informacje: a – 5, b – 2, r – 2, k – 1, d – 1.*/
+
+//Console.WriteLine("Zliczamy ilosc wystepowanie poszczegolnych znakow");
+//string ciag = "abrakadabra";
+//int liczbaZnakow = 0;
+//int pozycja, start = 0;
+//Console.WriteLine(ciag);
+//Console.WriteLine("szukany tekst {0} jest na pozycjach:", ciag[0]);
+
+//while ((pozycja = ciag.IndexOf(ciag[0], start)) >= 0)
+//{
+//    Console.Write("{0}, ", pozycja);
+//    start = pozycja + 1;
+//    liczbaZnakow++;
+//}
+//Console.WriteLine("\nLitera {1} wystąpiła {0} razy", liczbaZnakow, ciag[0]);
 
 /*Zadanie 4.13.
 Napisz program, który przeanalizuje dany łańcuch pod kątem wielokrotnego
@@ -1526,6 +1566,27 @@ występowania słów w tekście. Przykładowo dla zmiennej łańcuchowej o zawar
 idzie się po miód z balonikiem, to trzeba się starać, żeby pszczoły nie wiedziały, po co się
 idzie – odpowiedział Puchatek” – program powinien wypisać raport o słowach powielonych
 w tym tekście: idzie – 2 razy, po – 2 razy, się – 3 razy.*/
+string tekstowo = "Kiedy idzie się po miód z balonikiem, to trzeba się starać, żeby pszczoły nie wiedziały, po co się idzie – odpowiedział Puchatek";
+int liczbaZnakow = 0;
+int pozycja, start = 0;
+Console.WriteLine(tekstowo);
+Console.WriteLine("szukany tekst {0} jest na pozycjach:", tekstowo[0]);
+foreach (char x in tekstowo)
+{
+    if (x == ' ')
+    {
+        x;
+    }
+
+}
+
+while ((pozycja = tekstowo.IndexOf("Kiedy", start)) >= 0)
+{
+    Console.Write("{0}, ", pozycja);
+    start = pozycja + 1;
+    liczbaZnakow++;
+}
+Console.WriteLine("\nslowo {1} wystąpiła {0} razy", liczbaZnakow, "Kiedy");
 
 
 /*5 Metody str 125*/

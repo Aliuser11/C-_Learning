@@ -1569,16 +1569,20 @@ w tym tekście: idzie – 2 razy, po – 2 razy, się – 3 razy.*/
 string tekstowo = "Kiedy idzie się po miód z balonikiem, to trzeba się starać, żeby pszczoły nie wiedziały, po co się idzie – odpowiedział Puchatek";
 int liczbaZnakow = 0;
 int pozycja, start = 0;
+
+var groupsOfWords = tekstowo.Split().GroupBy(x => x);
+
+foreach (var group in groupsOfWords)
+{
+    if (group.Count() > 1)
+    {
+        Console.WriteLine(group.Key + " : " + group.Count());
+    }
+}
+
+
 Console.WriteLine(tekstowo);
 Console.WriteLine("szukany tekst {0} jest na pozycjach:", tekstowo[0]);
-foreach (char x in tekstowo)
-{
-    if (x == ' ')
-    {
-        x;
-    }
-
-}
 
 while ((pozycja = tekstowo.IndexOf("Kiedy", start)) >= 0)
 {

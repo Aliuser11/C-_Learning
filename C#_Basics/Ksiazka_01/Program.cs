@@ -1330,81 +1330,101 @@ Napisz program wyświetlający informacje o wypełnionej przez użytkownika tabl
  wartość i numer pozycji najmniejszego elementu,
  średnia wartości wszystkich elementów tablicy,
  liczba dodatnich elementów tablicy*/
-//int[,] tablica2d = { { 1, -2 }, { 3, -4 }, { 5, 8 }, { -7, 6 } };
-//Console.WriteLine("wyswietlenie tablicy");
-//for (int a = 0; a < 4; a++)
-//{
-//    for (int b = 0; b < 2; b++)
-//    {
-//        Console.Write("{0,3}", tablica2d[a, b]);
-//    }
-//    Console.WriteLine();
-//}
-//Console.WriteLine("sprawdzenie liczby dodatnich elementów tablicy");
-//int count = 0;
-//for (int a = 0; a < 4; a++)
-//{
-//    for (int b = 0; b < 2; b++)
-//    {
-//        if (tablica2d[a, b] > 0)
-//        {
-//            count += 1;
-//        }
-//    }
-//}
-//Console.WriteLine(" dodatnich elementów jest {0}", count);
-//Console.WriteLine();
-//Console.WriteLine("średnia wartości w tablicy 2d ");
-//int suma = 0;
-//double srednia;
-//for (int a = 0; a < 4; a++)
-//{
-//    for (int b = 0; b < 2; b++)
-//    {
-//        Console.Write("{0}, ", tablica2d[a, b]);
-//        suma += tablica2d[a, b];
-//    }
-//}
-//srednia = (double)suma / tablica2d.Length;
-//Console.WriteLine();
-//Console.WriteLine(" Średnia: {0}", srednia);
-//Console.WriteLine();
-//Console.WriteLine("wartość i numer pozycji największego elementu w tablicy 2d ");
-//int max = 0;
-//for (int a = 0; a < 4; a++)
-//{
-//    for (int b = 0; b < 2; b++)
-//    {
+int[,] tablica2dd = { { 1, -2 }, { 3, -4 }, { 5, 8 }, { -7, 6 } };
 
-//        if (tablica2d[a, b] > max)
-//        {
-//            max = tablica2d[a, b];
-//        }
-//    }
-//}
-//Console.WriteLine(" max element w tablicy {0}", max);
-//Console.WriteLine("{0,3}", tablica2d[2, 1]);
-//Console.WriteLine();
+var maximum = -100;
+var index = new Tuple<int, int>(-1, -1);
+
+for (int i = 0; i < 4; i++)
+{
+    for (int j = 0; j < 2; j++)
+    {
+        if (tablica2dd[i,j] > maximum)
+        {
+            maximum = tablica2dd[i, j];
+            index = new Tuple<int, int>(i, j);
+        }
+    }
+}
 
 
-//Console.WriteLine("wartość i numer pozycji najmniejszego elementu w tablicy 2d ");
-//int min = 0;
-//for (int a = 0; a < 4; a++)
-//{
-//    for (int b = 0; b < 2; b++)
-//    {
 
-//        if (tablica2d[a, b] < min)
-//        {
-//            min = tablica2d[a, b];
-//        }
-//    }
-//}
-//Console.WriteLine(" min element w tablicy {0}", min);
-////Console.WriteLine("{}", tablica2d[1][3, 0]);
-//Console.ReadKey();
 
-//Console.WriteLine();
+
+Console.WriteLine("wyswietlenie tablicy");
+for (int a = 0; a < 4; a++)
+{
+    for (int b = 0; b < 2; b++)
+    {
+        Console.Write("{0,3}", tablica2dd[a, b]);
+    }
+    Console.WriteLine();
+}
+Console.WriteLine("sprawdzenie liczby dodatnich elementów tablicy");
+int count = 0;
+for (int a = 0; a < 4; a++)
+{
+    for (int b = 0; b < 2; b++)
+    {
+        if (tablica2dd[a, b] > 0)
+        {
+            count += 1;
+        }
+    }
+}
+Console.WriteLine(" dodatnich elementów jest {0}", count);
+Console.WriteLine();
+Console.WriteLine("średnia wartości w tablicy 2d ");
+int suma = 0;
+double srednia;
+for (int a = 0; a < 4; a++)
+{
+    for (int b = 0; b < 2; b++)
+    {
+        Console.Write("{0}, ", tablica2dd[a, b]);
+        suma += tablica2dd[a, b];
+    }
+}
+srednia = (double)suma / tablica2dd.Length;
+Console.WriteLine();
+Console.WriteLine(" Średnia: {0}", srednia);
+Console.WriteLine();
+Console.WriteLine("wartość i numer pozycji największego elementu w tablicy 2d ");
+int max = 0;
+for (int a = 0; a < 4; a++)
+{
+    for (int b = 0; b < 2; b++)
+    {
+
+        if (tablica2dd[a, b] > max)
+        {
+            max = tablica2dd[a, b];
+        }
+    }
+}
+Console.WriteLine(" max element w tablicy {0}", max);
+Console.WriteLine("{0,3}", tablica2dd[2, 1]);
+Console.WriteLine();
+
+
+Console.WriteLine("wartość i numer pozycji najmniejszego elementu w tablicy 2d ");
+int min = 0;
+for (int a = 0; a < 4; a++)
+{
+    for (int b = 0; b < 2; b++)
+    {
+
+        if (tablica2dd[a, b] < min)
+        {
+            min = tablica2dd[a, b];
+        }
+    }
+}
+Console.WriteLine(" min element w tablicy {0}", min);
+//Console.WriteLine("{}", tablica2d[1][3, 0]);
+Console.ReadKey();
+
+Console.WriteLine();
 /*Zadanie 4.4.
 Napisz program, który podaje, ile jest liczb pierwszych w tablicy 100 elementowej typu
 int. Tablicę należy wypełnić losowymi wartościami. Wskazówka: Poniższy fragment
@@ -1471,7 +1491,7 @@ wierszu), a następnie wyświetlić sumę elementów znajdujących się na głó
 tablicy (główna przekątna – od elementu o indeksach 0,0 do elementu o indeksach n,n)*/
 int[,] rzeczywiste = { { 1, 2, 3, 4, 5 }, { 3, 4, 5, 6, 9 }, { 1, 2, 3, 4, 5 }, { 5, 6, 9, 9, 1 }, { 7, 8, 6, 8, 7 } };
 Console.WriteLine("5x5 ");
-int suma = 0;
+int sumaa = 0;
 for (int a = 0; a < 5; a++)
 {
     for (int b = 0; b < 5; b++)

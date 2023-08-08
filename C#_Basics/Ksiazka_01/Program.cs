@@ -1022,6 +1022,7 @@
 //int[,] tablica2d = new int[3, 5];
 //int[, ,] tablica3d = new int[2, 2, 2];
 
+using System.Globalization;
 using System.Security.Cryptography.X509Certificates;
 using static System.Net.Mime.MediaTypeNames;
 ///* wykaz wybranych modyfikatorów typów dla literałów:
@@ -1537,8 +1538,18 @@ użytkownika. Należy przyjąć, że wyrazy to ciągi znaków rozdzielone spacj�
 /*Zadanie 4.10.
 Napisać program, który pobierze datę w formacie DD-MM-RRRR, z której pobierze
 miesiąc i wyświetli jego nazwę słownie*/
-Console.WriteLine(DateTime.Now.ToString("MM/dd/yyyy"));
-Console.WriteLine(DateTime.Now.ToString("MMMM"));
+
+string data = "29-02-1980";
+string[] formats = { "DD-MM-RRRR" };
+DateTime dt;
+
+DateTime parsed = DateTime.Parse(data);
+
+
+
+Console.WriteLine("MM/dd/yyyy");
+Console.WriteLine(parsed.ToString("MMMM"));
+Console.WriteLine();
 
 /*Zadanie 4.11. Na razie tylko dla jednej litery
 Napisz program analizujący częstość występowania poszczególnych znaków w

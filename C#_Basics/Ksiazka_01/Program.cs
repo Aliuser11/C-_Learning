@@ -867,15 +867,6 @@
 //Console.ReadKey();
 
 //3.10 Napisz program obliczający n! (n silnia), gdzie n jest podane przez użytkownika.
-///* wykaz wybranych modyfikatorów typów dla literałów:
-///*jeśli operator jest przed
-///* program przeliczający temperaturę w stopniach Celsjusza na temperaturę w  stopniach Fahrenheita. 
-///* oblicz wskaznik BMI = masa/wzrost kg/m */
-///*Po wykonaniu przedstawionego niżej kodu programu zmienna gestoscZaludnienia
-///*ZADANIA*/
-///* Dwaj koledzy Janek i Karol zadłużyli się na 80 zł. Umówili się między sobą, że każdy z
-///*3.6 BMI Z zadania 2.3 a potem komunikaty
-///* 3.8 Pobierz od użytkownika wartość średniej ocen. Program ma wyświetlać informacje o wysokości przysługującego stypendium zgodnie z poniższą tabelą: Średnia ocen Kwota stypendium
 //Console.WriteLine("podaj  liczbe");
 //int liczba = int.Parse(Console.ReadLine());
 //int s = 1;
@@ -1022,37 +1013,37 @@
 //int[,] tablica2d = new int[3, 5];
 //int[, ,] tablica3d = new int[2, 2, 2];
 
-using System.Globalization;
-using System.Security.Cryptography.X509Certificates;
-using static System.Net.Mime.MediaTypeNames;
-///* wykaz wybranych modyfikatorów typów dla literałów:
-///*jeśli operator jest przed
-///* program przeliczający temperaturę w stopniach Celsjusza na temperaturę w  stopniach Fahrenheita. 
-///* oblicz wskaznik BMI = masa/wzrost kg/m */
-///*Po wykonaniu przedstawionego niżej kodu programu zmienna gestoscZaludnienia
-///*ZADANIA*/
-///* Dwaj koledzy Janek i Karol zadłużyli się na 80 zł. Umówili się między sobą, że każdy z
-///*3.6 BMI Z zadania 2.3 a potem komunikaty
-///* 3.8 Pobierz od użytkownika wartość średniej ocen. Program ma wyświetlać informacje o wysokości przysługującego stypendium zgodnie z poniższą tabelą: Średnia ocen Kwota stypendium
-int[,] tablica2d = { { 1, 2 }, { 3, 4 }, { 5, 6 }, { 7, 8 } }; // 4,2  4weirsze i 2 kolumny
-Console.WriteLine(tablica2d[2, 0]); //5
-Console.WriteLine(tablica2d[2, 1]);//6
-Console.WriteLine(tablica2d[1, 1]);//4
-Console.WriteLine(" ");
-foreach (int x in tablica2d)
-{
-Console.WriteLine(x);
-}
-Console.WriteLine(" ");
+//using System.Globalization;
+//using System.Security.Cryptography.X509Certificates;
+//using static System.Net.Mime.MediaTypeNames;
+/////* wykaz wybranych modyfikatorów typów dla literałów:
+/////*jeśli operator jest przed
+/////* program przeliczający temperaturę w stopniach Celsjusza na temperaturę w  stopniach Fahrenheita. 
+/////* oblicz wskaznik BMI = masa/wzrost kg/m */
+/////*Po wykonaniu przedstawionego niżej kodu programu zmienna gestoscZaludnienia
+/////*ZADANIA*/
+/////* Dwaj koledzy Janek i Karol zadłużyli się na 80 zł. Umówili się między sobą, że każdy z
+/////*3.6 BMI Z zadania 2.3 a potem komunikaty
+/////* 3.8 Pobierz od użytkownika wartość średniej ocen. Program ma wyświetlać informacje o wysokości przysługującego stypendium zgodnie z poniższą tabelą: Średnia ocen Kwota stypendium
+//int[,] tablica2d = { { 1, 2 }, { 3, 4 }, { 5, 6 }, { 7, 8 } }; // 4,2  4weirsze i 2 kolumny
+//Console.WriteLine(tablica2d[2, 0]); //5
+//Console.WriteLine(tablica2d[2, 1]);//6
+//Console.WriteLine(tablica2d[1, 1]);//4
+//Console.WriteLine(" ");
+//foreach (int x in tablica2d)
+//{
+//Console.WriteLine(x);
+//}
+//Console.WriteLine(" ");
 
-for (int a = 0; a < 4; a++)
-{
-    for (int b = 0; b < 2; b++)
-    {
-        Console.Write("{0,3}", tablica2d[a, b]);
-    }
-    Console.WriteLine();
-}
+//for (int a = 0; a < 4; a++)
+//{
+//    for (int b = 0; b < 2; b++)
+//    {
+//        Console.Write("{0,3}", tablica2d[a, b]);
+//    }
+//    Console.WriteLine();
+//}
 //Console.WriteLine("Rozmiar: " + tablica2d.Length);
 //Console.WriteLine(" ");
 
@@ -1117,7 +1108,6 @@ for (int a = 0; a < 4; a++)
 //new int[,] { {1,2}, {3,4} },
 //new int[,] { {5,6,7}, {8,9,10} }
 //};
-///*Wyświetlenie wartości elementu tej tablicy wymaga odwołania się w indeksie
 //pierwszym do tablicy jednowymiarowej, a w indeksie drugim do tablicy dwuwymiarowej*/
 
 //Console.WriteLine(taby[1][0, 2]); // wypisze 7 | drugi rzad index 2 czyli 3 pozycja
@@ -1170,7 +1160,6 @@ for (int a = 0; a < 4; a++)
 //Console.ReadKey();
 //Console.WriteLine("");
 
-///*Reverse(): zamiast odwrocenia z uzycie petli for*/
 //int[] tab = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 //Array.Reverse(tab);
 //foreach (int x in tab)
@@ -1178,14 +1167,12 @@ for (int a = 0; a < 4; a++)
 //Console.ReadKey();
 //Console.WriteLine("nastepnie: sortowanie tablicy");
 
-///*Sort()*/
 //int[] taby = { 4, 2, 6, 23, 1, 3, 7, 0 };
 //Array.Sort(taby); // sortowanie tablicy
 //for (int i = 0; i < taby.Length; i++)
 //    Console.WriteLine(taby[i]);
 //Console.ReadKey();
 
-///*IndexOf(), która zwraca indeks pierwszego wystąpienia szukanego elementu
 // LastIndexOf(), zrwaca ostatnie wystapienie */
 ////  elementy tablicy  0      1      2        3       4
 //string[] imiona = { "Ala", "Ola", "Ela", "Tola", "Ela" };
@@ -1193,7 +1180,6 @@ for (int a = 0; a < 4; a++)
 //Console.WriteLine(Array.IndexOf(imiona, "Iza")); // wypisze -1
 //Console.ReadKey();
 //Console.WriteLine();
-///*właściwość Rank, która zwraca liczbę wymiarów danej tablicy*/
 
 //////Operacje na tekstach
 //string tekst = "Ala ma kota";
@@ -1239,7 +1225,6 @@ for (int a = 0; a < 4; a++)
 //Console.ReadKey();
 //Console.WriteLine();
 
-///*Concat(): laczy ciagi znakow*/
 //string tekstSklejony;
 //string tekst10 = "Ala ma kota";
 //string tekst20 = " i psa";
@@ -1247,7 +1232,6 @@ for (int a = 0; a < 4; a++)
 //Console.WriteLine(tekstSklejony);
 //Console.ReadKey();
 
-///*IndexOf(). by spr czy fragment znajduje sie w innym tekscie, zwroci zero gdy jest OK */
 //string tekst = "być albo nie być";
 //Console.WriteLine(tekst.IndexOf("być")); // wypisze 0
 
@@ -1330,101 +1314,104 @@ Napisz program wyświetlający informacje o wypełnionej przez użytkownika tabl
  wartość i numer pozycji najmniejszego elementu,
  średnia wartości wszystkich elementów tablicy,
  liczba dodatnich elementów tablicy*/
-int[,] tablica2dd = { { 1, -2 }, { 3, -4 }, { 5, 8 }, { -7, 6 } };
+//int[,] tablica2dd = { { 1, -2 }, { 3, -4 }, { 5, 8 }, { -7, 6 } };
 
-var maximum = -100;
-var index = new Tuple<int, int>(-1, -1);
+//var maximum = -100;
+//var index = new Tuple<int, int>(-1, -1);
 
-for (int i = 0; i < 4; i++)
-{
-    for (int j = 0; j < 2; j++)
-    {
-        if (tablica2dd[i,j] > maximum)
-        {
-            maximum = tablica2dd[i, j];
-            index = new Tuple<int, int>(i, j);
-        }
-    }
-}
-
-
+//for (int i = 0; i < 4; i++)
+//{
+//    for (int j = 0; j < 2; j++)
+//    {
+//        if (tablica2dd[i,j] > maximum)
+//        {
+//            maximum = tablica2dd[i, j];
+//            index = new Tuple<int, int>(i, j);
+//        }
+//    }
+//}
 
 
 
-Console.WriteLine("wyswietlenie tablicy");
-for (int a = 0; a < 4; a++)
-{
-    for (int b = 0; b < 2; b++)
-    {
-        Console.Write("{0,3}", tablica2dd[a, b]);
-    }
-    Console.WriteLine();
-}
-Console.WriteLine("sprawdzenie liczby dodatnich elementów tablicy");
-int count = 0;
-for (int a = 0; a < 4; a++)
-{
-    for (int b = 0; b < 2; b++)
-    {
-        if (tablica2dd[a, b] > 0)
-        {
-            count += 1;
-        }
-    }
-}
-Console.WriteLine(" dodatnich elementów jest {0}", count);
-Console.WriteLine();
-Console.WriteLine("średnia wartości w tablicy 2d ");
-int suma = 0;
-double srednia;
-for (int a = 0; a < 4; a++)
-{
-    for (int b = 0; b < 2; b++)
-    {
-        Console.Write("{0}, ", tablica2dd[a, b]);
-        suma += tablica2dd[a, b];
-    }
-}
-srednia = (double)suma / tablica2dd.Length;
-Console.WriteLine();
-Console.WriteLine(" Średnia: {0}", srednia);
-Console.WriteLine();
-Console.WriteLine("wartość i numer pozycji największego elementu w tablicy 2d ");
-int max = 0;
-for (int a = 0; a < 4; a++)
-{
-    for (int b = 0; b < 2; b++)
-    {
-
-        if (tablica2dd[a, b] > max)
-        {
-            max = tablica2dd[a, b];
-        }
-    }
-}
-Console.WriteLine(" max element w tablicy {0}", max);
-Console.WriteLine("{0,3}", tablica2dd[2, 1]);
-Console.WriteLine();
 
 
-Console.WriteLine("wartość i numer pozycji najmniejszego elementu w tablicy 2d ");
-int min = 0;
-for (int a = 0; a < 4; a++)
-{
-    for (int b = 0; b < 2; b++)
-    {
+//Console.WriteLine("wyswietlenie tablicy");
+//for (int a = 0; a < 4; a++)
+//{
+//    for (int b = 0; b < 2; b++)
+//    {
+//        Console.Write("{0,3}", tablica2dd[a, b]);
+//    }
+//    Console.WriteLine();
+//}
+//Console.WriteLine("sprawdzenie liczby dodatnich elementów tablicy");
+//int count = 0;
+//for (int a = 0; a < 4; a++)
+//{
+//    for (int b = 0; b < 2; b++)
+//    {
+//        if (tablica2dd[a, b] > 0)
+//        {
+//            count += 1;
+//        }
+//    }
+//}
+//Console.WriteLine(" dodatnich elementów jest {0}", count);
+//Console.WriteLine();
+//Console.WriteLine("średnia wartości w tablicy 2d ");
+//int suma = 0;
+//double srednia;
+//for (int a = 0; a < 4; a++)
+//{
+//    for (int b = 0; b < 2; b++)
+//    {
+//        Console.Write("{0}, ", tablica2dd[a, b]);
+//        suma += tablica2dd[a, b];
+//    }
+//}
+//srednia = (double)suma / tablica2dd.Length;
+//Console.WriteLine();
+//Console.WriteLine(" Średnia: {0}", srednia);
+//Console.WriteLine();
+//Console.WriteLine("wartość i numer pozycji największego elementu w tablicy 2d ");
 
-        if (tablica2dd[a, b] < min)
-        {
-            min = tablica2dd[a, b];
-        }
-    }
-}
-Console.WriteLine(" min element w tablicy {0}", min);
+//var index = new Tuple<int, int>(-1, -1);
+//int max = 0;
+//for (int a = 0; a < 4; a++)
+//{
+//    for (int b = 0; b < 2; b++)
+//    {
+
+//        if (tablica2dd[a, b] > max)
+//        {
+//            max = tablica2dd[a, b];
+//            index = new Tuple<int, int>(a, b);
+//        }
+//    }
+//}
+//Console.WriteLine(" max element w tablicy {0}", max);
+//Console.WriteLine("{0,3}", tablica2dd[2, 1]);
+//Console.WriteLine();
+
+
+//Console.WriteLine("wartość i numer pozycji najmniejszego elementu w tablicy 2d ");
+//int min = 0;
+//for (int a = 0; a < 4; a++)
+//{
+//    for (int b = 0; b < 2; b++)
+//    {
+
+//        if (tablica2dd[a, b] < min)
+//        {
+//            min = tablica2dd[a, b];
+//        }
+//    }
+//}
+//Console.WriteLine(" min element w tablicy {0}", min);
 //Console.WriteLine("{}", tablica2d[1][3, 0]);
-Console.ReadKey();
+//Console.ReadKey();
 
-Console.WriteLine();
+//Console.WriteLine();
 /*Zadanie 4.4.
 Napisz program, który podaje, ile jest liczb pierwszych w tablicy 100 elementowej typu
 int. Tablicę należy wypełnić losowymi wartościami. Wskazówka: Poniższy fragment
@@ -1473,38 +1460,38 @@ jedną pozycje. To znaczy, że element w tablicy źródłowej o indeksie 0 powin
 tablicy docelowej pod indeksem 1, element o indeksie 1 ma być w tablicy docelowej pod
 indeksem 2 itd. Element ostatni tablicy źródłowej ma być elementem o indeksie 0 w tablicy
 docelowej*/
-int[] tab1 = {-10, 9, -2, 4, -5, 6, -9, -7, 10, 11 };
-int[] tabela2 = new int[tab1.Length];
-Array.Copy(tab1, 9, tabela2, 0, 1);
-Array.Copy(tab1, 0, tabela2, 1, 9);
-foreach (int x in tabela2)
-{
-    Console.Write("{0}, ", x);
-}
-Console.ReadKey();
-Console.WriteLine("");
+//int[] tab1 = {-10, 9, -2, 4, -5, 6, -9, -7, 10, 11 };
+//int[] tabela2 = new int[tab1.Length];
+//Array.Copy(tab1, 9, tabela2, 0, 1);
+//Array.Copy(tab1, 0, tabela2, 1, 9);
+//foreach (int x in tabela2)
+//{
+//    Console.Write("{0}, ", x);
+//}
+//Console.ReadKey();
+//Console.WriteLine("");
 
 /*Zadanie 4.6.
 Napisz program, który deklaruje i inicjalizuje dwuwymiarową tablicę liczb
 rzeczywistych o rozmiarze 5 x 5. Program ma wyświetlić elementy tablicy (wiersz po
 wierszu), a następnie wyświetlić sumę elementów znajdujących się na głównej przekątnej
 tablicy (główna przekątna – od elementu o indeksach 0,0 do elementu o indeksach n,n)*/
-int[,] rzeczywiste = { { 1, 2, 3, 4, 5 }, { 3, 4, 5, 6, 9 }, { 1, 2, 3, 4, 5 }, { 5, 6, 9, 9, 1 }, { 7, 8, 6, 8, 7 } };
-Console.WriteLine("5x5 ");
-int sumaa = 0;
-for (int a = 0; a < 5; a++)
-{
-    for (int b = 0; b < 5; b++)
-    {
-        Console.Write("{0,4}", rzeczywiste[a, b]);
-        if (a == b)
-        {
-            suma += rzeczywiste[a, b];
-        }
-    }
-    Console.WriteLine();
-}
-Console.WriteLine(" suma po przekatnej to: {0}", suma);
+//int[,] rzeczywiste = { { 1, 2, 3, 4, 5 }, { 3, 4, 5, 6, 9 }, { 1, 2, 3, 4, 5 }, { 5, 6, 9, 9, 1 }, { 7, 8, 6, 8, 7 } };
+//Console.WriteLine("5x5 ");
+//int sumaa = 0;
+//for (int a = 0; a < 5; a++)
+//{
+//    for (int b = 0; b < 5; b++)
+//    {
+//        Console.Write("{0,4}", rzeczywiste[a, b]);
+//        if (a == b)
+//        {
+//            suma += rzeczywiste[a, b];
+//        }
+//    }
+//    Console.WriteLine();
+//}
+//Console.WriteLine(" suma po przekatnej to: {0}", suma);
 
 /*Zadanie 4.8.
 Uzupełnij poniższy kod programu o wszystkie dni tygodnia i przy użyciu pętli wyświetl
@@ -1519,30 +1506,29 @@ dniTygodnia[1, 1] = "tuesday";
 dniTygodnia[0, 2] = "montag";
 dniTygodnia[1, 2] = "dienstag"*/
 
-string[,] dniTygodnia;
-dniTygodnia = new string[3, 3]; // pamiętaj o zmianie rozmiaru tablicy
-dniTygodnia[0, 0] = "poniedzialek";
-dniTygodnia[1, 0] = "wtorek";
-dniTygodnia[0, 1] = "monday";
-dniTygodnia[1, 1] = "tuesday";
-dniTygodnia[0, 2] = "montag";
-dniTygodnia[1, 2] = "dienstag";
-dniTygodnia[2, 0] = "środa";
-dniTygodnia[2, 1] = "Wednesday";
-dniTygodnia[2, 2] = "Mittwoch";
-for (int a = 0; a < 3; a++)
-{
-    for (int b = 0; b < 3; b++)
-    {
-        Console.Write("{0,2}, ", dniTygodnia[a, b]);
-    }
-    Console.WriteLine();
-}
+//string[,] dniTygodnia;
+//dniTygodnia = new string[3, 3]; // pamiętaj o zmianie rozmiaru tablicy
+//dniTygodnia[0, 0] = "poniedzialek";
+//dniTygodnia[1, 0] = "wtorek";
+//dniTygodnia[0, 1] = "monday";
+//dniTygodnia[1, 1] = "tuesday";
+//dniTygodnia[0, 2] = "montag";
+//dniTygodnia[1, 2] = "dienstag";
+//dniTygodnia[2, 0] = "środa";
+//dniTygodnia[2, 1] = "Wednesday";
+//dniTygodnia[2, 2] = "Mittwoch";
+//for (int a = 0; a < 3; a++)
+//{
+//    for (int b = 0; b < 3; b++)
+//    {
+//        Console.Write("{0,2}, ", dniTygodnia[a, b]);
+//    }
+//    Console.WriteLine();
+//}
 
-Console.WriteLine("operacje na tekstach \n");
-/*Zadanie 4.9.
-Napisz program obliczający liczbę wyrazów w łańcuchu znaków wprowadzonym przez
-użytkownika. Należy przyjąć, że wyrazy to ciągi znaków rozdzielone spacją*/
+//Console.WriteLine("operacje na tekstach \n");
+//Napisz program obliczający liczbę wyrazów w łańcuchu znaków wprowadzonym przez
+//użytkownika. Należy przyjąć, że wyrazy to ciągi znaków rozdzielone spacją*/
 
 //Console.WriteLine("Podaj wyrażenie: ");
 //string wyrazenie =  Console.ReadLine();
@@ -1559,17 +1545,17 @@ użytkownika. Należy przyjąć, że wyrazy to ciągi znaków rozdzielone spacj�
 Napisać program, który pobierze datę w formacie DD-MM-RRRR, z której pobierze
 miesiąc i wyświetli jego nazwę słownie*/
 
-string data = "29-02-1980";
-string[] formats = { "DD-MM-RRRR" };
-DateTime dt;
+//string data = "29-02-1980";
+//string[] formats = { "DD-MM-RRRR" };
+//DateTime dt;
 
-DateTime parsed = DateTime.Parse(data);
+//DateTime parsed = DateTime.Parse(data);
 
 
 
-Console.WriteLine("MM/dd/yyyy");
-Console.WriteLine(parsed.ToString("MMMM"));
-Console.WriteLine();
+//Console.WriteLine("MM/dd/yyyy");
+//Console.WriteLine(parsed.ToString("MMMM"));
+//Console.WriteLine();
 
 /*Zadanie 4.11. Na razie tylko dla jednej litery
 Napisz program analizujący częstość występowania poszczególnych znaków w
@@ -1597,32 +1583,129 @@ występowania słów w tekście. Przykładowo dla zmiennej łańcuchowej o zawar
 idzie się po miód z balonikiem, to trzeba się starać, żeby pszczoły nie wiedziały, po co się
 idzie – odpowiedział Puchatek” – program powinien wypisać raport o słowach powielonych
 w tym tekście: idzie – 2 razy, po – 2 razy, się – 3 razy.*/
-string tekstowo = "Kiedy idzie się po miód z balonikiem, to trzeba się starać, żeby pszczoły nie wiedziały, po co się idzie – odpowiedział Puchatek";
-int liczbaZnakow = 0;
-int pozycja, start = 0;
+//string tekstowo = "Kiedy idzie się po miód z balonikiem, to trzeba się starać, żeby pszczoły nie wiedziały, po co się idzie – odpowiedział Puchatek";
+//int liczbaZnakow = 0;
+//int pozycja, start = 0;
 
-var groupsOfWords = tekstowo.Split().GroupBy(x => x);
+//var groupsOfWords = tekstowo.Split().GroupBy(x => x);
 
-foreach (var group in groupsOfWords)
-{
-    if (group.Count() > 1)
-    {
-        Console.WriteLine(group.Key + " : " + group.Count());
-    }
-}
+//foreach (var group in groupsOfWords)
+//{
+//    if (group.Count() > 1)
+//    {
+//        Console.WriteLine(group.Key + " : " + group.Count());
+//    }
+//}
 
 
-Console.WriteLine(tekstowo);
-Console.WriteLine("szukany tekst {0} jest na pozycjach:", tekstowo[0]);
+//Console.WriteLine(tekstowo);
+//Console.WriteLine("szukany tekst {0} jest na pozycjach:", tekstowo[0]);
 
-while ((pozycja = tekstowo.IndexOf("Kiedy", start)) >= 0)
-{
-    Console.Write("{0}, ", pozycja);
-    start = pozycja + 1;
-    liczbaZnakow++;
-}
-Console.WriteLine("\nslowo {1} wystąpiła {0} razy", liczbaZnakow, "Kiedy");
+//while ((pozycja = tekstowo.IndexOf("Kiedy", start)) >= 0)
+//{
+//    Console.Write("{0}, ", pozycja);
+//    start = pozycja + 1;
+//    liczbaZnakow++;
+//}
+//Console.WriteLine("\nslowo {1} wystąpiła {0} razy", liczbaZnakow, "Kiedy");
 
 
 /*5 Metody str 125*/
 
+using System.Reflection;
+///* wykaz wybranych modyfikatorów typów dla literałów:
+///*jeśli operator jest przed
+///* program przeliczający temperaturę w stopniach Celsjusza na temperaturę w  stopniach Fahrenheita. 
+///* oblicz wskaznik BMI = masa/wzrost kg/m */
+///*Po wykonaniu przedstawionego niżej kodu programu zmienna gestoscZaludnienia
+///*ZADANIA*/
+///* Dwaj koledzy Janek i Karol zadłużyli się na 80 zł. Umówili się między sobą, że każdy z
+///*3.6 BMI Z zadania 2.3 a potem komunikaty
+///* 3.8 Pobierz od użytkownika wartość średniej ocen. Program ma wyświetlać informacje o wysokości przysługującego stypendium zgodnie z poniższą tabelą: Średnia ocen Kwota stypendium
+///*Wyświetlenie wartości elementu tej tablicy wymaga odwołania się w indeksie
+///*Reverse(): zamiast odwrocenia z uzycie petli for*/
+///*Sort()*/
+///*IndexOf(), która zwraca indeks pierwszego wystąpienia szukanego elementu
+///*właściwość Rank, która zwraca liczbę wymiarów danej tablicy*/
+///*Concat(): laczy ciagi znakow*/
+///*IndexOf(). by spr czy fragment znajduje sie w innym tekscie, zwroci zero gdy jest OK */
+///*Zadanie 4.9.
+static double Dziel(double x, int y)
+{
+    double wynik = 0;
+    if ( y != 0)
+    {
+        wynik = x / y;
+    }
+    return (wynik);
+}
+Console.WriteLine(Dziel(1.5, 3) + " wynik dzielenia");
+
+
+
+    static void Dodaj(int a)
+    {
+        a++;
+        Console.WriteLine("Argument z wnętrza metody: " + a);
+    }
+
+
+Console.WriteLine("Przed wywołaniem metody: " + 5);
+Dodaj(5);
+Console.WriteLine("Po wywołaniu metody: " + 5);
+Console.WriteLine();
+
+/*Przekazywanie argumentów przez referencję*/    
+static void dod( ref int a)
+{
+    a++;
+    Console.WriteLine("argument z wnetrza metody: " + a);
+}
+int x = 5;
+Console.WriteLine("Przed wywołaniem metody: " + x);
+dod(ref x);
+Console.WriteLine("Po wywołaniu metody: " + x);
+
+static void Nowe_Ddoaj(out int x, out int y)
+{
+    x = 2;
+    y = 5;
+    Console.WriteLine("Dodaj(): x={0} y={1}", x, y);
+}
+
+int a, b; // deklaracja, brak inicjalizacji
+Nowe_Ddoaj(out a, out b);
+Console.WriteLine("Main(): a={0} b={1}", a, b);
+Console.WriteLine();
+
+/*Lista argumentów o zmiennej długości*/
+static void Elementy(params int[] tab)
+{
+    for (int i = 0; i < tab.Length; i++)
+    {
+        Console.WriteLine(tab[i]);
+    }
+    Console.WriteLine();
+}
+Elementy(1, 2, 3); // 1) wywołanie dla listy argumentów
+int[] tab1 = new int[3] { 18, 26, 67 };
+Elementy(tab1); // 2) wywołanie z użyciem tablicy
+Console.WriteLine();
+
+/*Przekazywanie i zwracanie tablic*/ //#StrongNameKeyPair 136!
+static void Wielkie(string[] tab)
+{
+    for (int i = 0; i < tab.Length; i++)
+    {
+        tab[i] = tab[i].ToUpper();
+    }
+}
+
+string[] tab1 = { "jeden", "dwa", "trzy" };
+Wielkie(tab1); // wywołanie metody (tablica argumentem)
+for (int i = 0; i < tab1.Length; i++)
+{
+    Console.Write(tab1[i] + " ");
+}
+Console.WriteLine();
+Console.ReadKey();

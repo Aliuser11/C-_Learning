@@ -1692,7 +1692,10 @@ int[] tab1 = new int[3] { 18, 26, 67 };
 Elementy(tab1); // 2) wywołanie z użyciem tablicy
 Console.WriteLine();
 
+
+Console.WriteLine("Przekazywanie i zwracanie tablic");
 /*Przekazywanie i zwracanie tablic*/ //#StrongNameKeyPair 136!
+
 static void Wielkie(string[] tab)
 {
     for (int i = 0; i < tab.Length; i++)
@@ -1701,11 +1704,114 @@ static void Wielkie(string[] tab)
     }
 }
 
-string[] tab1 = { "jeden", "dwa", "trzy" };
-Wielkie(tab1); // wywołanie metody (tablica argumentem)
+string[] tabb1 = { "jeden", "dwa", "trzy" };
+Wielkie(tabb1); // wywołanie metody (tablica argumentem)
 for (int i = 0; i < tab1.Length; i++)
 {
     Console.Write(tab1[i] + " ");
 }
+Console.WriteLine("\n");
+
+
+    Console.WriteLine("metoda zwracająca tablice");
+static int[] liczby(int rozmiar)
+{
+    int[] tap = new int[rozmiar];
+    for (int i = 0; i < rozmiar; i++)
+    {
+        tap[i] = i;
+    }
+    return (tap);
+}
+int[] tabbb1 = liczby(5);
+for (int i = 0; i < tabbb1.Length; i++)
+{
+    Console.WriteLine(tabbb1[i] + " ");
+}
+
+
+Console.WriteLine("przekazanie do metody tablicy prostokątnej");
+static void Wielkiego(string[,] tab)
+{
+    for (int i = 0; i < tab.GetLength(0); i++)
+    {
+        for (int j = 0; j < tab.GetLength(1); j++)
+        {
+            tab[i, j] = tab[i, j].ToUpper();
+        }
+    }
+}
+
+Console.WriteLine("upper");
+string[,] taab1 = {{ "jeden", "dwa", "trzy" },
+                    { "one", "two", "three" }};
+Wielkiego(taab1);
+for (int i = 0; i < taab1.GetLength(0); i++)
+{
+    for (int j = 0; j < taab1.GetLength(1); j++)
+    {
+        Console.Write("{0,-8}", taab1[i, j]);
+    }
+    Console.WriteLine();
+}
+//argumenty domyślne
+Console.WriteLine("dodawanie");
+static int Dodajmy(int x, int y = 0)
+{
+    return x + y;
+}
+/*Argumenty domyślne (może ich być więcej niż jeden) muszą być umieszczone na końcu listy argumentów*/
+Console.WriteLine(Dodajmy(1)); //  1
+Console.WriteLine(Dodajmy(1, 5)); //6
+
+//Metody przeładowane
 Console.WriteLine();
-Console.ReadKey();
+//Console.WriteLine("Metody przeładowane");
+//class Opisz
+//{
+//    static string OpiszTyp()
+//    {
+//        return "Metoda bez argumentów";
+//    }
+//    static string OpiszTyp(int x)
+//    {
+//        return "Liczba całkowita";
+//    }
+//    static string OpiszTyp(string x)
+//    {
+//        return "Łańcuch znaków";
+//    }
+//    static string OpiszTyp(double x, int y)
+//    {
+//        return "Liczba double i liczba całkowita";
+//    }
+//    static void Main(string[] args)
+//    {
+//        Console.WriteLine(OpiszTyp());
+//        Console.WriteLine(OpiszTyp(10));
+//        Console.WriteLine(OpiszTyp("Apollo 10"));
+//        Console.WriteLine(OpiszTyp(100.45, 10));
+//        Console.ReadKey();
+//    }
+//}
+/*że w przypadku, gdy do danego
+wywołania pasuje zarówno metoda dokładnie według sygnatury oraz jednocześnie pasuje
+metoda z zastosowaniem argumentu domyślnego – to kompilator wybiera to dokładne dopasowanie*/
+class Dajmi
+{
+    static int Daj(int x = 0) // argument domyślny
+    {
+        return x;
+    }
+    static int Daj()
+
+    {
+        return -1;
+    }
+    static void Main(string[] args)
+    {
+        Console.WriteLine(Daj());
+        Console.ReadKey();
+    }
+}
+//5,13 str 141

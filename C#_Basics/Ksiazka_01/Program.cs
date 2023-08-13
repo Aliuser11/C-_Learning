@@ -1612,206 +1612,321 @@ w tym tekście: idzie – 2 razy, po – 2 razy, się – 3 razy.*/
 
 /*5 Metody str 125*/
 
-using System.Reflection;
-///* wykaz wybranych modyfikatorów typów dla literałów:
-///*jeśli operator jest przed
-///* program przeliczający temperaturę w stopniach Celsjusza na temperaturę w  stopniach Fahrenheita. 
-///* oblicz wskaznik BMI = masa/wzrost kg/m */
-///*Po wykonaniu przedstawionego niżej kodu programu zmienna gestoscZaludnienia
-///*ZADANIA*/
-///* Dwaj koledzy Janek i Karol zadłużyli się na 80 zł. Umówili się między sobą, że każdy z
-///*3.6 BMI Z zadania 2.3 a potem komunikaty
-///* 3.8 Pobierz od użytkownika wartość średniej ocen. Program ma wyświetlać informacje o wysokości przysługującego stypendium zgodnie z poniższą tabelą: Średnia ocen Kwota stypendium
-///*Wyświetlenie wartości elementu tej tablicy wymaga odwołania się w indeksie
-///*Reverse(): zamiast odwrocenia z uzycie petli for*/
-///*Sort()*/
-///*IndexOf(), która zwraca indeks pierwszego wystąpienia szukanego elementu
-///*właściwość Rank, która zwraca liczbę wymiarów danej tablicy*/
-///*Concat(): laczy ciagi znakow*/
-///*IndexOf(). by spr czy fragment znajduje sie w innym tekscie, zwroci zero gdy jest OK */
-///*Zadanie 4.9.
-static double Dziel(double x, int y)
-{
-    double wynik = 0;
-    if ( y != 0)
-    {
-        wynik = x / y;
-    }
-    return (wynik);
-}
-Console.WriteLine(Dziel(1.5, 3) + " wynik dzielenia");
-
-
-
-    static void Dodaj(int a)
-    {
-        a++;
-        Console.WriteLine("Argument z wnętrza metody: " + a);
-    }
-
-
-Console.WriteLine("Przed wywołaniem metody: " + 5);
-Dodaj(5);
-Console.WriteLine("Po wywołaniu metody: " + 5);
-Console.WriteLine();
-
-/*Przekazywanie argumentów przez referencję*/    
-static void dod( ref int a)
-{
-    a++;
-    Console.WriteLine("argument z wnetrza metody: " + a);
-}
-int x = 5;
-Console.WriteLine("Przed wywołaniem metody: " + x);
-dod(ref x);
-Console.WriteLine("Po wywołaniu metody: " + x);
-
-static void Nowe_Ddoaj(out int x, out int y)
-{
-    x = 2;
-    y = 5;
-    Console.WriteLine("Dodaj(): x={0} y={1}", x, y);
-}
-
-int a, b; // deklaracja, brak inicjalizacji
-Nowe_Ddoaj(out a, out b);
-Console.WriteLine("Main(): a={0} b={1}", a, b);
-Console.WriteLine();
-
-/*Lista argumentów o zmiennej długości*/
-static void Elementy(params int[] tab)
-{
-    for (int i = 0; i < tab.Length; i++)
-    {
-        Console.WriteLine(tab[i]);
-    }
-    Console.WriteLine();
-}
-Elementy(1, 2, 3); // 1) wywołanie dla listy argumentów
-int[] tab1 = new int[3] { 18, 26, 67 };
-Elementy(tab1); // 2) wywołanie z użyciem tablicy
-Console.WriteLine();
-
-
-Console.WriteLine("Przekazywanie i zwracanie tablic");
-/*Przekazywanie i zwracanie tablic*/ //#StrongNameKeyPair 136!
-
-static void Wielkie(string[] tab)
-{
-    for (int i = 0; i < tab.Length; i++)
-    {
-        tab[i] = tab[i].ToUpper();
-    }
-}
-
-string[] tabb1 = { "jeden", "dwa", "trzy" };
-Wielkie(tabb1); // wywołanie metody (tablica argumentem)
-for (int i = 0; i < tab1.Length; i++)
-{
-    Console.Write(tab1[i] + " ");
-}
-Console.WriteLine("\n");
-
-
-    Console.WriteLine("metoda zwracająca tablice");
-static int[] liczby(int rozmiar)
-{
-    int[] tap = new int[rozmiar];
-    for (int i = 0; i < rozmiar; i++)
-    {
-        tap[i] = i;
-    }
-    return (tap);
-}
-int[] tabbb1 = liczby(5);
-for (int i = 0; i < tabbb1.Length; i++)
-{
-    Console.WriteLine(tabbb1[i] + " ");
-}
-
-
-Console.WriteLine("przekazanie do metody tablicy prostokątnej");
-static void Wielkiego(string[,] tab)
-{
-    for (int i = 0; i < tab.GetLength(0); i++)
-    {
-        for (int j = 0; j < tab.GetLength(1); j++)
-        {
-            tab[i, j] = tab[i, j].ToUpper();
-        }
-    }
-}
-
-Console.WriteLine("upper");
-string[,] taab1 = {{ "jeden", "dwa", "trzy" },
-                    { "one", "two", "three" }};
-Wielkiego(taab1);
-for (int i = 0; i < taab1.GetLength(0); i++)
-{
-    for (int j = 0; j < taab1.GetLength(1); j++)
-    {
-        Console.Write("{0,-8}", taab1[i, j]);
-    }
-    Console.WriteLine();
-}
-//argumenty domyślne
-Console.WriteLine("dodawanie");
-static int Dodajmy(int x, int y = 0)
-{
-    return x + y;
-}
-/*Argumenty domyślne (może ich być więcej niż jeden) muszą być umieszczone na końcu listy argumentów*/
-Console.WriteLine(Dodajmy(1)); //  1
-Console.WriteLine(Dodajmy(1, 5)); //6
-
-//Metody przeładowane
-Console.WriteLine();
-//Console.WriteLine("Metody przeładowane");
-//class Opisz
+//using System.Reflection;
+/////* wykaz wybranych modyfikatorów typów dla literałów:
+/////*jeśli operator jest przed
+/////* program przeliczający temperaturę w stopniach Celsjusza na temperaturę w  stopniach Fahrenheita. 
+/////* oblicz wskaznik BMI = masa/wzrost kg/m */
+/////*Po wykonaniu przedstawionego niżej kodu programu zmienna gestoscZaludnienia
+/////*ZADANIA*/
+/////* Dwaj koledzy Janek i Karol zadłużyli się na 80 zł. Umówili się między sobą, że każdy z
+/////*3.6 BMI Z zadania 2.3 a potem komunikaty
+/////* 3.8 Pobierz od użytkownika wartość średniej ocen. Program ma wyświetlać informacje o wysokości przysługującego stypendium zgodnie z poniższą tabelą: Średnia ocen Kwota stypendium
+/////*Wyświetlenie wartości elementu tej tablicy wymaga odwołania się w indeksie
+/////*Reverse(): zamiast odwrocenia z uzycie petli for*/
+/////*Sort()*/
+/////*IndexOf(), która zwraca indeks pierwszego wystąpienia szukanego elementu
+/////*właściwość Rank, która zwraca liczbę wymiarów danej tablicy*/
+/////*Concat(): laczy ciagi znakow*/
+/////*IndexOf(). by spr czy fragment znajduje sie w innym tekscie, zwroci zero gdy jest OK */
+/////*Zadanie 4.9.
+//static double Dziel(double x, int y)
 //{
-//    static string OpiszTyp()
+//    double wynik = 0;
+//    if ( y != 0)
 //    {
-//        return "Metoda bez argumentów";
+//        wynik = x / y;
 //    }
-//    static string OpiszTyp(int x)
+//    return (wynik);
+//}
+//Console.WriteLine(Dziel(1.5, 3) + " wynik dzielenia");
+
+
+
+//    static void Dodaj(int a)
 //    {
-//        return "Liczba całkowita";
+//        a++;
+//        Console.WriteLine("Argument z wnętrza metody: " + a);
 //    }
-//    static string OpiszTyp(string x)
+
+
+//Console.WriteLine("Przed wywołaniem metody: " + 5);
+//Dodaj(5);
+//Console.WriteLine("Po wywołaniu metody: " + 5);
+//Console.WriteLine();
+
+///*Przekazywanie argumentów przez referencję*/    
+//static void dod( ref int a)
+//{
+//    a++;
+//    Console.WriteLine("argument z wnetrza metody: " + a);
+//}
+//int x = 5;
+//Console.WriteLine("Przed wywołaniem metody: " + x);
+//dod(ref x);
+//Console.WriteLine("Po wywołaniu metody: " + x);
+
+//static void Nowe_Ddoaj(out int x, out int y)
+//{
+//    x = 2;
+//    y = 5;
+//    Console.WriteLine("Dodaj(): x={0} y={1}", x, y);
+//}
+
+//int a, b; // deklaracja, brak inicjalizacji
+//Nowe_Ddoaj(out a, out b);
+//Console.WriteLine("Main(): a={0} b={1}", a, b);
+//Console.WriteLine();
+
+///*Lista argumentów o zmiennej długości*/
+//static void Elementy(params int[] tab)
+//{
+//    for (int i = 0; i < tab.Length; i++)
 //    {
-//        return "Łańcuch znaków";
+//        Console.WriteLine(tab[i]);
 //    }
-//    static string OpiszTyp(double x, int y)
+//    Console.WriteLine();
+//}
+//Elementy(1, 2, 3); // 1) wywołanie dla listy argumentów
+//int[] tab1 = new int[3] { 18, 26, 67 };
+//Elementy(tab1); // 2) wywołanie z użyciem tablicy
+//Console.WriteLine();
+
+
+//Console.WriteLine("Przekazywanie i zwracanie tablic");
+///*Przekazywanie i zwracanie tablic*/ //#StrongNameKeyPair 136!
+
+//static void Wielkie(string[] tab)
+//{
+//    for (int i = 0; i < tab.Length; i++)
 //    {
-//        return "Liczba double i liczba całkowita";
+//        tab[i] = tab[i].ToUpper();
 //    }
-//    static void Main(string[] args)
+//}
+
+//string[] tabb1 = { "jeden", "dwa", "trzy" };
+//Wielkie(tabb1); // wywołanie metody (tablica argumentem)
+//for (int i = 0; i < tab1.Length; i++)
+//{
+//    Console.Write(tab1[i] + " ");
+//}
+//Console.WriteLine("\n");
+
+
+//    Console.WriteLine("metoda zwracająca tablice");
+//static int[] liczby(int rozmiar)
+//{
+//    int[] tap = new int[rozmiar];
+//    for (int i = 0; i < rozmiar; i++)
 //    {
-//        Console.WriteLine(OpiszTyp());
-//        Console.WriteLine(OpiszTyp(10));
-//        Console.WriteLine(OpiszTyp("Apollo 10"));
-//        Console.WriteLine(OpiszTyp(100.45, 10));
+//        tap[i] = i;
+//    }
+//    return (tap);
+//}
+//int[] tabbb1 = liczby(5);
+//for (int i = 0; i < tabbb1.Length; i++)
+//{
+//    Console.WriteLine(tabbb1[i] + " ");
+//}
+
+
+//Console.WriteLine("przekazanie do metody tablicy prostokątnej");
+//static void Wielkiego(string[,] tab)
+//{
+//    for (int i = 0; i < tab.GetLength(0); i++)
+//    {
+//        for (int j = 0; j < tab.GetLength(1); j++)
+//        {
+//            tab[i, j] = tab[i, j].ToUpper();
+//        }
+//    }
+//}
+
+//Console.WriteLine("upper");
+//string[,] taab1 = {{ "jeden", "dwa", "trzy" },
+//                    { "one", "two", "three" }};
+//Wielkiego(taab1);
+//for (int i = 0; i < taab1.GetLength(0); i++)
+//{
+//    for (int j = 0; j < taab1.GetLength(1); j++)
+//    {
+//        Console.Write("{0,-8}", taab1[i, j]);
+//    }
+//    Console.WriteLine();
+//}
+////argumenty domyślne
+//Console.WriteLine("dodawanie");
+//static int Dodajmy(int x, int y = 0)
+//{
+//    return x + y;
+//}
+///*Argumenty domyślne (może ich być więcej niż jeden) muszą być umieszczone na końcu listy argumentów*/
+//Console.WriteLine(Dodajmy(1)); //  1
+//Console.WriteLine(Dodajmy(1, 5)); //6
+
+////Metody przeładowane
+//Console.WriteLine();
+////Console.WriteLine("Metody przeładowane");
+////class Opisz
+////{
+////    static string OpiszTyp()
+////    {
+////        return "Metoda bez argumentów";
+////    }
+////    static string OpiszTyp(int x)
+////    {
+////        return "Liczba całkowita";
+////    }
+////    static string OpiszTyp(string x)
+////    {
+////        return "Łańcuch znaków";
+////    }
+////    static string OpiszTyp(double x, int y)
+////    {
+////        return "Liczba double i liczba całkowita";
+////    }
+////    static void Main(string[] args)
+////    {
+////        Console.WriteLine(OpiszTyp());
+////        Console.WriteLine(OpiszTyp(10));
+////        Console.WriteLine(OpiszTyp("Apollo 10"));
+////        Console.WriteLine(OpiszTyp(100.45, 10));
+////        Console.ReadKey();
+////    }
+////}
+///*że w przypadku, gdy do danego
+//wywołania pasuje zarówno metoda dokładnie według sygnatury oraz jednocześnie pasuje
+//metoda z zastosowaniem argumentu domyślnego – to kompilator wybiera to dokładne dopasowanie*/
+//class Dajmi
+//{
+//    static int Daj(int x = 0) // argument domyślny
+//    {
+//        return x;
+//    }
+//    static int Daj()
+
+//    {
+//        return -1;
+//    }
+//    static void M ain(string[] args)
+//    {
+//        Console.WriteLine(Daj());
 //        Console.ReadKey();
 //    }
 //}
-/*że w przypadku, gdy do danego
-wywołania pasuje zarówno metoda dokładnie według sygnatury oraz jednocześnie pasuje
-metoda z zastosowaniem argumentu domyślnego – to kompilator wybiera to dokładne dopasowanie*/
-class Dajmi
-{
-    static int Daj(int x = 0) // argument domyślny
-    {
-        return x;
-    }
-    static int Daj()
 
+/*niejawna konwersja*/
+//class XXX
+//{
+//    static int Dodaj(int x, int y) // 1) oba argumenty int
+//    {
+//        return x + y;
+//    }
+//    static int Dodaj(int x, short y) // 2) jeden int, drugi short
+//    {
+//        return -1 * (x + y); // ta wersja zwróci liczbę ujemną
+//    }
+//    static void Main(string[] args)
+//    {
+//        int a = 1, b = 5;
+//        short c = 1;
+//        Console.WriteLine(Dodaj(a, b)); // wyświetli się 6 (metoda 1)
+//        Console.WriteLine(Dodaj(a, c)); // wyświetli się -2 (metoda 2)
+//        Console.ReadKey();
+//    }
+//}
+/*uwzględniając w jednym programie zarówno argument domyślny jak i niejawną konwersję*/
+
+//class Program
+//{
+//    static int Dodaj(short x, int y = 0) // 1) short oraz int domyślny
+//    {
+//        return x + y;
+//    }
+//    static int Dodaj(int x) // 2) jeden argument int
+//    {
+//        return -1 * x; // ta wersja zwróci liczbę ujemną
+//    }
+//    static void Main(string[] args)
+//    {
+//        short b = 3;
+//        Console.WriteLine(Dodaj(b)); // wyświetli się 3 (metoda 1)
+//        Console.ReadKey();
+//    }
+//}
+
+/*Rekurencja*/
+//class Program
+//{
+//    static int Silnia(int n)
+//    {
+//        if (n <= 1) return 1;
+//        else return n * Silnia(n - 1);
+//    }
+//    static void Main(string[] args)
+//    {
+//        Console.WriteLine(Silnia(4)); //24
+//        Console.ReadKey();
+//    }
+//}
+
+
+/*najwikeszy wspolny dzielnik dla podanych liczb*/
+//class Program
+//{
+//    static int NWD(int a, int b)
+//    {
+//        if (b == 0) return a;
+//        else return NWD(b, a % b);
+//    }
+//    static void Main(string[] args)
+//    {
+//        int a, b;
+//        Console.WriteLine("Podaj a i b");
+//        a = int.Parse(Console.ReadLine());
+//        b = int.Parse(Console.ReadLine());
+//        Console.WriteLine("NWD = {0}", NWD(a, b));
+//        Console.ReadKey();
+//    }
+//}
+
+/*zadania rozdzial 5*/
+/*Napisz program zawierający metodę statyczną obliczającą temperaturę w stopniach
+Fahrenheita na temperaturę w stopniach Celsjusza. Metoda ma przyjmować jeden argument
+(temperaturę w stopniach Fahrenheita) i zwracać temperaturę w stopniach Celsjusza*/
+class Temperatura
+{
+    static double Temp(double F)
     {
-        return -1;
+        double C = (F - 32) * 5 / 9;
+        return C;
     }
     static void Main(string[] args)
     {
-        Console.WriteLine(Daj());
+        double F;
+        Console.WriteLine("Podaj temperatrure w F: ");
+        F = (double)int.Parse(Console.ReadLine());
+
+        Console.WriteLine("{0} celsjusza", Temp(F));
+        Console.WriteLine(Temp(F));
         Console.ReadKey();
     }
 }
-//5,13 str 141
+
+
+/*metodę, która sprawdza, czy liczba x należy do przedziału obustronnie otwartego (a, b).
+Metoda sprawdzająca ma zwrócić wartość logiczną, którą należy zinterpretować w metodzie
+Main() z podaniem stosownego komunikatu.*/
+
+/*Zadanie 5.10.
+Jaki będzie rezultat metody Oblicz() wywołanej z parametrem n = 5? Zadanie wykonaj
+najpierw bez udziału kompilatora, a dopiero później uruchom program i sprawdź otrzymany
+wynik*/
+//static int Oblicz(int n)
+//{
+//if (n <= 1) return (1);
+//else return (n + Oblicz(n - 1)); 
+//}
+//Console.WriteLine(Oblicz( 57));
+
+/* r6. str 151*/

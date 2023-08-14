@@ -1890,33 +1890,58 @@ w tym tekście: idzie – 2 razy, po – 2 razy, się – 3 razy.*/
 //    }
 //}
 
-/*zadania rozdzial 5*/
+/*zadania rozdzial 5*/ // OK   -> :)
 /*Napisz program zawierający metodę statyczną obliczającą temperaturę w stopniach
 Fahrenheita na temperaturę w stopniach Celsjusza. Metoda ma przyjmować jeden argument
 (temperaturę w stopniach Fahrenheita) i zwracać temperaturę w stopniach Celsjusza*/
-class Temperatura
-{
-    static double Temp(double F)
-    {
-        double C = (F - 32) * 5 / 9;
-        return C;
-    }
-    static void Main(string[] args)
-    {
-        double F;
-        Console.WriteLine("Podaj temperatrure w F: ");
-        F = (double)int.Parse(Console.ReadLine());
+//class Temperatura
+//{
+//    static double Temp(double F)
+//    {
+//        double C = (F - 32) * 5 / 9;
+//        return C;
+//    }
+//    static void Main(string[] args)
+//    {
+//        double F;
+//        Console.WriteLine("Podaj temperatrure w F: ");
+//        F = (double)int.Parse(Console.ReadLine());
 
-        Console.WriteLine("{0} celsjusza", Temp(F));
-        Console.WriteLine(Temp(F));
-        Console.ReadKey();
-    }
-}
+//        Console.WriteLine("{0} celsjusza", Temp(F));
+//        Console.WriteLine(Temp(F));
+//        Console.ReadKey();
+//    }
+//}
 
 
 /*metodę, która sprawdza, czy liczba x należy do przedziału obustronnie otwartego (a, b).
 Metoda sprawdzająca ma zwrócić wartość logiczną, którą należy zinterpretować w metodzie
 Main() z podaniem stosownego komunikatu.*/
+
+//static Liczba_x (int a, int b)
+//{
+//    int x = 5;
+
+//    if (x < a && b < x) 
+//        return x;
+
+//    else return 0;
+//}
+//static void Main(string[] args)
+//{
+
+//    Console.WriteLine("Podaj a liczbe:\n ");
+//    int a = int.Parse(Console.ReadLine());
+//    Console.WriteLine("Podaj b liczbe:\n ");
+//    int b = int.Parse(Console.ReadLine());
+//    Console.WriteLine(Liczba_x(57));
+//    Console.ReadKey();
+//}
+
+
+
+// jeszcze nie wyszlo
+
 
 /*Zadanie 5.10.
 Jaki będzie rezultat metody Oblicz() wywołanej z parametrem n = 5? Zadanie wykonaj
@@ -1929,4 +1954,191 @@ wynik*/
 //}
 //Console.WriteLine(Oblicz( 57));
 
-/* r6. str 151*/
+
+/* r6. str 151*/ //Tworzenie klas
+                 //public static class Pracownik
+                 //{
+                 //    public string nazwisko;
+                 //    private double zarobki;
+                 //    public static int liczbaPracownikow;
+                 //    public const double etat = 1.0;
+                 //}
+
+//public static class Pracownik
+//{
+//    public string nazwisko;
+//    private double zarobki;
+//    public Pracownik(string n, double z)
+//    {
+//        nazwisko = n;
+//        zarobki = z;
+//    }
+//    public void PokazPracownika()
+//    {
+//        Console.WriteLine("{ 0, - 15} {1, 10}", nazwisko, zarobki);
+//    }
+//}
+//class Program
+//{
+//    static void Main(string[] args)
+//    {
+//        Pracownik p1 = new Pracownik("Kowalski", 1000);
+//        p1.PokazPracownika();
+//        Console.ReadKey();
+//    }
+//}
+
+//zmiana wartosci pol
+//class Program
+//{
+//    static void Main(string[] args)
+//    {
+//        Pracownik p1 = new Pracownik("Kowalski", 1000);
+//        p1.nazwisko = "Nowak"; //Ponieważ pole nazwisko zostało zadeklarowane jako public, to jest możliwa zmiana wartości pola obiektu poza macierzystą klasą Pracownik.
+//        p1.PokazPracownika();
+//        Console.ReadKey();
+//    }
+//}
+
+/*wlasciwosci*/
+//public class Pracownik
+//{
+//    public string nazwisko;
+//    private double zarobki;
+//    public double Zarobki // właściwość dla pola zarobki
+//    {
+//        get { return zarobki; }
+//        set { zarobki = value; }
+//    }
+//    public void PokazPracownika() // metoda
+//    {
+//        Console.WriteLine("{0,-15} {1,10}", nazwisko, zarobki);
+//    }
+//}
+//class Program
+//{
+//    static void Main(string[] args)
+//    {
+//        Pracownik p1 = new Pracownik();
+//        p1.nazwisko = "Kowalski";
+//        p1.Zarobki = 1250.0; // użycie akcesora set
+//        p1.PokazPracownika();
+//        Console.WriteLine(p1.Zarobki); // użycie akcesora get
+//        Console.ReadKey();
+//    }
+//}
+/*Dla tak zdefiniowanej właściwości nie można przypisać wartości na zewnątrz klasy,
+możliwy będzie jedynie jej odczyt.
+public double Zarobki
+{
+get { return zarobki; }
+private set { zarobki = value; }
+}*/
+
+//public class Pracownik
+//{
+//    public string nazwisko;
+//    public double Zarobki { get; private set; } // automatyczna właściwość |krotsze
+//    public void PokazPracownika() // metoda
+//    {
+//        Console.WriteLine("{0,-15} {1,10}", nazwisko, Zarobki);
+//    }
+//}
+//class Program
+//{
+//    static void Main(string[] args)
+//    {
+//        Pracownik p1 = new Pracownik();
+//        p1.nazwisko = "Kowalski";
+//        p1.Zarobki = 1250.0; // użycie akcesora set
+//        p1.PokazPracownika();
+//        Console.WriteLine(p1.Zarobki); // użycie akcesora get
+//        Console.ReadKey();
+//    }
+//}
+
+/*Składniki statyczne
+Klasa może zawierać składowe statyczne, zarówno pola jak i metody. Składowe
+statyczne nie wymagają tworzenia obiektów i dotyczą całej klasy, a nie konkretnego obiektu*/
+//public class Pracownik
+//{
+//    public static int liczbaPrac; // pole statyczne
+//    public string Nazwisko { get; set; } // właściwość automatyczna
+//    public double Zarobki { get; set; } // właściwość
+//    public Pracownik(string naz, double zar) // konstruktor
+//    {
+//        liczbaPrac++;
+//        Nazwisko = naz;
+//        Zarobki = zar;
+//    }
+//    static Pracownik() //konstruktor statyczny
+//    {
+//        liczbaPrac = 0;
+//    }
+//    public void PokazPracownika() // metoda
+//    {
+//        Console.WriteLine("{0,-15} {1,10}", Nazwisko, Zarobki);
+//    }
+//}
+//class Program
+//{
+//    static void Main(string[] args)
+//    {
+//        Console.WriteLine("Liczba {0}", Pracownik.liczbaPrac);
+//        Pracownik p1 = new Pracownik("Kowalski", 1250.0);
+//        p1.PokazPracownika();
+//        Pracownik p2 = new Pracownik("Nowak", 1340.0);
+//        p2.PokazPracownika();
+//        Console.WriteLine("Liczba {0}", Pracownik.liczbaPrac);
+//        Console.ReadKey();
+//    }
+//}
+
+/*Tablice obiektów*/
+//public class Pracownik
+//{
+//    public string Nazwisko { get; set; } // właściwość
+//    public double Zarobki { get; set; } // właściwość
+//    public Pracownik(string naz, double zar) // konstruktor
+//    {
+//        Nazwisko = naz;
+//        Zarobki = zar;
+//    }
+//    public void PokazPracownika() // metoda
+//    {
+//        Console.WriteLine("{0,-15} {1,10}", Nazwisko, Zarobki);
+//    }
+//    public static double Sumuj(Pracownik[] tab) // metoda statyczna
+//    {
+//        double suma = 0;
+//        for (int i = 0; i < tab.Length; i++)
+//        {
+//            suma += tab[i].Zarobki;
+//        }
+//        return suma;
+//    }
+//}
+//class Program
+//{
+//    static void Main(string[] args)
+//    {
+//        Pracownik[] tab = new Pracownik[3];
+//        tab[0] = new Pracownik("Kowalski", 1250.0);
+//        tab[1] = new Pracownik("Nowak", 1340.0);
+//        tab[2] = new Pracownik("Abacki", 2210.0);
+//        //foreach (Pracownik p in tab)
+//        //{
+//        //    p.PokazPracownika();
+//        //}
+//        /*albo petla for*/
+//        // Pętla for
+//        for (int i = 0; i < tab.Length; i++)
+//        {
+//            tab[i].PokazPracownika();
+//        }
+//        Console.WriteLine("Suma {0}", Pracownik.Sumuj(tab));
+//        Console.ReadKey();
+//    }
+//}
+
+//6,4 typ referencyjny str 168

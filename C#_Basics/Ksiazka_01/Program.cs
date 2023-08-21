@@ -1655,7 +1655,6 @@ w tym tekście: idzie – 2 razy, po – 2 razy, się – 3 razy.*/
 //Console.WriteLine("Po wywołaniu metody: " + 5);
 //Console.WriteLine();
 
-///*Przekazywanie argumentów przez referencję*/    
 //static void dod( ref int a)
 //{
 //    a++;
@@ -1678,7 +1677,6 @@ w tym tekście: idzie – 2 razy, po – 2 razy, się – 3 razy.*/
 //Console.WriteLine("Main(): a={0} b={1}", a, b);
 //Console.WriteLine();
 
-///*Lista argumentów o zmiennej długości*/
 //static void Elementy(params int[] tab)
 //{
 //    for (int i = 0; i < tab.Length; i++)
@@ -1694,7 +1692,6 @@ w tym tekście: idzie – 2 razy, po – 2 razy, się – 3 razy.*/
 
 
 //Console.WriteLine("Przekazywanie i zwracanie tablic");
-///*Przekazywanie i zwracanie tablic*/ //#StrongNameKeyPair 136!
 
 //static void Wielkie(string[] tab)
 //{
@@ -1760,7 +1757,6 @@ w tym tekście: idzie – 2 razy, po – 2 razy, się – 3 razy.*/
 //{
 //    return x + y;
 //}
-///*Argumenty domyślne (może ich być więcej niż jeden) muszą być umieszczone na końcu listy argumentów*/
 //Console.WriteLine(Dodajmy(1)); //  1
 //Console.WriteLine(Dodajmy(1, 5)); //6
 
@@ -1794,7 +1790,6 @@ w tym tekście: idzie – 2 razy, po – 2 razy, się – 3 razy.*/
 ////        Console.ReadKey();
 ////    }
 ////}
-///*że w przypadku, gdy do danego
 //wywołania pasuje zarówno metoda dokładnie według sygnatury oraz jednocześnie pasuje
 //metoda z zastosowaniem argumentu domyślnego – to kompilator wybiera to dokładne dopasowanie*/
 //class Dajmi
@@ -2141,4 +2136,124 @@ statyczne nie wymagają tworzenia obiektów i dotyczą całej klasy, a nie konkr
 //    }
 //}
 
-//6,4 typ referencyjny str 168
+//6,4 typ referencyjny | typ wartościowy
+
+//int p1 = 5, p2 = p1;
+//Console.WriteLine("p1 = {0}", p1);
+//Console.WriteLine("p2 = {0}", p2);
+//p1 = 8;
+//Console.WriteLine();
+//Console.WriteLine("Wartości po zmianie p1");
+//Console.WriteLine("p1 = {0}", p1);
+//Console.WriteLine("p2 = {0}", p2);
+//Console.ReadKey();
+
+//public class MojaKlasa
+//{
+//    public int Dana { get; set; }
+//}
+//class Programy
+//{
+//    static void Main(string[] args)
+//    {
+//        MojaKlasa p1 = new MojaKlasa();
+//        p1.Dana = 5;
+//        MojaKlasa p2 = p1;
+//        Console.WriteLine("p1.Dana = {0}", p1.Dana);
+//        Console.WriteLine("p2.Dana = {0}", p2.Dana);
+//        p1.Dana = 8;
+//        Console.WriteLine();
+//        Console.WriteLine("Wartości po zmianie obiektu p1");
+//        Console.WriteLine("p1.Dana = {0}", p1.Dana);
+//        Console.WriteLine("p2.Dana = {0}", p2.Dana);
+//        Console.ReadKey();
+//    }
+//}
+//zdefiniowanie konstruktora kopiującego.
+
+///*Przekazywanie argumentów przez referencję*/    
+///*Lista argumentów o zmiennej długości*/
+///*Przekazywanie i zwracanie tablic*/ //#StrongNameKeyPair 136!
+///*Argumenty domyślne (może ich być więcej niż jeden) muszą być umieszczone na końcu listy argumentów*/
+///*że w przypadku, gdy do danego
+//public class MojaKlasa
+//{
+//    public int Dana { get; set; }
+//    public MojaKlasa(int d) // konstruktor
+//    {
+//        this.Dana = d;
+//    }
+//    public MojaKlasa(MojaKlasa kopia) // konstruktor kopiujący
+//    {
+//        this.Dana = kopia.Dana;
+//    }
+//}
+//class Program
+//{
+//    static void Main(string[] args)
+//    {
+//        MojaKlasa p1 = new MojaKlasa(5);
+//        MojaKlasa p2 = new MojaKlasa(p1); // wywołanie konstr. kopiującego
+//        Console.WriteLine("p1.Dana = {0}", p1.Dana);
+//        Console.WriteLine("p2.Dana = {0}", p2.Dana);
+//        p1.Dana = 8;
+//        Console.WriteLine();
+//        Console.WriteLine("Wartości po zmianie obiektu p1");
+//        Console.WriteLine("p1.Dana = {0}", p1.Dana);
+//        Console.WriteLine("p2.Dana = {0}", p2.Dana);
+//        Console.ReadKey();
+//    }
+//}
+/*Po deklaracji obiektu p2 z użyciem konstruktora kopiującego na stercie powstaje drugi
+obiekt o tych samych składowych (tu tylko jedna składowa Dana). Zmiana jednego obiektu
+nie będzie wpływać na stan drugiego obiektu*/
+
+/*6.5 Struktury a klasy
+ Struktura jest typem wartosciowym i nie dziedziczy
+jej slowwo kluczowe to struct a nie class
+kontruktor moze byc zadeklarowany tylko z argumentem
+skladowe nie moga być inicjalizowane w momencie deklarowania*/
+
+///struktura datetime
+//DateTime t1 = DateTime.Now;
+//Console.WriteLine("Czas początkowy t1: {0}", t1);
+//int licznik = 0;
+//for (int i = 0; i < int.MaxValue; i++)
+//    licznik++;
+//Console.WriteLine("Wartość zmiennej licznik {0}", licznik);
+//DateTime t2 = DateTime.Now;
+//Console.WriteLine("Czas końcowy t2: {0}", t2);
+//Console.WriteLine("Różnica t2-t1: {0}", t2 - t1);
+//Console.WriteLine("Dziś jest {0} dzień roku", t1.DayOfYear);
+//Console.ReadKey();
+
+/*definiowanie struktury Kwadrat*/
+struct Kwadrat
+{
+    int bok;
+    ConsoleColor kolor;
+    public Kwadrat(int bok1, ConsoleColor kolor1)
+    {
+        bok = bok1;
+        kolor = kolor1;
+    }
+    public void RysujKwadrat()
+    {
+        Console.ForegroundColor = kolor;
+        for (int i = 1; i <= bok; i++)
+        {
+            for (int j = 1; j <= bok; j++)
+                Console.Write("*");
+            Console.WriteLine();
+        }
+    }
+}
+class Prog
+{
+    static void Main(string[] args)
+    {
+        Kwadrat k1 = new Kwadrat(5, ConsoleColor.Blue);
+        k1.RysujKwadrat();
+        Console.ReadKey();
+    }
+}

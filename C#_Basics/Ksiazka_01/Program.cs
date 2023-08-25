@@ -2022,8 +2022,7 @@ wynik*/
 //        Console.ReadKey();
 //    }
 //}
-/*Dla tak zdefiniowanej właściwości nie można przypisać wartości na zewnątrz klasy,
-możliwy będzie jedynie jej odczyt.
+/*Dla tak zdefiniowanej właściwości nie można przypisać wartości na zewnątrz klasy, możliwy będzie jedynie jej odczyt.
 public double Zarobki
 {
 get { return zarobki; }
@@ -2228,32 +2227,264 @@ skladowe nie moga być inicjalizowane w momencie deklarowania*/
 //Console.ReadKey();
 
 /*definiowanie struktury Kwadrat*/
-struct Kwadrat
+//struct Kwadrat
+//{
+//    int bok;
+//    ConsoleColor kolor;
+//    public Kwadrat(int bok1, ConsoleColor kolor1)
+//    {
+//        bok = bok1;
+//        kolor = kolor1;
+//    }
+//    public void RysujKwadrat()
+//    {
+//        Console.ForegroundColor = kolor;
+//        for (int i = 1; i <= bok; i++)
+//        {
+//            for (int j = 1; j <= bok; j++)
+//                Console.Write("*");
+//            Console.WriteLine();
+//        }
+//    }
+//}
+//class Prog
+//{
+//    static void Main(string[] args)
+//    {
+//        Kwadrat k1 = new Kwadrat(5, ConsoleColor.Blue);
+//        k1.RysujKwadrat();
+//        Console.ReadKey();
+//    }
+//}
+
+/*Język C# wspomaga trzy główne cechy programowania obiektowego:
+hermetyzację, dziedziczenie, polimorfizm*/
+using System;
+using System.Drawing;
+using System.Runtime.CompilerServices;
+using System.Security.Cryptography;
+///*Przekazywanie argumentów przez referencję*/    
+///*Lista argumentów o zmiennej długości*/
+///*Przekazywanie i zwracanie tablic*/ //#StrongNameKeyPair 136!
+///*Argumenty domyślne (może ich być więcej niż jeden) muszą być umieszczone na końcu listy argumentów*/
+///*że w przypadku, gdy do danego
+///struktura datetime
+//public class Pracownik
+//{
+//    private string nazwisko;
+//    private double zarobki;
+//    public Pracownik(string naz, double zar)
+//    {
+//        nazwisko = naz;
+//        zarobki = zar;
+//    }
+//public override string ToString()
+//    {
+//        return String.Format("{0,-15} {1,10}", nazwisko, zarobki);
+//    }
+//}
+//class Program
+//{
+//    static void Main(string[] args)
+//    {
+//        Pracownik p1 = new Pracownik("Kowalski", 1250.0);
+//        Console.WriteLine(p1.ToString()); // wyświetlenie danych pracownika
+//        Console.ReadKey();
+//    }
+//}
+
+/*Zadanie 6.1. Napisz program, który tworzy klasę Prostokat, zawierającą dwie prywatne dane składowe: dlugosc, szerokosc, dwie prywatne metody: powierzchnia(), obwod() oraz metodę
+publiczną – Prezentuj() (która wyświetla powierzchnię i obwód prostokąta) i konstruktor inicjalizujący. W metodzie Main() zdefiniuj obiekt i uruchom dla niego metodę Prezentuj().*/
+
+//class Prostokat
+//{
+//    private int dlugosc, szerokosc; // klasa z prywatnymi danymi
+
+//    public Prostokat(int d, int s) //<- konstruktor
+//    {
+//        dlugosc = d;
+//        szerokosc = s;
+//    }
+//    private int Obwod()
+//    {
+//        return 2 * dlugosc + 2 * szerokosc;
+//    }
+
+//    private int Powierzchnia()
+//    {
+//        return dlugosc * szerokosc;
+//    }
+//    public void Prezentuj()
+//    {
+//        Console.WriteLine("Szerokosc: {0}, Dlugosc: {1}, Obwod: {2}, Powierzchnia: {3}", dlugosc, szerokosc, Obwod(), Powierzchnia());
+//    }
+//}
+//class Programuj
+//{
+//    static void Main(string[] args)
+//    {
+//        Prostokat p1 = new (2, 5);
+//        Prostokat p2 = new Prostokat(21, 15);
+//        Console.WriteLine("1: \t\n ");
+//        p1.Prezentuj();
+//        Console.Write("\n");
+//        Console.WriteLine("2: \n \t");
+//        p2.Prezentuj();
+//        Console.ReadKey();
+//    }
+//}
+
+/*Zadanie 6.2.
+Uzupełnij program z poprzedniego zadania o definicje tablicy obiektów dla
+prostokątów. W metodzie Main() wyświetl powierzchnie oraz obwód wszystkich prostokątów
+w tablicy używając (wewnątrz pętli foreach) metody publicznej Prezentuj()*/
+//class Prostokat
+//{
+//    private int dlugosc, szerokosc; // klasa z prywatnymi danymi
+
+//    public Prostokat(int d, int s) //<- konstruktor
+//    {
+//        dlugosc = d;
+//        szerokosc = s;
+//    }
+//    private int Obwod()
+//    {
+//        return 2 * dlugosc + 2 * szerokosc;
+//    }
+
+//    private int Powierzchnia()
+//    {
+//        return dlugosc * szerokosc;
+//    }
+//    public void Prezentuj()
+//    {
+//        Console.WriteLine("Szerokosc: {0}, Dlugosc: {1}, Obwod: {2}, Powierzchnia: {3}", dlugosc, szerokosc, Obwod(), Powierzchnia());
+//    }
+//}
+//class Programuj
+//{
+//    static void Main(string[] args) // <- tablica
+//    {
+//        Prostokat[] tab = new Prostokat[5];
+//        tab[0] = new Prostokat(2, 5);
+//        tab[1] = new Prostokat(12, 5);
+//        tab[2] = new Prostokat(2, 10);
+//        tab[3] = new Prostokat(3, 5);
+//        tab[4] = new Prostokat(2, 4);
+//        for (int i = 0; i < tab.Length; i++)
+//        {
+//            tab[i].Prezentuj();
+//        }
+//        Console.ReadKey();
+//    }
+//}
+
+/*Zadanie 6.3.
+Uzupełnij program z poprzedniego zadania o definicję metody statycznej, która podaje
+powierzchnię największego prostokąta*/
+class Prostokat
 {
-    int bok;
-    ConsoleColor kolor;
-    public Kwadrat(int bok1, ConsoleColor kolor1)
+    private int dlugosc, szerokosc; 
+
+    public Prostokat(int d, int s) 
     {
-        bok = bok1;
-        kolor = kolor1;
+        dlugosc = d;
+        szerokosc = s;
     }
-    public void RysujKwadrat()
+    private int Obwod()
     {
-        Console.ForegroundColor = kolor;
-        for (int i = 1; i <= bok; i++)
+        return 2 * dlugosc + 2 * szerokosc;
+    }
+
+    private int Powierzchnia()
+    {
+        return dlugosc * szerokosc;
+    }
+    public void Prezentuj()
+    {
+        Console.WriteLine("Szerokosc: {0}, Dlugosc: {1}, Obwod: {2}, Powierzchnia: {3}", dlugosc, szerokosc, Obwod(), Powierzchnia());
+        //Console.WriteLine("Obwod: {0}, Obwod()");
+        //Console.WriteLine("powierzchnia {0}, Powierzchnia()");
+    }
+    private int Maxa(Prostokat[] tab)  // metoda statyczna
+    {
+        int max = 0;
+        for (int i = 0; i < tab.Length; i++)
         {
-            for (int j = 1; j <= bok; j++)
-                Console.Write("*");
-            Console.WriteLine();
+            if (tab[i].Powierzchnia() > max)
+            {
+                max = tab[i].Powierzchnia();
+            }
+            return max;
         }
     }
-}
-class Prog
+class Programuj
 {
     static void Main(string[] args)
     {
-        Kwadrat k1 = new Kwadrat(5, ConsoleColor.Blue);
-        k1.RysujKwadrat();
+        Prostokat[] tab = new Prostokat[5];
+        tab[0] = new Prostokat(2, 5);
+        tab[1] = new Prostokat(12, 5);
+        tab[2] = new Prostokat(2, 10);
+        tab[3] = new Prostokat(3, 5);
+        tab[4] = new Prostokat(2, 4);
+        for (int i = 0; i < tab.Length; i++)
+        {
+            tab[i].Prezentuj();
+        }
+        Console.WriteLine("Max_Prostokąt {0}", Maxa(tab));
         Console.ReadKey();
     }
 }
+    /*Zadanie 6.4.
+Zdefiniuj klasę, która pozwoli na rejestrację zużycia energii elektrycznej. Klasa
+powinna pozwalać na:
+ rejestrację początkowego i bieżącego stanu licznika energii,
+ uzyskanie danych o początkowym oraz bieżącym stanie licznika,
+ obliczanie zużytej energii.
+
+Zadanie 6.5.
+Napisz program tworzący klasę Punkt do obsługi punktów na płaszczyźnie. Klasa ta ma
+zawierać: konstruktor, którego argumentami będą współrzędne punktu, metodę składową
+Przesun(), realizującą przesunięcie o zadane wielkości oraz metodę składową Wyswietl()
+wypisującą aktualne współrzędne punktu. Współrzędne punktu mają być zdefiniowane
+poprzez właściwości.
+
+Zadanie 6.6.
+Napisz program (używając klasy Punkt zdefiniowanej w poprzednim zadaniu), który
+przechowuje dane o trzech punktach w tablicy obiektów i sprawdza przy pomocy statycznej
+metody, czy leżą one na jednej prostej.
+
+Zadanie 6.7.
+Zdefiniuj klasę Odcinek składającą się z dwóch punktów klasy Punkt. W klasie Odcinek
+zdefiniuj metodę, która obliczy długość odcinka.
+
+Zadanie 6.8.
+Zdefiniuj klasę Prostopadloscian, która pozwoli na reprezentację danych opisujących
+długość, szerokość i wysokość prostopadłościanu. W klasie zaimplementuj metody
+pozwalające na obliczenie objętości prostopadłościanu, oraz porównanie objętości dwóch
+prostopadłościanów.
+
+Zadanie 6.9.
+Wykonaj zadania 6.1 oraz 6.2 z użyciem struktury (zamiast klasy).
+
+Zadanie 6.10.
+Napisz program z użyciem struktury KandydatNaStudia, która ma posiadać następujące
+pola: nazwisko, punktyMatematyka, punktyInformatyka, punktyJezykObcy.W trzech ostatnich
+polach mają być zapisane punkty za przedmioty zdawane na maturze (dla uproszczenia
+uwzględniamy tylko jeden poziom zdawanej matury, np. podstawowy). Jeden punkt to jeden
+procent (tj. student, który ma 55% z matematyki ma mieć 55 punktów z tego przedmiotu).
+Struktura ma posiadać metodę obliczającą łączną liczbę punktów kandydata według
+przelicznika: 0,6 punktów z matematyki + 0,5 punktów z informatyki + 0,2 punktów z języka
+obcego. W metodzie Main() utwórz obiekty dla struktury (jako elementy tablicy) dla kilku
+kandydatów i pokaż listę kandydatów, zawierającą nazwisko i obok, w tej samej linii,
+obliczoną łączną liczbę punktów.
+
+Zadanie 6.11.
+Napisz z użyciem klas menu programu zawierające kilka opcji dla programów
+wykonanych w rozdziale 3. Przykładowe opcje: Kalkulator, Wskaźnik BMI, Liczby
+doskonałe. Po wybraniu przez użytkownika danej opcji program ma wykonać działanie
+określone dla danego zadania (np. kalkulator z zadania 3.4). Po naciśnięciu klawisza Esc
+należy zakończyć działanie programu*/
+
+/* chapter 7. s.183*/

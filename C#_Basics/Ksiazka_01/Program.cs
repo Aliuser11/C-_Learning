@@ -996,7 +996,7 @@
 //Console.WriteLine("Średnia: {0}", srednia);
 //Console.ReadKey();
 
-// znajdz max lkiczbe w tablicy
+// znajdz max liczbe w tablicy
 //int[] uczestnicy = { 19, 34, 23, 54, 31 };
 //int max = uczestnicy[0]; 
 //for (int i = 1; i < uczestnicy.Length; i++)
@@ -1308,7 +1308,7 @@ tej tablicy*/
 //Console.ReadKey();
 
 /*Zadanie 4.3.
-Napisz program wyświetlający informacje o wypełnionej przez użytkownika tablicy n-elementowej: NIE UMIEM WYPISAC POZYCJI DLA MAX I MIN WARTOSCI W TABELI
+Napisz program wyświetlający informacje o wypełnionej przez użytkownika tablicy n-elementowej: 
 
  wartość i numer pozycji największego elementu,
  wartość i numer pozycji najmniejszego elementu,
@@ -2384,9 +2384,9 @@ Uzupełnij program z poprzedniego zadania o definicję metody statycznej, która
 powierzchnię największego prostokąta*/
 class Prostokat
 {
-    private int dlugosc, szerokosc; 
+    private int dlugosc, szerokosc; // klasa z prywatnymi danymi
 
-    public Prostokat(int d, int s) 
+    public Prostokat(int d, int s) //<- konstruktor
     {
         dlugosc = d;
         szerokosc = s;
@@ -2403,40 +2403,46 @@ class Prostokat
     public void Prezentuj()
     {
         Console.WriteLine("Szerokosc: {0}, Dlugosc: {1}, Obwod: {2}, Powierzchnia: {3}", dlugosc, szerokosc, Obwod(), Powierzchnia());
-        //Console.WriteLine("Obwod: {0}, Obwod()");
-        //Console.WriteLine("powierzchnia {0}, Powierzchnia()");
     }
-    private int Maxa(Prostokat[] tab)  // metoda statyczna
+    public static int Najwieksze(Prostokat[] tab)  // metoda statyczna
     {
         int max = 0;
+
         for (int i = 0; i < tab.Length; i++)
         {
             if (tab[i].Powierzchnia() > max)
             {
                 max = tab[i].Powierzchnia();
             }
-            return max;
         }
+        Console.WriteLine("Największe, {0}", max);
+        return max;
     }
+}
+
 class Programuj
 {
-    static void Main(string[] args)
+    static void Main(string[] args) // <- tablica
     {
         Prostokat[] tab = new Prostokat[5];
         tab[0] = new Prostokat(2, 5);
-        tab[1] = new Prostokat(12, 5);
+        tab[1] = new Prostokat(9, 5);
         tab[2] = new Prostokat(2, 10);
-        tab[3] = new Prostokat(3, 5);
-        tab[4] = new Prostokat(2, 4);
+        tab[3] = new Prostokat(5, 5);
+        tab[4] = new Prostokat(8, 4);
         for (int i = 0; i < tab.Length; i++)
         {
             tab[i].Prezentuj();
         }
-        Console.WriteLine("Max_Prostokąt {0}", Maxa(tab));
+        int nam = Prostokat.Najwieksze(tab);
+        Console.WriteLine("Największe, {0}", nam);
         Console.ReadKey();
     }
 }
-    /*Zadanie 6.4.
+
+
+
+/*Zadanie 6.4.
 Zdefiniuj klasę, która pozwoli na rejestrację zużycia energii elektrycznej. Klasa
 powinna pozwalać na:
  rejestrację początkowego i bieżącego stanu licznika energii,

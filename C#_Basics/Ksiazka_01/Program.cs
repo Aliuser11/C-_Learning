@@ -2552,7 +2552,7 @@ pozwalające na obliczenie objętości prostopadłościanu, oraz porównanie obj
 prostopadłościanów.*/
 class Prostopadloscian
 {
-    private int dlugosc, szerokosc, wysokosc; // klasa z prywatnymi danymi
+    public int dlugosc, szerokosc, wysokosc; // klasa z prywatnymi danymi
 
     public Prostopadloscian(int d, int s, int w) //<- konstruktor
     {
@@ -2560,20 +2560,23 @@ class Prostopadloscian
         szerokosc = s;
         wysokosc = w;
     }
-    private int Objetosc()
+    public int Objetosc()
     {
         return wysokosc * dlugosc * szerokosc;
     }
 
-    //public static int Porownaj(Prostopadloscian)
-    //{
-    //    int a, b;
-    //    if ( a >  b)
-    //    {
-    //        return a;
-    //    }
-
-    //}
+    public static int Porownaj(Prostopadloscian[] tab)
+    {
+        int bigger = 0;
+        for (int i = 0; i < tab.Length; i++)
+        {
+            if (tab[i].Objetosc() > bigger)
+            {
+                bigger = tab[i].Objetosc();
+            }
+        }
+        return bigger;
+    }
     public void Prezentuj()
     {
         Console.WriteLine("Szerokosc: {0}, Dlugosc: {1}, wysokosc: {2}, Objetosc: {3}", dlugosc, szerokosc, wysokosc, Objetosc());
@@ -2583,17 +2586,19 @@ class Programuj
 {
     static void Main(string[] args) // <- tablica
     {
-        Prostopadloscian a = new(2, 5, 47);
-        Prostopadloscian b = new Prostopadloscian(21, 15, 5);
+        Prostopadloscian[] tab = new Prostopadloscian[2];
+        tab[0] = new Prostopadloscian(21, 15, 5);
+        tab[1] = new(2, 5, 47);
         Console.WriteLine("1: \t\n ");
-        a.Prezentuj();
+        tab[0].Prezentuj();
         Console.Write("\n");
         Console.WriteLine("2: \n \t");
-        b.Prezentuj();
-        //if (a.Objetosc() > b.Objetosc()
-        //{
-        //    return a;
-        //}
+        tab[1].Prezentuj();
+        int big = Prostopadloscian.Porownaj(tab);
+        Console.WriteLine("Największe, {0}", big);
+        Console.Write("\n");
+        Console.WriteLine("Najwiekszy prostopadloscian:{0} \n \t",big);
+
     }
 }
 

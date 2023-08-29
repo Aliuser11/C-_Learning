@@ -2382,65 +2382,145 @@ w tablicy używając (wewnątrz pętli foreach) metody publicznej Prezentuj()*/
 /*Zadanie 6.3.
 Uzupełnij program z poprzedniego zadania o definicję metody statycznej, która podaje
 powierzchnię największego prostokąta*/
-class Prostokat
-{
-    private int dlugosc, szerokosc; // klasa z prywatnymi danymi
+//class Prostokat
+//{
+//    private int dlugosc, szerokosc; // klasa z prywatnymi danymi
 
-    public Prostokat(int d, int s) //<- konstruktor
-    {
-        dlugosc = d;
-        szerokosc = s;
-    }
-    private int Obwod()
-    {
-        return 2 * dlugosc + 2 * szerokosc;
-    }
+//    public Prostokat(int d, int s) //<- konstruktor
+//    {
+//        dlugosc = d;
+//        szerokosc = s;
+//    }
+//    private int Obwod()
+//    {
+//        return 2 * dlugosc + 2 * szerokosc;
+//    }
 
-    private int Powierzchnia()
-    {
-        return dlugosc * szerokosc;
-    }
-    public void Prezentuj()
-    {
-        Console.WriteLine("Szerokosc: {0}, Dlugosc: {1}, Obwod: {2}, Powierzchnia: {3}", dlugosc, szerokosc, Obwod(), Powierzchnia());
-    }
-    public static int Najwieksze(Prostokat[] tab)  // metoda statyczna
-    {
-        int max = 0;
+//    private int Powierzchnia()
+//    {
+//        return dlugosc * szerokosc;
+//    }
+//    public void Prezentuj()
+//    {
+//        Console.WriteLine("Szerokosc: {0}, Dlugosc: {1}, Obwod: {2}, Powierzchnia: {3}", dlugosc, szerokosc, Obwod(), Powierzchnia());
+//    }
+//    public static int Najwieksze(Prostokat[] tab)  // metoda statyczna
+//    {
+//        int max = 0;
 
-        for (int i = 0; i < tab.Length; i++)
-        {
-            if (tab[i].Powierzchnia() > max)
-            {
-                max = tab[i].Powierzchnia();
-            }
-        }
-        Console.WriteLine("Największe, {0}", max);
-        return max;
-    }
-}
+//        for (int i = 0; i < tab.Length; i++)
+//        {
+//            if (tab[i].Powierzchnia() > max)
+//            {
+//                max = tab[i].Powierzchnia();
+//            }
+//        }
+//        Console.WriteLine("Największe, {0}", max);
+//        return max;
+//    }
+//}
 
-class Programuj
-{
-    static void Main(string[] args) // <- tablica
-    {
-        Prostokat[] tab = new Prostokat[5];
-        tab[0] = new Prostokat(2, 5);
-        tab[1] = new Prostokat(9, 5);
-        tab[2] = new Prostokat(2, 10);
-        tab[3] = new Prostokat(5, 5);
-        tab[4] = new Prostokat(8, 4);
-        for (int i = 0; i < tab.Length; i++)
-        {
-            tab[i].Prezentuj();
-        }
-        int nam = Prostokat.Najwieksze(tab);
-        Console.WriteLine("Największe, {0}", nam);
-        Console.ReadKey();
-    }
-}
+//class Programuj
+//{
+//    static void Main(string[] args) // <- tablica
+//    {
+//        Prostokat[] tab = new Prostokat[5];
+//        tab[0] = new Prostokat(2, 5);
+//        tab[1] = new Prostokat(9, 5);
+//        tab[2] = new Prostokat(2, 10);
+//        tab[3] = new Prostokat(5, 5);
+//        tab[4] = new Prostokat(8, 4);
+//        for (int i = 0; i < tab.Length; i++)
+//        {
+//            tab[i].Prezentuj();
+//        }
+//        int nam = Prostokat.Najwieksze(tab);
+//        Console.WriteLine("Największe, {0}", nam);
+//        Console.ReadKey();
+//    }
+//}
+/*Zadanie 6.9. Wykonaj zadania 6.1 oraz 6.2 z użyciem struktury (zamiast klasy)*/
+/*Zadanie 6.1. z wykorzystaniem struct*/
 
+//struct Prostokat
+//{
+//    private int dlugosc, szerokosc; // klasa z prywatnymi danymi
 
+//public Prostokat(int d, int s) //<- konstruktor
+//{
+//dlugosc = d;
+//szerokosc = s;
+//}
+//private int Obwod()
+//{
+//return 2 * dlugosc + 2 * szerokosc;
+//}
+
+//private int Powierzchnia()
+//{
+//return dlugosc * szerokosc;
+//}
+//public void Prezentuj()
+//{
+//Console.WriteLine("Szerokosc: {0}, Dlugosc: {1}, Obwod: {2}, Powierzchnia: {3}", dlugosc, szerokosc, Obwod(), Powierzchnia());
+//}
+//}
+//class Programuj
+//{
+//    static void Main(string[] args)
+//    {
+//        Prostokat p1 = new(2, 5);
+//        Prostokat p2 = new Prostokat(21, 15);
+//        Console.WriteLine("1: \t\n ");
+//        p1.Prezentuj();
+//        Console.Write("\n");
+//        Console.WriteLine("2: \n \t");
+//        p2.Prezentuj();
+//        Console.ReadKey();
+//    }
+//}
+
+//6,2 na strukturze
+//struct Prostokat
+//{
+//    private int dlugosc, szerokosc; // klasa z prywatnymi danymi
+
+//    public Prostokat(int d, int s) //<- konstruktor
+//    {
+//        dlugosc = d;
+//        szerokosc = s;
+//    }
+//    private int Obwod()
+//    {
+//        return 2 * dlugosc + 2 * szerokosc;
+//    }
+
+//    private int Powierzchnia()
+//    {
+//        return dlugosc * szerokosc;
+//    }
+//    public void Prezentuj()
+//    {
+//        Console.WriteLine("Szerokosc: {0}, Dlugosc: {1}, Obwod: {2}, Powierzchnia: {3}", dlugosc, szerokosc, Obwod(), Powierzchnia());
+//    }
+//}
+//class Programuj
+//{
+//    static void Main(string[] args) // <- tablica
+//    {
+//        Prostokat[] tab = new Prostokat[5];
+//        tab[0] = new Prostokat(2, 5);
+//        tab[1] = new Prostokat(12, 5);
+//        tab[2] = new Prostokat(2, 10);
+//        tab[3] = new Prostokat(3, 5);
+//        tab[4] = new Prostokat(2, 4);
+//        for (int i = 0; i < tab.Length; i++)
+//        {
+//            tab[i].Prezentuj();
+//        }
+//        Console.ReadKey();
+//    }
+//}
 
 /*Zadanie 6.4.
 Zdefiniuj klasę, która pozwoli na rejestrację zużycia energii elektrycznej. Klasa
@@ -2469,12 +2549,55 @@ Zadanie 6.8.
 Zdefiniuj klasę Prostopadloscian, która pozwoli na reprezentację danych opisujących
 długość, szerokość i wysokość prostopadłościanu. W klasie zaimplementuj metody
 pozwalające na obliczenie objętości prostopadłościanu, oraz porównanie objętości dwóch
-prostopadłościanów.
+prostopadłościanów.*/
+class Prostopadloscian
+{
+    private int dlugosc, szerokosc, wysokosc; // klasa z prywatnymi danymi
 
-Zadanie 6.9.
-Wykonaj zadania 6.1 oraz 6.2 z użyciem struktury (zamiast klasy).
+    public Prostopadloscian(int d, int s, int w) //<- konstruktor
+    {
+        dlugosc = d;
+        szerokosc = s;
+        wysokosc = w;
+    }
+    private int Objetosc()
+    {
+        return wysokosc * dlugosc * szerokosc;
+    }
 
-Zadanie 6.10.
+    //public static int Porownaj(Prostopadloscian)
+    //{
+    //    int a, b;
+    //    if ( a >  b)
+    //    {
+    //        return a;
+    //    }
+
+    //}
+    public void Prezentuj()
+    {
+        Console.WriteLine("Szerokosc: {0}, Dlugosc: {1}, wysokosc: {2}, Objetosc: {3}", dlugosc, szerokosc, wysokosc, Objetosc());
+    }
+}
+class Programuj
+{
+    static void Main(string[] args) // <- tablica
+    {
+        Prostopadloscian a = new(2, 5, 47);
+        Prostopadloscian b = new Prostopadloscian(21, 15, 5);
+        Console.WriteLine("1: \t\n ");
+        a.Prezentuj();
+        Console.Write("\n");
+        Console.WriteLine("2: \n \t");
+        b.Prezentuj();
+        //if (a.Objetosc() > b.Objetosc()
+        //{
+        //    return a;
+        //}
+    }
+}
+
+/*Zadanie 6.10.
 Napisz program z użyciem struktury KandydatNaStudia, która ma posiadać następujące
 pola: nazwisko, punktyMatematyka, punktyInformatyka, punktyJezykObcy.W trzech ostatnich
 polach mają być zapisane punkty za przedmioty zdawane na maturze (dla uproszczenia
@@ -2486,11 +2609,5 @@ obcego. W metodzie Main() utwórz obiekty dla struktury (jako elementy tablicy) 
 kandydatów i pokaż listę kandydatów, zawierającą nazwisko i obok, w tej samej linii,
 obliczoną łączną liczbę punktów.
 
-Zadanie 6.11.
-Napisz z użyciem klas menu programu zawierające kilka opcji dla programów
-wykonanych w rozdziale 3. Przykładowe opcje: Kalkulator, Wskaźnik BMI, Liczby
-doskonałe. Po wybraniu przez użytkownika danej opcji program ma wykonać działanie
-określone dla danego zadania (np. kalkulator z zadania 3.4). Po naciśnięciu klawisza Esc
-należy zakończyć działanie programu*/
 
 /* chapter 7. s.183*/

@@ -2527,9 +2527,51 @@ Zdefiniuj klasę, która pozwoli na rejestrację zużycia energii elektrycznej. 
 powinna pozwalać na:
  rejestrację początkowego i bieżącego stanu licznika energii,
  uzyskanie danych o początkowym oraz bieżącym stanie licznika,
- obliczanie zużytej energii.
+ obliczanie zużytej energii.*/
+class RejestracjaZuzyciaEnergii
+{
+    private static readonly int PoczatkowyLicznik = 100;
+    public int BiezacyLicznik;
 
-Zadanie 6.5.
+    public RejestracjaZuzyciaEnergii(int bl) 
+    {
+        BiezacyLicznik = bl;
+    }
+    public int PobierzPoczatkowyStanLicznika { get; } = PoczatkowyLicznik;
+
+    public int PobierzBierzacyStanLicznika()
+    {
+        return BiezacyLicznik;
+    }
+
+    public int ObliczZuzycie()
+    {
+        return BiezacyLicznik - PoczatkowyLicznik;
+    }
+
+}
+
+class JakieZuzycie
+{
+    public static void Main(string[] args)
+    {
+        var Rejestracja1 = new RejestracjaZuzyciaEnergii (458);
+        int drukuj1 = Rejestracja1.ObliczZuzycie();
+        int stanPocz = Rejestracja1.PobierzPoczatkowyStanLicznika;
+        Console.WriteLine($"pocztakowe zuzycie energii:");
+        Console.WriteLine(stanPocz);
+        Console.WriteLine($"zuzycie:");
+        Console.WriteLine(Rejestracja1.BiezacyLicznik);
+        Console.WriteLine($"obliczone zuzycie energii:");
+        Console.WriteLine(drukuj1);
+
+    }
+}
+
+
+
+
+/*Zadanie 6.5.
 Napisz program tworzący klasę Punkt do obsługi punktów na płaszczyźnie. Klasa ta ma
 zawierać: konstruktor, którego argumentami będą współrzędne punktu, metodę składową
 Przesun(), realizującą przesunięcie o zadane wielkości oraz metodę składową Wyswietl()
@@ -2550,57 +2592,111 @@ Zdefiniuj klasę Prostopadloscian, która pozwoli na reprezentację danych opisu
 długość, szerokość i wysokość prostopadłościanu. W klasie zaimplementuj metody
 pozwalające na obliczenie objętości prostopadłościanu, oraz porównanie objętości dwóch
 prostopadłościanów.*/
-class Prostopadloscian
-{
-    public int dlugosc, szerokosc, wysokosc; // klasa z prywatnymi danymi
 
-    public Prostopadloscian(int d, int s, int w) //<- konstruktor
-    {
-        dlugosc = d;
-        szerokosc = s;
-        wysokosc = w;
-    }
-    public int Objetosc()
-    {
-        return wysokosc * dlugosc * szerokosc;
-    }
+//class Prostopadloscian
+//{
+//    private readonly int dlugosc, szerokosc, wysokosc; // klasa z prywatnymi danymi
 
-    public static int Porownaj(Prostopadloscian[] tab)
-    {
-        int bigger = 0;
-        for (int i = 0; i < tab.Length; i++)
-        {
-            if (tab[i].Objetosc() > bigger)
-            {
-                bigger = tab[i].Objetosc();
-            }
-        }
-        return bigger;
-    }
-    public void Prezentuj()
-    {
-        Console.WriteLine("Szerokosc: {0}, Dlugosc: {1}, wysokosc: {2}, Objetosc: {3}", dlugosc, szerokosc, wysokosc, Objetosc());
-    }
-}
-class Programuj
-{
-    static void Main(string[] args) // <- tablica
-    {
-        Prostopadloscian[] tab = new Prostopadloscian[2];
-        tab[0] = new Prostopadloscian(21, 15, 5);
-        tab[1] = new(2, 5, 47);
-        Console.WriteLine("1: \t\n ");
-        tab[0].Prezentuj();
-        Console.Write("\n");
-        Console.WriteLine("2: \n \t");
-        tab[1].Prezentuj();
-        int big = Prostopadloscian.Porownaj(tab);
-        Console.WriteLine("Największe, {0}", big);
-        Console.Write("\n");
-        Console.WriteLine("Najwiekszy prostopadloscian:{0} \n \t",big);
+//    public Prostopadloscian(int d, int s, int w) //<- konstruktor
+//    {
+//        dlugosc = d;
+//        szerokosc = s;
+//        wysokosc = w;
+//    }
 
-    }
-}
+//    public int Objetosc()
+//    {
+//        return wysokosc * dlugosc * szerokosc;
+//    }
+
+//    public static int Porownaj(Prostopadloscian p1, Prostopadloscian p2)
+//    {
+//        if (p1.Objetosc() > p2.Objetosc())
+//        {
+//            return p1.Objetosc();
+//        }
+
+//        return p2.Objetosc();
+//    }
+
+//    public void Prezentuj()
+//    {
+//        Console.WriteLine("Szerokosc: {0}, Dlugosc: {1}, wysokosc: {2}, Objetosc: {3}", dlugosc, szerokosc, wysokosc, Objetosc());
+//    }
+//}
+//class Programuj
+//{
+//    static void Main(string[] args) // <- tablica
+//    {
+//        Prostopadloscian[] tab = new Prostopadloscian[2];
+//        tab[0] = new Prostopadloscian(21, 15, 5);
+//        tab[1] = new(2, 5, 47);
+//        Console.WriteLine("1: \t\n ");
+//        tab[0].Prezentuj();
+//        Console.Write("\n");
+//        Console.WriteLine("2: \n \t");
+//        tab[1].Prezentuj();
+//        int big = Prostopadloscian.Porownaj(tab[0], tab[1]);
+//        Console.WriteLine("Największe, {0}", big);
+//        Console.Write("\n");
+//        Console.WriteLine("Najwiekszy prostopadloscian:{0} \n \t",big);
+
+//    }
+//}
+
+/*SAMOCHOD*/
+
+//public class TworzenieAuta
+//{
+//    public TworzenieAuta()
+//    {
+//        var toyotaYaris = new Samochod(5, 270, 5); //typ ustalany w czasie kompilacji
+//        toyotaYaris.Jazda(30);
+
+//        object audiA4 = new Samochod(4, 290, 5); //typ ustalany w czasie kompilacji, mozna przypisac cokolwiek
+//        dynamic fordEscort = new Samochod(4, 200, 5); //typ ustalany w czasie dzialania
+
+//        bool czyJedzie = toyotaYaris.Jedzie;
+//        int jakaJestPredkosc = toyotaYaris.AktualnaPredkosc;
+//    }
+//}
+
+//public class Samochod
+//{
+//    private readonly int wagaPojazdu = 1200;
+//    private readonly int sredniaWagaPasazera = 80;
+
+//    public Samochod(int iloscDrzwi, int maxPredkosc, int iloscPasazerow)
+//    {
+//        MasaPojazdu = wagaPojazdu + iloscPasazerow * sredniaWagaPasazera;
+//        MaxPredkosc = maxPredkosc;
+//    }
+
+//    public bool Jedzie { get; set; } = false;
+//    public int AktualnaPredkosc { get; set; } = 0;
+//    public int MasaPojazdu { get; set; }
+//    public int MaxPredkosc { get; set; }
+
+//    public int PobierzPredkosc()
+//    {
+//        return AktualnaPredkosc;
+//    }
+
+//    public void Jazda(int predkoscJazdy)
+//    {
+//        if (predkoscJazdy <= MaxPredkosc)
+//        {
+//            Jedzie = true;
+//            AktualnaPredkosc = predkoscJazdy;
+//        }
+//    }
+
+//    public void Zatrzymanie()
+//    {
+//        Jedzie = false;
+//        AktualnaPredkosc = 0;
+//    }
+//}
 
 /*Zadanie 6.10.
 Napisz program z użyciem struktury KandydatNaStudia, która ma posiadać następujące

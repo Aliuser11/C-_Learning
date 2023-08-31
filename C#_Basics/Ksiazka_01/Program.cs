@@ -2528,45 +2528,44 @@ powinna pozwalać na:
  rejestrację początkowego i bieżącego stanu licznika energii,
  uzyskanie danych o początkowym oraz bieżącym stanie licznika,
  obliczanie zużytej energii.*/
-class RejestracjaZuzyciaEnergii
-{
-    private static readonly int PoczatkowyLicznik = 100;
-    public int BiezacyLicznik;
+//class RejestracjaZuzyciaEnergii
+//{
+//    private static readonly int PoczatkowyLicznik = 100;
+//    public int BiezacyLicznik;
 
-    public RejestracjaZuzyciaEnergii(int bl) 
-    {
-        BiezacyLicznik = bl;
-    }
-    public int PobierzPoczatkowyStanLicznika { get; } = PoczatkowyLicznik;
+//    public RejestracjaZuzyciaEnergii(int bl) 
+//    {
+//        BiezacyLicznik = bl;
+//    }
+//    public int PobierzPoczatkowyStanLicznika { get; } = PoczatkowyLicznik;
 
-    public int PobierzBierzacyStanLicznika()
-    {
-        return BiezacyLicznik;
-    }
+//    public int PobierzBierzacyStanLicznika()
+//    {
+//        return BiezacyLicznik;
+//    }
 
-    public int ObliczZuzycie()
-    {
-        return BiezacyLicznik - PoczatkowyLicznik;
-    }
+//    public int ObliczZuzycie()
+//    {
+//        return BiezacyLicznik - PoczatkowyLicznik;
+//    }
 
-}
+//}
 
-class JakieZuzycie
-{
-    public static void Main(string[] args)
-    {
-        var Rejestracja1 = new RejestracjaZuzyciaEnergii (458);
-        int drukuj1 = Rejestracja1.ObliczZuzycie();
-        int stanPocz = Rejestracja1.PobierzPoczatkowyStanLicznika;
-        Console.WriteLine($"pocztakowe zuzycie energii:");
-        Console.WriteLine(stanPocz);
-        Console.WriteLine($"zuzycie:");
-        Console.WriteLine(Rejestracja1.BiezacyLicznik);
-        Console.WriteLine($"obliczone zuzycie energii:");
-        Console.WriteLine(drukuj1);
+//class JakieZuzycie
+//{
+//    public static void Main(string[] args)
+//    {
+//        var Rejestracja1 = new RejestracjaZuzyciaEnergii (458);
+//        int drukuj1 = Rejestracja1.ObliczZuzycie();
+//        int stanPocz = Rejestracja1.PobierzPoczatkowyStanLicznika;
+//        Console.WriteLine("pocztakowe zuzycie energii:{0}", stanPocz);
+//        Console.WriteLine($"zuzycie:");
+//        Console.WriteLine(Rejestracja1.BiezacyLicznik);
+//        Console.WriteLine($"obliczone zuzycie energii:");
+//        Console.WriteLine(drukuj1);
 
-    }
-}
+//    }
+//}
 
 
 
@@ -2586,6 +2585,8 @@ metody, czy leżą one na jednej prostej.
 Zadanie 6.7.
 Zdefiniuj klasę Odcinek składającą się z dwóch punktów klasy Punkt. W klasie Odcinek
 zdefiniuj metodę, która obliczy długość odcinka.
+
+
 
 Zadanie 6.8.
 Zdefiniuj klasę Prostopadloscian, która pozwoli na reprezentację danych opisujących
@@ -2699,16 +2700,46 @@ prostopadłościanów.*/
 //}
 
 /*Zadanie 6.10.
-Napisz program z użyciem struktury KandydatNaStudia, która ma posiadać następujące
-pola: nazwisko, punktyMatematyka, punktyInformatyka, punktyJezykObcy.W trzech ostatnich
-polach mają być zapisane punkty za przedmioty zdawane na maturze (dla uproszczenia
-uwzględniamy tylko jeden poziom zdawanej matury, np. podstawowy). Jeden punkt to jeden
-procent (tj. student, który ma 55% z matematyki ma mieć 55 punktów z tego przedmiotu).
-Struktura ma posiadać metodę obliczającą łączną liczbę punktów kandydata według
-przelicznika: 0,6 punktów z matematyki + 0,5 punktów z informatyki + 0,2 punktów z języka
-obcego. W metodzie Main() utwórz obiekty dla struktury (jako elementy tablicy) dla kilku
-kandydatów i pokaż listę kandydatów, zawierającą nazwisko i obok, w tej samej linii,
-obliczoną łączną liczbę punktów.
+Napisz program z użyciem struktury KandydatNaStudia, która ma posiadać następujące pola: nazwisko, punktyMatematyka, punktyInformatyka, punktyJezykObcy. W trzech ostatnich
+polach mają być zapisane punkty za przedmioty zdawane na maturze (dla uproszczenia uwzględniamy tylko jeden poziom zdawanej matury, np. podstawowy). Jeden punkt to jeden
+procent (tj. student, który ma 55% z matematyki ma mieć 55 punktów z tego przedmiotu). Struktura ma posiadać metodę obliczającą łączną liczbę punktów kandydata według
+przelicznika: 0,6 punktów z matematyki + 0,5 punktów z informatyki + 0,2 punktów z języka obcego.
+W metodzie Main() utwórz obiekty dla struktury (jako elementy tablicy) dla kilku kandydatów i pokaż listę kandydatów, zawierającą nazwisko i obok, w tej samej linii, obliczoną łączną liczbę punktów.*/
 
+struct KandydatNaStudia
+{
+    string nazwisko;
+    int punktyMatematyka, punktyInformatyka, punktyJezykObcy;
 
+    public KandydatNaStudia(int m, int i, int j, string n)
+    {
+        nazwisko = n;
+        punktyMatematyka = m;
+        punktyInformatyka = i;
+        punktyJezykObcy = j;
+    }
+
+    public double LacznaLiczbaPunktow()
+    {
+        return 0.6 * punktyMatematyka + 0.5 * punktyInformatyka + 0.2 * punktyJezykObcy;
+    }
+    public void ListaKandydatów()
+    {
+        Console.WriteLine("Nazwisko: {0}, wynik: {1}", nazwisko, LacznaLiczbaPunktow());
+    }
+}
+class PodliczamyMature
+{
+    public static void Main()
+    {
+        KandydatNaStudia[] tab = new KandydatNaStudia[3];
+        tab[0] = new KandydatNaStudia(60, 80, 65, "Kowalski");
+        tab[1] = new KandydatNaStudia(50, 90, 85, "Nowak");
+        tab[2] = new KandydatNaStudia(68, 77, 85, "Kowal");
+        for (int i = 0; i < tab.Length; i++)
+        {
+            tab[i].ListaKandydatów();
+        }
+    }
+}
 /* chapter 7. s.183*/

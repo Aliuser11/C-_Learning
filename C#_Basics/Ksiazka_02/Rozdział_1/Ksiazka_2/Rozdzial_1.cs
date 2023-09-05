@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Diagnostics.Contracts;
+using System.Text;
 
 //class Mnozenie
 //{
@@ -351,7 +353,7 @@ Znak   Znaczenie     Wartość
 //            new int[] {0,1,2},
 //            new int[] {3,4,5},
 //            new int[] {6,7,8,9}
-            
+
 //        };
 //        int[,] rectangularMatrix =
 //        {
@@ -382,3 +384,361 @@ Znak   Znaczenie     Wartość
 //        var nex = new[] { 1, 10000000000 }; // wszystkie elementy można przekonwertować na typ long
 //    }
 //}
+
+//class ZmienneIparametry //metoda rekurencyjna, tzn. wywołująca samą siebie.
+//{
+//    static int Factorial(int x)     // stos
+//    {
+//        if (x == 0) return 1;
+//        return x * Factorial(x - 1);
+//    }
+//    public string StringBuilder(string obiekt)
+//    {
+//        return obiekt;
+//    }
+//}
+//class Wynik
+//{ 
+//    public static void Main()
+//    {
+//        StringBuilder ref1 = new StringBuilder("obiekt1");
+//        Console.WriteLine(ref1);
+//        // obiekt typu StringBuilder wskazywany przez zmienną ref1 można już przekazać
+//        // do systemu usuwania nieużytków
+//        StringBuilder ref2 = new StringBuilder("obiekt2");
+//        StringBuilder ref3 = ref2;
+//        // obiekt StringBuilder wskazywany przez zmienną ref2 jeszcze nie jest gotowy
+//        // do przekazania systemowi usuwania nieużytków
+//        Console.WriteLine(ref3); // obiekt2
+//    }
+//}
+/* wartosci domyslne
+ Typ          Wartość domyślna
+typy referencyjne null
+typy numeryczne i wyliczeniowe 0
+Typ char         '\0'
+Typ bool        false  */
+//class Statement
+//{
+//    static void Foos(StringBuilder fooSB)
+//    {
+//        fooSB.Append("test");
+//        fooSB = null;
+//    }
+
+//    public int Foo(int p)
+//    {
+//        p = p + 1; // zwiększa p o 1
+//        Console.WriteLine(p); // drukuje p na ekranie
+//        return p;
+//    }
+//}
+//class Boo
+//{
+//    static void Main()
+//    {
+//        int x = 8;
+//        Foo f1 = new Statement.Foo(x);
+//        Foo(x); // tworzy kopię x
+
+//        Console.WriteLine(x); // x nadal ma wartość 8
+//        StringBuilder sb = new StringBuilder();
+//        Foos(sb);
+//        Console.WriteLine(sb.ToString()); // test
+//    }
+//}
+
+//Modyfikator ref
+/* int x = 8;
+Foo (ref x); // niech Foo bezpośrednio zadziała na x
+Console.WriteLine (x); // x ma teraz wartość 9
+static void Foo (ref int p)
+{
+p = p + 1; // zwiększa p o 1
+Console.WriteLine (p); // drukuje p na ekranie
+}*/
+
+//namespace Podrecznik
+//{
+//    class Modyfikator
+//    {
+//        static string Swap(ref string a, ref string b)
+//        {
+//            string temp = a;
+//            a = b;
+//            b = temp;
+//        }
+//    }
+//    class Program
+//    {
+//        public static void Main()
+//        {
+//            string x = "Penn";
+//            string y = "Teller";
+//            Swamp s1 = new Modyfikator.Swamp(ref x, ref y);
+//            Console.WriteLine(x); // Teller
+//            Console.WriteLine(y); // Penn
+
+//        }
+
+//    }
+//}
+
+/*Modyfikator out do zwrócenia więcej niż jednej wartości przez metodę.
+
+string a, b;
+Split ("Stevie Ray Vaughn", out a, out b);
+//albo  w jednej linijce:
+Split ("Stevie Ray Vaughan", out string a, out string b);
+//i potem juz:
+Console.WriteLine (a); // Stevie Ray
+Console.WriteLine (b); // Vaughn
+
+void Split (string name, out string firstNames, out string lastName)
+{
+    int i = name.LastIndexOf (' ');
+    firstNames = name.Substring (0, i);
+    lastName = name.Substring (i + 1);
+}
+ out oraz  ref, są przekazywane przez referencję.*/
+
+//Implikacje przekazywania przez referencj 
+
+//class Test
+//{
+//    static int x;
+//    static string X = "Stara wartość";
+//    static ref string GetX() => ref X; // Ta metoda zwraca ref
+
+//    static void Main() 
+
+//    {
+//        Instrukcje.ShowCard(13);
+//        TellMeWhatICanDo(12);
+//        Console.WriteLine(" : bo taki wiek");
+//        ref string xRef = ref GetX(); // Przypisanie wyniku do lokalnej zmiennej ref
+//        xRef = "Nowa wartość";
+//        Console.Write("xref : ");
+//        Console.WriteLine(X);
+//        //ref int numRef = ref Numbers[2];
+//        Bar(d: 3);
+//        Foo(out x);
+//        Fool(x: 1, y: 2); // 1, 2
+//        int total = Sum(1, 2, 3, 4);
+//        Console.Write($"suma:");
+//        Console.WriteLine( total); // 10
+//    }
+//    static void TellMeWhatICanDo(int age)
+
+//    {
+//        Console.WriteLine("zabawa kartami");
+//        if (age >= 35)
+//            Console.WriteLine("Możesz być prezydentem!");
+//        else if (age >= 21)
+//            Console.WriteLine("Możesz pić alkohol w USA!");
+//        else if (age >= 18)
+//            Console.WriteLine("Możesz brać udział w wyborach!");
+//        else
+//            Console.WriteLine("Możesz jeszcze poczekać!");
+//    }
+
+//    static void Foo(out int y)
+//    {
+//        Console.WriteLine("{0} to x",  x); // x wynosi 0
+//        y = 1; // modyfikacja y
+//        Console.WriteLine("{0} to x", x); // x wynosi 1
+
+//    }
+//    public void Numbers()
+//    {
+//        int [] numbers = { 0, 1, 2, 3, 4 };
+
+//    }
+//    static void Bar(int a = 0, int b = 0, int c = 0, int d = 0) { Console.Write(" bar abcd =  "); Console.WriteLine(a + ": " + b + ": " + c + ": " + d); }
+//    static void Fool(int x, int y) { Console.Write(x + ", " + y); Console.WriteLine(" fool x + y"); }
+//    static int Sum(params int[] ints)
+//    {
+//        int sum = 0;
+//        for (int i = 0; i < ints.Length; i++)
+//            sum += ints[i]; // zwiększa sum o ints[i]
+//        return sum;
+//    }
+//}
+
+// if else switch continue
+//class Instrukcje
+//    /*• break (przeskok na koniec instrukcji switch);
+//• goto case x (przeskok do innej klauzuli case);
+//• goto default (przeskok do klauzuli default);
+//• inna instrukcja skoku — return, throw, continue lub goto etykieta.*/
+//{
+//    public static void ShowCard(int cardNumber)
+//    {
+//        switch (cardNumber)
+//        {
+//            case 13:
+//                Console.WriteLine("Król");
+//                break;
+//            case 12:
+//                Console.WriteLine("Dama");
+//                break;
+//            case 11:
+//                Console.WriteLine("Walet");
+//                break;
+//            case -1: 
+//                goto case 12; 
+//            default: // wykonania dla  pozostałych numerów 
+//                Console.WriteLine(cardNumber);
+//                break;
+//        }
+//        //albo cos takiego
+//        switch (cardNumber)
+//        {
+//            case 13:
+//            case 12:
+//            case 11:
+//            Console.WriteLine("Figura");
+//                break;
+//            default:
+//            Console.WriteLine("Inna karta");
+//                break;
+//        }
+
+//    }
+//}
+
+//class SwichType
+
+//{
+//    static void Main()
+//    {
+//        Console.WriteLine("typy\n");
+//        TellMeTheType(12);
+//        TellMeTheType("hello");
+//        TellMeTheType(true);
+//    }
+
+
+//    public static void TellMeTheType(object x) // object zezwala na każdy typ
+//    {
+//        switch (x)
+//        {
+//            case int i:
+//                Console.WriteLine("To jest liczba całkowita!");
+//                Console.WriteLine($"Kwadrat {i} wynosi {i * i}");
+//                break;
+//            case string s:
+//                Console.WriteLine("To jest łańcuch.");
+//                Console.WriteLine($"Długość {s} wynosi {s.Length}");
+//                break;
+//            default:
+//                Console.WriteLine("Nie wiem, czym jest x.");
+//                break;
+//        }
+//        //albo
+//        switch (x)
+//        {
+//            case bool b when b == true: // wykonuje kod tylko wtedy, gdy b jest prawdą
+//                Console.WriteLine("Prawda!");
+//                break;
+//            case bool _:
+//                Console.WriteLine("Fałsz!"); // docelowa wartosc bool to falsz
+//                break;
+//        }
+//        switch (x)
+//        {
+//            case float f when f > 1000:
+//            case double d when d > 1000:
+//            case decimal m when m > 1000:
+//                Console.WriteLine("W tym miejscu możemy odwoływać się do x, ale nie do f, d ani m");
+//                break;
+//        }
+//        //Wyrażenia switch są zwięźlejsze odinstrukcji switch
+
+//    }
+//}
+
+// inrstrukcje iteracyjne
+class Iteracje
+{
+    static void Main()
+    {
+        int ii = 0;
+        do
+        {
+            Console.WriteLine(ii);
+            ii++;
+        }
+        while (ii < 3);
+        //Pętla do-while różni się od while tylko tym, że wyrażenie testuje po wykonaniu bloku instrukcji
+        Console.WriteLine("inny przyklad");
+        int j = 0;
+        while (j < 3)
+        {
+            Console.Write(j);
+            j++;
+        }
+        Console.WriteLine("przyklad kolejny: ");
+        for (int wu = 0; wu < 3; wu++)
+        {
+            Console.WriteLine(wu);
+        }
+        Console.WriteLine("fibonacci");
+        for (int i = 0, prevFib = 1, curFib = 1; i < 10; i++)
+        {
+            Console.WriteLine(prevFib);
+            int newFib = prevFib + curFib;
+            prevFib = curFib; curFib = newFib;
+        }
+        //foreach
+        Console.WriteLine("napisze p i w o : ");
+        foreach (char c in "piwo\n") // c jest zmienną iteracyjną
+        {
+            Console.WriteLine(c);
+        }
+        //break
+        Console.WriteLine("break:\n");
+        int ygrek = 0;
+        while(true)
+        {
+            Console.WriteLine(ygrek);
+            if (ygrek++ > 5)
+
+                break;
+        }
+        //continue
+        Console.WriteLine("continue\n");
+        for (int iv = 0; iv < 10; iv++)
+        {
+            if ((iv % 2) == 0) 
+                continue; 
+            Console.Write(iv + " ");
+        }
+        // goto
+        Console.WriteLine("goto\n");
+        int iq = 1;
+        startLoop:
+        if (iq <= 5)
+        {
+            Console.Write(iq + " ");
+            iq++;
+            goto startLoop;
+        }
+        //return
+        decimal AsPercentage(decimal d)
+        {
+            decimal p = d * 100m;
+            return p; // zwraca wartość do metody wywołującej
+        }
+        Console.WriteLine(AsPercentage(3));
+
+        Console.WriteLine("Instrukcja throw");
+        //Instrukcja throw
+        /*if (w == null)
+        throw new ArgumentNullException*/
+}
+
+}
+
+
+//Przestrzenie nazw s99

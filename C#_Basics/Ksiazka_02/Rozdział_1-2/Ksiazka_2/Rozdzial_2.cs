@@ -1,4 +1,5 @@
-﻿using System;
+﻿using N1;
+using System;
 using System.Diagnostics.Contracts;
 using System.Text;
 
@@ -659,86 +660,140 @@ void Split (string name, out string firstNames, out string lastName)
 //}
 
 // inrstrukcje iteracyjne
-class Iteracje
+//class Iteracje
+//{
+//    static void Main()
+//    {
+//        int ii = 0;
+//        do
+//        {
+//            Console.WriteLine(ii);
+//            ii++;
+//        }
+//        while (ii < 3);
+//        //Pętla do-while różni się od while tylko tym, że wyrażenie testuje po wykonaniu bloku instrukcji
+//        Console.WriteLine("inny przyklad");
+//        int j = 0;
+//        while (j < 3)
+//        {
+//            Console.Write(j);
+//            j++;
+//        }
+//        Console.WriteLine("przyklad kolejny: ");
+//        for (int wu = 0; wu < 3; wu++)
+//        {
+//            Console.WriteLine(wu);
+//        }
+//        Console.WriteLine("fibonacci");
+//        for (int i = 0, prevFib = 1, curFib = 1; i < 10; i++)
+//        {
+//            Console.WriteLine(prevFib);
+//            int newFib = prevFib + curFib;
+//            prevFib = curFib; curFib = newFib;
+//        }
+//        //foreach
+//        Console.WriteLine("napisze p i w o : ");
+//        foreach (char c in "piwo\n") // c jest zmienną iteracyjną
+//        {
+//            Console.WriteLine(c);
+//        }
+//        //break
+//        Console.WriteLine("break:\n");
+//        int ygrek = 0;
+//        while(true)
+//        {
+//            Console.WriteLine(ygrek);
+//            if (ygrek++ > 5)
+
+//                break;
+//        }
+//        //continue
+//        Console.WriteLine("continue\n");
+//        for (int iv = 0; iv < 10; iv++)
+//        {
+//            if ((iv % 2) == 0) 
+//                continue; 
+//            Console.Write(iv + " ");
+//        }
+//        // goto
+//        Console.WriteLine("goto\n");
+//        int iq = 1;
+//        startLoop:
+//        if (iq <= 5)
+//        {
+//            Console.Write(iq + " ");
+//            iq++;
+//            goto startLoop;
+//        }
+//        //return
+//        decimal AsPercentage(decimal d)
+//        {
+//            decimal p = d * 100m;
+//            return p; // zwraca wartość do metody wywołującej
+//        }
+//        Console.WriteLine(AsPercentage(3));
+
+//        Console.WriteLine("Instrukcja throw");
+//        //Instrukcja throw
+//        /*if (w == null)
+//        throw new ArgumentNullException*/
+//}
+
+//}
+
+
+//Przestrzenie nazw 
+
+namespace Outer
 {
-    static void Main()
+    namespace Middle
     {
-        int ii = 0;
-        do
+        namespace Inner
         {
-            Console.WriteLine(ii);
-            ii++;
+            class Klasa1 { }
+            class Klasa2 { }
         }
-        while (ii < 3);
-        //Pętla do-while różni się od while tylko tym, że wyrażenie testuje po wykonaniu bloku instrukcji
-        Console.WriteLine("inny przyklad");
-        int j = 0;
-        while (j < 3)
-        {
-            Console.Write(j);
-            j++;
-        }
-        Console.WriteLine("przyklad kolejny: ");
-        for (int wu = 0; wu < 3; wu++)
-        {
-            Console.WriteLine(wu);
-        }
-        Console.WriteLine("fibonacci");
-        for (int i = 0, prevFib = 1, curFib = 1; i < 10; i++)
-        {
-            Console.WriteLine(prevFib);
-            int newFib = prevFib + curFib;
-            prevFib = curFib; curFib = newFib;
-        }
-        //foreach
-        Console.WriteLine("napisze p i w o : ");
-        foreach (char c in "piwo\n") // c jest zmienną iteracyjną
-        {
-            Console.WriteLine(c);
-        }
-        //break
-        Console.WriteLine("break:\n");
-        int ygrek = 0;
-        while(true)
-        {
-            Console.WriteLine(ygrek);
-            if (ygrek++ > 5)
+    }
+}
+//to samo co cwyżej, krocej napisane
+//namespace Outer.Middle.Inner
+//{
+//    class Klasa1 { }
+//    class Klasa2 { }
+//}
 
-                break;
-        }
-        //continue
-        Console.WriteLine("continue\n");
-        for (int iv = 0; iv < 10; iv++)
+//gdy te same nazwy występują używamy identyfikatora by je rozróznić w wybrac odpowiednie
+namespace Outer
+{
+    class Foo { }
+    namespace Inner
+    {
+        class Foo { }
+        class Test
         {
-            if ((iv % 2) == 0) 
-                continue; 
-            Console.Write(iv + " ");
+            Foo f1; // = Outer.Inner.Foo
+            Outer.Foo f2; // = Outer.Foo
         }
-        // goto
-        Console.WriteLine("goto\n");
-        int iq = 1;
-        startLoop:
-        if (iq <= 5)
-        {
-            Console.Write(iq + " ");
-            iq++;
-            goto startLoop;
-        }
-        //return
-        decimal AsPercentage(decimal d)
-        {
-            decimal p = d * 100m;
-            return p; // zwraca wartość do metody wywołującej
-        }
-        Console.WriteLine(AsPercentage(3));
-
-        Console.WriteLine("Instrukcja throw");
-        //Instrukcja throw
-        /*if (w == null)
-        throw new ArgumentNullException*/
+    }
 }
 
+namespace N1
+{
+    class Class1 { }
+}
+namespace N2
+{
+    using N1;
+    class Class2 : Class1 { } // Class1 jest tylko w N1 dostępne, jesli nie użyjemy 'using' nie dobierzemy sie do niej
+}
+namespace N2
+{
+    class Class3 : Class1 { } // błąd kompilacji
 }
 
-
-//Przestrzenie nazw s99
+//Do kwalifikacji przestrzeni nazw służą znaki ::.
+//extern alias W1;
+//extern alias W2;
+//class Test
+//W1::Widgets.Widget w1 = new W1::Widgets.Widget();
+//W2::Widgets.Widget w2 = new W2::Widgets.Widget();

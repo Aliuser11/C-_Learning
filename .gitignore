@@ -261,3 +261,4 @@ FakesAssemblies/
 
 # Visual Studio 6 workspace options file
 *.opt
+/C#_Basics/Ksiazka_03

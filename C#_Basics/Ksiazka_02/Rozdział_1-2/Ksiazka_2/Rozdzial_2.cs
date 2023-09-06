@@ -1,34 +1,16 @@
-﻿using N1;
-using System;
-using System.Diagnostics.Contracts;
-using System.Text;
-
-//class Mnozenie
-//{
-//    public int FeetToInches(int feet)
-//    {
-//        int inches = feet * 12;
-//        return inches;
-//    }
-//    public int Publikuj(int a)
-//    {
-//        return FeetToInches(a);
-//    }
-
-//}
-
-//class Glowna
-//{
-//    private static void MM(string[] args)
-//    {
-//        int x = 12 * 30; // instrukcja 1
-//        Console.WriteLine(x); // instrukcja 2
-//    }
-//}
+﻿using System;
+class Progamujemy
+{
+    public void Main(string[] args)
+        {
+        int x = 12 * 30; // instrukcja 1
+        Console.WriteLine(x); // instrukcja 2
+    }
+}   
 
 //internal class Program
 //{
-//    private static void Aain(string[] args)
+//    private static void Main(string[] args)
 //    {
 //        int FeetToInches(int feet)
 //        {
@@ -217,17 +199,17 @@ UL ulong ulong i = 1UL;*/
 //        //return !windy && (rainy || sunny); /stosują skróconą metodę obliczania wartości
 //        return !windy & (rainy | sunny);  // NIE stosują skróconą metodę obliczania wartości
 //    }
-//Operator warunkowy (trójargumentowy)
-/*postać q ? a : b. Jeśli warunek q jest spełniony, następuje wykonanie wyrażenia a,
- w przeciwnym przypadku wykonywane jest wyrażenie b.*/
+//    //Operator warunkowy(trójargumentowy)
+///*postać q ? a : b. Jeśli warunek q jest spełniony, następuje wykonanie wyrażenia a,
+// w przeciwnym przypadku wykonywane jest wyrażenie b.*/
 //    public int Max(int a, int b)
 //    {
-//        return (a > b) ? a : b; 
+//        return (a > b) ? a : b;
 //    }
 //}
 //class SprawdzPogode
 //{
-//    public static void Main(string[] args)
+//    public static void JakiDzien(string[] args)
 //    {
 //        Pogoda pog1 = new Pogoda();
 //        Console.WriteLine(pog1.Max(10, 6));
@@ -744,17 +726,17 @@ void Split (string name, out string firstNames, out string lastName)
 
 //Przestrzenie nazw 
 
-namespace Outer
-{
-    namespace Middle
-    {
-        namespace Inner
-        {
-            class Klasa1 { }
-            class Klasa2 { }
-        }
-    }
-}
+//namespace Outer
+//{
+//    namespace Middle
+//    {
+//        namespace Inner
+//        {
+//            class Klasa1 { }
+//            class Klasa2 { }
+//        }
+//    }
+//}
 //to samo co cwyżej, krocej napisane
 //namespace Outer.Middle.Inner
 //{
@@ -762,34 +744,34 @@ namespace Outer
 //    class Klasa2 { }
 //}
 
-//gdy te same nazwy występują używamy identyfikatora by je rozróznić w wybrac odpowiednie
-namespace Outer
-{
-    class Foo { }
-    namespace Inner
-    {
-        class Foo { }
-        class Test
-        {
-            Foo f1; // = Outer.Inner.Foo
-            Outer.Foo f2; // = Outer.Foo
-        }
-    }
-}
+////gdy te same nazwy występują używamy identyfikatora by je rozróznić w wybrac odpowiednie
+//namespace Outer
+//{
+//    class Foo { }
+//    namespace Inner
+//    {
+//        class Foo { }
+//        class Test
+//        {
+//            Foo f1; // = Outer.Inner.Foo
+//            Outer.Foo f2; // = Outer.Foo
+//        }
+//    }
+//}
 
-namespace N1
-{
-    class Class1 { }
-}
-namespace N2
-{
-    using N1;
-    class Class2 : Class1 { } // Class1 jest tylko w N1 dostępne, jesli nie użyjemy 'using' nie dobierzemy sie do niej
-}
-namespace N2
-{
-    class Class3 : Class1 { } // błąd kompilacji
-}
+//namespace N1
+//{
+//    class Class1 { }
+//}
+//namespace N2
+//{
+//    using N1;
+//    class Class2 : Class1 { } // Class1 jest tylko w N1 dostępne, jesli nie użyjemy 'using' nie dobierzemy sie do niej
+//}
+//namespace N2
+//{
+//    class Class3 : Class1 { } // błąd kompilacji
+//}
 
 //Do kwalifikacji przestrzeni nazw służą znaki ::.
 //extern alias W1;

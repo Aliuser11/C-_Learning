@@ -442,3 +442,4 @@ class TypGeneryczny
 
 }
 //Deklarowanie parametrów typów s156
+

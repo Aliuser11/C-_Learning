@@ -7,57 +7,126 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 
 //Zaawansowane elementy języka C#
-//namespace Rozdzial_4
-//{
-//    internal class Program
-//    {
-//        //delegaty
-//        delegate int Transformer(int x); //zgodny z metodami o zwrocie int i jednym przyjmowanym argumencie
-//        int Square(int x) => x * x; // ta metoda może mieć przypisanie zmiennej typu dlegacyjnego
-//        int[] values = { 1, 2, 3 };
-//        Transform(values, Square); // podłączenie metody Square
-//        foreach (int i in values)        
-//        Console.Write(i + " "); // 1 4 9
-
-//        int Square(int x) => x * x;
-//        int Cube(int x) => x * x * x;
-//        delegate int Transformer(int x);
-//    }
-
-//    static void Main(string[] args)
-//    {
-//        Transformer t = new Transformer(Square); ; // egzemplarz delegatu
-//        int result = t(3);
-//        Console.WriteLine(result);
-//    }
-//    void Transform(int[] values, Transformer t)
-//    {
-//        for (int i = 0; i < values.Length; i++)
-//            values[i] = t(values[i]);
-//    }
-
-//}
-
-/*Zdarzenia*/ //s174
-public delegate void PriceChangedHandler(decimal oldPrice,
-decimal newPrice);
-public class Stock
-{
-    string symbol;
-    decimal price;
-    public Stock(string symbol) { this.symbol = symbol; }
-    public event PriceChangedHandler PriceChanged;
-    public decimal Price
+namespace Zdarzenie
+    { 
+    internal class Program
     {
-        get { return price; }
-        set
+        private static void NewMain(string[] args)
         {
-            if (price == value) return; // koniec pracy, jeśli nic się nie zmieniło
-            decimal oldPrice = price;
-            price = value;
-            if (PriceChanged != null) // jeśli lista wywołań nie jest pusta,
-            PriceChanged(oldPrice, price); // następuje uruchomienie zdarzenia
+            Stock stock = new Stock("THPW");
+            stock.Price = 27.10M;
+            // rejestracja w zdarzeniu PriceChanged
+            //stock.PriceChanged += stock_PriceChanged;
+            stock.Price = 31.59M;
+
+
+
+            void stock_PriceChanged(object sender, PriceChangedEventArgs e)
+            {
+                if ((e.NewPrice - e.LastPrice) / e.LastPrice > 0.1M)
+                    Console.WriteLine("Uwaga: wzrost cen akcji o 10%!");
+            }
+        }
+    }
+
+    public class PriceChangedEventArgs : EventArgs
+        {
+            public readonly decimal LastPrice;
+            public readonly decimal NewPrice;
+            public PriceChangedEventArgs(decimal lastPrice, decimal newPrice)
+            {
+                LastPrice = lastPrice; NewPrice = newPrice;
+            }
+        }
+    public class Stock
+    {
+        string symbol;
+        decimal price;
+        public Stock(string symbol) { this.symbol = symbol; }
+        public event EventHandler PriceChanged;
+        protected virtual void OnPriceChanged(EventArgs e)
+        {
+            PriceChanged?.Invoke(this, e);
+        }
+        public decimal Price
+        {
+            get { return price; }
+            set
+            {
+                if (price == value) return;
+                price = value;
+                OnPriceChanged(EventArgs.Empty);
+            }
         }
     }
 }
-//177
+namespace lambda
+{
+
+    /*Wyrażenia lambda*/
+    class Wykonaj
+
+    {
+        static Func<int> Natural()
+        {
+            int seed = 0;
+            Console.WriteLine(seed); 
+            return () => seed++;
+
+        }
+
+        static void NewMain()
+        {
+            //Func<int, int> sqr = x => { return x * x; };
+            //Transformer sqr = x => { return x * x; };
+            //Console.WriteLine(sqr(3));
+            //delegate int Transformer(int i);
+            int factor = 2;
+            Func<int, int> multiplier = n => n * factor;
+            Console.WriteLine(multiplier(3));
+
+            Func<int, int> multiplier2 = n => n * factor;
+            factor = 10;
+            Console.WriteLine(multiplier2(3)); // 30
+
+
+            Func<int> natural = Natural();
+            Console.WriteLine(natural()); // 0
+            Console.WriteLine(natural()); // 1
+
+
+        }
+    }
+}
+
+namespace Try
+{
+    class Test
+    {
+        static void Main(string[] args)
+        {
+            try
+            {
+                byte b = byte.Parse(args[0]);
+                Console.WriteLine(b);
+            }
+            catch (IndexOutOfRangeException)
+            {
+                Console.WriteLine("podaj argument.");
+                Console.ReadLine();
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("to nie liczba");
+            }
+            catch (OverflowException)
+            {
+                Console.WriteLine("przekazano za duzo");
+            }
+            finally
+            {
+                Console.WriteLine("koniec");
+            }
+        }
+    }
+}

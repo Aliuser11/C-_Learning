@@ -171,3 +171,149 @@ class Fibonacci
 
     }
 }
+
+//struktura Nullable <T>
+
+/*public struct Nullable<T> where T : struct
+{
+    public T Value { get; }
+    public bool HasValue { get; }
+    public T GetValueOrDefault();
+    public T GetValueOrDefault(T defaultValue);
+
+}
+{
+    Nullable<int> i = new Nullable<int>();
+    Console.WriteLine(!i.HasValue);
+}*/
+
+/*operatory rownosci*/
+class XXX
+{ 
+    static void Main()
+    {
+        int? x = 5;
+        int? y = null;
+        
+        bool b = (x.HasValue && y.HasValue)
+        ? (x.Value < y.Value)
+        : false;
+
+        int? c = (x.HasValue && y.HasValue)
+        ? (int?)(x.Value + y.Value)
+        : null;
+        // c ma wartość null (przy założeniu, że x wynosi 5, a y ma wartość null)
+
+        Console.WriteLine(null == null); // prawda
+        Console.WriteLine((bool?)null == (bool?)null); //prawda
+
+        //oOperatory & i | z typem bool
+        bool? n = null;
+        bool? f = false;
+        bool? t = true;
+        Console.WriteLine(n | n); // (null)
+        Console.WriteLine(n | f); // (null)
+        Console.WriteLine(n | t); // prawda
+        Console.WriteLine(n & n); // (null)
+        Console.WriteLine(n & f); // fałsz
+        Console.WriteLine(n & t); // (null)
+
+    }
+}
+
+
+ /* Metoda rozszerzająca jest statyczną metodą statycznej klasy,
+gdzie modyfikator this jest stosowany do pierwszego parametru. Typ pierwszego parametru
+będzie tym typem, który zostanie rozszerzony.
+ */
+
+public static class StringHelper
+{
+    public static bool IsCapitalized(this string s)
+    {
+        if (string.IsNullOrEmpty(s)) return false;
+        return char.IsUpper(s[0]);
+    }
+}
+
+
+namespace Utils
+{
+    public static class StringHelper
+    {
+        public static bool IsCapitalized(this string s)
+        {
+            if (string.IsNullOrEmpty(s)) return false;
+            return char.IsUpper(s[0]);
+        }
+    }
+}
+
+/*powolanie sie na namespace Utils aby uzyc metody IsCapitalized
+ */
+namespace MyApp
+{
+    using Utils;
+    class Test
+    {
+        static void Main() => Console.WriteLine ("Perth".IsCapitalized());
+    }
+}
+
+//Typy anonimowe
+/*Do typu anonimowego należy odnosić się przy użyciu słowa kluczowego var, ponieważ ten typ
+nie ma nazwy.*/
+internal class AnonymousGeneratedTypeName
+{
+    private string name; // rzeczywista nazwa pola nie ma znaczenia
+    private int age; // rzeczywista nazwa pola nie ma znaczenia
+    public AnonymousGeneratedTypeName(string name, int age)
+    {
+        this.name = name; this.age = age;
+    }
+    public string Name { get { return name; } }
+    public int Age { get { return age; } }
+    // metody Equals i GetHashCode są przesłonięte (zob. rozdział 6.)
+    // metoda ToString też jest przesłonięta
+}
+class Test
+{
+    static void Main()
+    {
+        var dude = new { Name = "Bartek", Age = 23 };
+        int Age = 23;
+        var dude2 = new { Name = "Bartek", Age, Age.ToString().Length };
+    }
+}
+
+//Krotki
+class Boo
+{
+    public string name;
+    public int age;
+    public void GetPerson(string name, int age)
+
+    {
+        this.name = name; this.age = age;
+    }
+
+}
+class Goo
+{
+
+    static void Main()
+    {
+        var bob = ("Bartek", 23); // kompilator wydedukuje typy elementów
+        Console.WriteLine(bob.Item1); // Bartek
+        Console.WriteLine(bob.Item2); //23
+
+        var joe = bob; // joe jest *kopią* boba
+        joe.Item1 = "Jacek"; // zmiana elementu Item1 krotki joe z Bartek na Jacek
+        Console.WriteLine(bob); // (Bartek, 23)
+        Console.WriteLine(joe);//jacek,23
+
+        (string, int) GetPerson() => ("Bartek", 23);
+    }
+}
+
+//212

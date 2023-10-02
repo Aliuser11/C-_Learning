@@ -316,4 +316,171 @@ class Goo
     }
 }
 
-//212
+//Definiowanie REKORDU
+//record Point
+//{
+//    public Point (double x, double y) => (X, Y) = (x, y); //albo => { this.X = x; this.Y = y; }
+//    public double X { get; init; }
+//    public double Y { get; init; }
+//}
+
+//record Point(double X, double Y)
+//{
+//    // Tutaj mogą się znajdować opcjonalne definicje dodatkowych składowych klasy...
+//}
+
+//record Point
+//{
+//    public Point (double x, double y) => (X, Y) = (x, y);
+//    double _x, _y;
+//    public double X { get => _x; init { _x = value; _distance = null; } }
+//    public double Y { get => _y; init { _y = value; _distance = null; } }
+//    double? _distance;
+//    public double DistanceFromOrigin => _distance ??= Math.Sqrt(X * X + Y * Y);
+//}
+//Point p1 = new Point(2, 3);
+//Console.WriteLine(p1.DistanceFromOrigin); // 3,605551275463989
+//Point p2 = p1 with { Y = 4 };
+//Console.WriteLine(p2.DistanceFromOrigin); // 4,47213595499958
+
+//223 rekordy i porownywanie
+//230 Atrybuty
+
+/* Wiązanie statyczne a wiązanie dynamiczne
+ dynamic d = ...
+ d.Quack();
+
+    Duck d = ... //statyczne
+    d.Quack(); 
+
+ dynamic x = "cześć"; // typem statycznym jest dynamic, a typem wykonawczym — string
+ var y = "cześć"; // typem statycznym i wykonawczym jest string
+ int i = x; // błąd wykonawczy (nie można przekonwertować typu string na int)
+ int j = y; // błąd kompilacji (nie można przekonwertować typu string na int)
+
+rzutowanie wyrażenia dynamicznego natyp statyczny daje wyrażenie statyczne:
+dynamic x = 2;
+var y = (int)x; // typem statycznym y jest int
+
+wywołania konstruktora zawsze dają wyrażenia statyczne — nawet w przypadku wywołańz dynamicznymi argumentami. W tym przykładzie zmienna x otrzyma statyczny typ StringBuilder:
+dynamic capacity = 10;
+var x = new System.Text.StringBuilder (capacity);
+
+typy statyczne są używane także — w wiązaniu dynamicznym.
+
+class Program
+{
+    static void Foo (object x, object y) { Console.WriteLine ("oo"); }
+    static void Foo (object x, string y) { Console.WriteLine ("os"); }
+    static void Foo (string x, object y) { Console.WriteLine ("so"); }
+    static void Foo (string x, string y) { Console.WriteLine ("ss"); }
+static void Main()
+    {
+    object o = "cześć";
+    dynamic d = "żegnaj";
+    Foo (o, d); // os    zgodnie z zasadami rozpoznawania przeciążenia, zostanie wybrana druga implementacja metody Foo ze względu na statyczny typ o i wykonawczy typ d.
+    }
+}
+*/
+
+//Przeciążanie true i false System.Data.SqlTypes.SqlBoolean.
+public struct SqlBoolean
+{
+    public static bool operator true(SqlBoolean x)
+    => x.m_value == True.m_value;
+    public static bool operator false(SqlBoolean x)
+    => x.m_value == False.m_value;
+    public static SqlBoolean operator !(SqlBoolean x)
+    {
+        if (x.m_value == Null.m_value) return Null;
+        if (x.m_value == False.m_value) return True;
+        return False;
+    }
+    public static readonly SqlBoolean Null = new SqlBoolean(0);
+    public static readonly SqlBoolean False = new SqlBoolean(1);
+    public static readonly SqlBoolean True = new SqlBoolean(2);
+    private SqlBoolean(byte value) { m_value = value; }
+    private byte m_value;
+}
+
+//Kod niebezpieczny
+class Program
+{ 
+    unsafe void BlueFilter(int[,] bitmap)
+    {
+        int length = bitmap.Length;
+        fixed (int* b = bitmap)
+        {
+            int* p = b;
+            for (int i = 0; i < length; i++)
+                *p++ &= 0xFF;
+        }
+    }
+}
+
+//fixed <= instrukcja 
+class Testowe
+{
+    int x;
+    static void Main()
+    {
+        Test test = new Test();
+        unsafe
+        {
+            fixed (int* p = &test.x) // przypina test
+//Typy wartościowe zadeklarowane wewnątrz typów referencyjnych wymagają, aby typ referencyjnybył przypięty
+            {
+                *p = 9;
+            }
+            System.Console.WriteLine(test.x);
+        }
+    }
+}
+
+//inne zastosowanie FIXED, tworzenie buforów. 
+
+unsafe struct UnsafeUnicodeString
+{
+    public short Length;
+    public fixed byte Buffer[30]; // alokuje blok 30 bajtów
+}
+unsafe class UnsafeClass
+{
+    UnsafeUnicodeString uus;
+    public UnsafeClass(string s)
+    {
+        uus.Length = (short)s.Length;
+        fixed (byte* p = uus.Buffer)
+            for (int i = 0; i < s.Length; i++)
+                p[i] = (byte)s[i];
+    }
+}
+class Testy
+{
+    static void Main() { new UnsafeClass("Christian Troy"); }
+}
+
+
+//Wskaźnik pusty (void*). Zmiennej tego typu nie można poddać dereferencji i nie można przy jej użyciu wykonywać operacji arytmetycznych.
+class Przyklad
+{
+    unsafe static void Main()
+    {
+        short[] a = { 1, 1, 2, 3, 5, 8, 13, 21, 34, 55 };
+        fixed (short* p = a)
+        {
+            // sizeof zwraca rozmiar typu wartościowego w bajtach
+            Zap(p, a.Length * sizeof(short));
+        }
+        foreach (short x in a)
+            System.Console.WriteLine(x); // drukuje same zera
+    }
+    unsafe static void Zap(void* memory, int byteCount)
+    {
+        byte* b = (byte*)memory;
+        for (int i = 0; i < byteCount; i++)
+            *b++ = 0;
+    }
+}
+
+//245

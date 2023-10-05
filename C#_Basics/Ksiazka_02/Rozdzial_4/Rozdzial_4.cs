@@ -484,3 +484,4 @@ class Przyklad
 }
 
 //245
+//255 nowy rozdzial

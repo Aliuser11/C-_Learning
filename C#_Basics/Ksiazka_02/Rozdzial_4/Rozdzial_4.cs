@@ -483,5 +483,10 @@ class Przyklad
     }
 }
 
-//245
-//255 nowy rozdzial
+//INTERFACE 
+/*
+ By default, members of an interface are abstract and public.
+Note: Interfaces can contain properties and methods, but not fields.
+To access the interface methods, the interface must be "implemented" (kinda like inherited) by another class. To implement an interface, use the : symbol (just like with inheritance). The body of the interface method is provided by the "implement" class
+C# does not support "multiple inheritance" (a class can only inherit from one base class). However, it can be achieved with interfaces, because the class can implement multiple interfaces. Note: To implement multiple interfaces, separate them with a comma
+ */

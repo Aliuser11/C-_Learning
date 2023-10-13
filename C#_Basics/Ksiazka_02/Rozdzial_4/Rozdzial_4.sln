@@ -5,7 +5,7 @@ VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rozdzial_4", "Rozdzial_4.csproj", "{10F5214A-55FE-4B95-8862-1A45DC951C74}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rozdzial_5", "..\Rozdzial_5\Rozdzial_5.csproj", "{AB9CA5A1-FB35-4206-89E3-96CF2612EB09}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rozdzial_dot_net", "..\Rozdzial_5\Rozdzial_dot_net.csproj", "{AB9CA5A1-FB35-4206-89E3-96CF2612EB09}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

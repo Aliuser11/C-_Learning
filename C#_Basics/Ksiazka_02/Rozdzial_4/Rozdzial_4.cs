@@ -490,3 +490,211 @@ Note: Interfaces can contain properties and methods, but not fields.
 To access the interface methods, the interface must be "implemented" (kinda like inherited) by another class. To implement an interface, use the : symbol (just like with inheritance). The body of the interface method is provided by the "implement" class
 C# does not support "multiple inheritance" (a class can only inherit from one base class). However, it can be achieved with interfaces, because the class can implement multiple interfaces. Note: To implement multiple interfaces, separate them with a comma
  */
+
+//INHERITANCE
+/*
+Two Categories:
+* Derived Class (child) - the class that inherits from another class
+* Base Class (parent) - the class being inherited from
+To inherit from a class, use the : symbol.
+
+
+If you don't want other classes to inherit from a class, use the sealed keyword:
+np sealed class Vehicle 
+ * */
+
+class Vehicle  // base class (parent) 
+{
+    public string brand = "Ford";  //  field
+    public void honk()             //  method 
+    {
+        Console.WriteLine("Tuut, tuut!");
+    }
+}
+
+class Car : Vehicle  //  (child)
+{
+    public string modelName = "Mustang";  
+}
+
+class Programuj
+{
+    static void Main(string[] args)
+    {
+        Car myCar = new Car();
+        myCar.honk();
+
+        Console.WriteLine(myCar.brand + " " + myCar.modelName);
+    }
+}
+
+/*Polymorphism and Overriding Methods
+Inheritance lets us inherit fields and methods from another class. Polymorphism uses those methods to perform different tasks. This allows us to perform a single action in different ways.
+
+*/
+class Animal  // Base class (parent) 
+{
+    public void animalSound()
+    {
+        Console.WriteLine("The animal makes a sound");
+    }
+}
+
+class Pig : Animal  // Derived class (child) 
+{
+    public void animalSound()
+    {
+        Console.WriteLine("The pig says: wee wee");
+    }
+}
+
+class Dog : Animal  // Derived class (child) 
+{
+    public void animalSound()
+    {
+        Console.WriteLine("The dog says: bow wow");
+    }
+}
+
+class Programm
+{
+    static void Main(string[] args)
+    {
+        Animal myAnimal = new Animal();  // Create a Animal object
+        Animal myPig = new Pig();  // Create a Pig object
+        Animal myDog = new Dog();  // Create a Dog object
+
+        // the base class method overrides the derived class method, when they share the same name.
+        // so the output will be:
+        myAnimal.animalSound(); //The animal makes a sound
+        myPig.animalSound();//The animal makes a sound
+        myDog.animalSound();//The animal makes a sound
+    }
+}
+//C# provides an option to override the base class method, by adding the virtual keyword to the method inside the base class, and by using the override keyword for each derived class methods
+
+/* It is useful for code reusability: reuse fields and methods of an existing class when you create a new class.*/
+class Animal  //  (parent) 
+{
+    public virtual void animalSound() //VIRTUAL
+    {
+        Console.WriteLine("The animal makes a sound");
+    }
+}
+
+class Pig : Animal  //  (child) 
+{
+    public override void animalSound()
+    {
+        Console.WriteLine("The pig says: wee wee");
+    }
+}
+
+class Dog : Animal  // (child) 
+{
+    public override void animalSound() // OVERRIDE
+    {
+        Console.WriteLine("The dog says: bow wow");
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Animal myAnimal = new Animal();  
+        Animal myPig = new Pig();  
+        Animal myDog = new Dog();  
+
+        myAnimal.animalSound(); //The animal makes a sound
+        myPig.animalSound(); //The pig says: wee wee
+        myDog.animalSound(); //The dog says: bow wow
+    }
+}
+
+//C# | Inheritance in interfaces
+
+/*
+-> If a class implements an interface, then it is necessary to implement all the method that defined by that interface including the base interface methods. Otherwise, the compiler throws an error.
+-> If both derived interface and base interface declares the same member then the base interface member name is hidden by the derived interface member name.
+
+ */
+//example
+public interface IA
+{
+    void method1();
+    void method2();
+}
+public interface IB : IA
+{
+    void method3();
+}
+class Geeks : BadImageFormatException
+{
+    public void method1()
+    {
+        Console.WriteLine("implementation of method 1");
+    }
+    public void method2()
+
+    {
+        Console.WriteLine("implementation of method 2");
+    }
+    public void method3()
+
+    {
+        Console.WriteLine("implementation of method 3");
+    }
+}
+class GFG
+{
+    static void Main(String[] args)
+    {
+        Geeks obj = new Geeks();    
+        obj.method1(); // Implement method 1
+        obj.method2(); // Implement method 2
+        obj.method3(); // Implement method 3
+    }
+}
+
+//example:
+
+public interface IVotes
+{
+    void vote_no(int a);
+}
+public interface IDetails: IVotes
+{
+    void detailsofauthor(string n, int p);
+}
+class TechinalscriptWriter : IDetails
+{
+    public void vote_no(int a)
+    {
+        Console.WriteLine("Total number of votes is: {0}", a);
+    }
+    public void detailsofauthor(string n, int p)
+    {
+        Console.WriteLine("Name of the author is: {0}", n);
+
+        Console.WriteLine("Total number of published" +
+                                " article is: {0}", p);
+    }
+}
+class GFGG
+{
+
+    // Main method
+    static void Main()
+    {
+
+        TechinalscriptWriter obj = new TechinalscriptWriter();
+        obj.vote_no(470045);
+        obj.detailsofauthor("Siya", 98);
+        /*
+         Total number of votes is: 470045
+        Name of the author is: Siya
+        Total number of published article is: 98
+        */
+    }
+}

@@ -144,6 +144,24 @@ Console.WriteLine(dt.TimeOfDay); // 10:20:30 (zwraca obiekt typu TimeSpan)
 
 //Daty i strefy czasowe 288
 
+//Łańcuchy formatowania daty i godziny 302
+
+//Klasa Convert 306
+double d = 3.9;
+int i = Convert.ToInt32(d); // i == 4
+
+public static object ChangeType(object value, Type conversionType); //metoda ChangeType z klasy Convert
+Type targetType = typeof(int);
+object source = "42";
+object result = Convert.ChangeType(source, targetType);
+Console.WriteLine(result); // 42
+Console.WriteLine(result.GetType()); // System.Int32
+
+/*typ System.Enum. Typ ten pełni dwie funkcje:
+• zapewnia jednolitość typów dla wszystkich typów wyliczeń;
+• definiuje statyczne metody pomocnicze.*/
+
+//Struktura Guid 317
 
 
 

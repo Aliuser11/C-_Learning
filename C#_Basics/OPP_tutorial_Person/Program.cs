@@ -1,35 +1,4 @@
-﻿// Properties and Encapsulation
-class Person
-{
-    //private string name; // field
-
-    //public string Name   // property
-    //{
-    //    get { return name; }   // get method
-    //    set { name = value; }  // set method
-    //}
-    // OR Using automatic properties:
-    public string Name  // property
-    { get; set; }
-}
-class Program
-{
-    static void Main(string[] args)
-    {
-        Person myObj = new Person();
-        myObj.Name = "Liam";
-        Console.WriteLine(myObj.Name);
-
-        // Create a myCar object
-        Car myCar = new Car();
-
-        // Call the honk() method (From the Vehicle class) on the myCar object
-        myCar.honk();
-
-        // Display the value of the brand field (from the Vehicle class) and the value of the modelName from the Car class
-        Console.WriteLine(myCar.brand + " " + myCar.modelName);
-    }
-}
+﻿
 /*"inheritance concept"  two categories:
 
     Derived Class (child) - the class that inherits from another class

@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OPP_tutorial_Cars", "OPP_tutorial_Cars.csproj", "{AEDE6F66-CD69-4C7A-8F97-6D202A44149A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OPP_tutorial_Cars", "OPP_tutorial_Cars.csproj", "{AEDE6F66-CD69-4C7A-8F97-6D202A44149A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OPP_tutorial_Person", "..\OPP_tutorial_Person\OPP_tutorial_Person.csproj", "{E3B92DDD-901B-4B8B-84BA-389B59D3065F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OPP_tutorial_", "..\OPP_tutorial_Person\OPP_tutorial_.csproj", "{E3B92DDD-901B-4B8B-84BA-389B59D3065F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OPP_tutorial_Enum", "..\OPP_tutorial_Enum\OPP_tutorial_Enum.csproj", "{83D2BC74-6D2B-4628-A290-2D8636D42808}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{E3B92DDD-901B-4B8B-84BA-389B59D3065F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E3B92DDD-901B-4B8B-84BA-389B59D3065F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E3B92DDD-901B-4B8B-84BA-389B59D3065F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83D2BC74-6D2B-4628-A290-2D8636D42808}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83D2BC74-6D2B-4628-A290-2D8636D42808}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83D2BC74-6D2B-4628-A290-2D8636D42808}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83D2BC74-6D2B-4628-A290-2D8636D42808}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

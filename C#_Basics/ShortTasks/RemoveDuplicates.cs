@@ -10,7 +10,6 @@ namespace ShortPrepareTasks
     {
         List<int> NoDuplicates();
         int RemoveElements(int k = 3);
-        //LinkedListNode<int> NoDuplicatesInListNode();
     }
 
     internal class RemoveDuplicates : IRemoveDuplicates
@@ -38,30 +37,10 @@ namespace ShortPrepareTasks
                 if (odej >= k)
                 {
                     counter++;
-                    //timestamps[counter++] = timestamps[i];
                     first = timestamps[i];
                 }
             }
             return counter;
         }
-
-        //public LinkedListNode<int> NoDuplicatesInListNode()
-        //{
-        //    LinkedListNode<int> head = [1, 2, 2, 2, 3, 4, 4, 5];
-        //    LinkedListNode<int> current = head;
-        //    while (current != null && current.next != null)
-        //    {
-        //        if (current.val == current.next.val)
-        //        {
-        //            // Skip the duplicate node
-        //            current.next = current.next.next;
-        //        }
-        //        else
-        //        {
-        //            current = current.next;
-        //        }
-        //    }
-
-        //}
     }
 }

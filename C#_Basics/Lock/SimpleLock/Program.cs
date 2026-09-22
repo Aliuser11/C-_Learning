@@ -5,6 +5,7 @@ internal class Program
     {
         IDivideMethod _method = new DivideMethod();
         var x = _method.Divide();
+
         return x;
     }
 

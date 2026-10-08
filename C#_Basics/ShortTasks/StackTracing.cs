@@ -23,6 +23,7 @@ namespace ShortPrepareTasks
             foreach (var op in operations)
             {
                 string[] parts = op.Split(' ');
+
                 switch (parts[0])
                 {
                     case "push":
@@ -56,8 +57,13 @@ namespace ShortPrepareTasks
 
         public void Pop()
         {
-            if (stack.Count == 0) return;
+            if (stack.Count == 0)
+            {
+                return;
+            }
+
             int val = stack.Pop();
+
             if (val == minStack.Peek())
             {
                 minStack.Pop();
@@ -66,13 +72,21 @@ namespace ShortPrepareTasks
 
         public int Top()
         {
-            if (stack.Count == 0) return -1;
+            if (stack.Count == 0)
+            {
+                return -1;
+            }
+
             return stack.Peek();
         }
 
         public int GetMin()
         {
-            if (minStack.Count == 0) return -1;
+            if (minStack.Count == 0)
+            {
+                return -1;
+            }
+
             return minStack.Peek();
         }
     }
